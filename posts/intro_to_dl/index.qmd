@@ -1,0 +1,95 @@
+---
+title: "Understanding neural networks without the math (yet)"
+author: "Larysha Rothmann"
+date: "2025-06-28"
+categories: [machine learning, deep learning, bioinformatics]
+description: "A gentle introduction to deep learning and where it fits in the machine learning landscape"
+image: images/mapofmachinelearning.png
+---
+
+## A Brief Outline of Deep Learning in Genomics
+
+Modern biology generates data at a scale that would have seemed absurd a decade ago. Next- and third-generation sequencing, genome-wide expression studies, multi-omics integration - the bottleneck isn't data collection anymore, it's making sense of it all.
+
+The challenge is that biological relationships are complex. Gene A affects gene B, which affects gene C, which loops back to influence gene A under certain conditions. Expression patterns shift depending on environment. Regulatory elements interact in ways that simple linear models can't capture. You need algorithms that can handle complexity, non-linearity, and high dimensionality without requiring you to manually consider every possible interaction.
+
+This post isn't about getting into the technical details of deep learning - that comes later. Instead, it's about fitting deep learning into the broader context and understanding when it might be useful.
+
+## Where Does Deep Learning Fit?
+
+Before diving into neural networks, it helps to see where deep learning sits in the broader machine learning ecosystem. It's part of a continuum or "umbrella" of methods that biologists already use, not something completely separate (and which I have whimsically illustrated below).
+
+![The machine learning landscape](images/map_of_machine_learning.png)
+
+Let's do a quick tour:
+
+**Supervised learning** includes familiar territory - linear regression for modelling growth curves, logistic regression for disease prediction, decision trees for variant classification. These models learn from labelled data: you provide input-output pairs, and they learn the mapping.
+
+**Unsupervised learning** is for when you don't have labels. This is where clustering comes in, such as identifying cell types from expression profiles, and dimensionality reduction, like visualising high-dimensional datasets with PCA or t-SNE. You're looking for structure in the data itself.
+
+**Bayesian methods** give you a probabilistic framework for incorporating prior knowledge. GWAS analyses often use Bayesian approaches when you want to integrate what's already known about genetic associations with new evidence.
+
+**Ensemble learning** - random forests, boosting methods like XGBoost - combines multiple simpler models to get better predictions than any single model could achieve. These are workhorses in genomics, particularly for expression prediction and disease risk modelling.
+
+And then there's **deep learning** - a subfield that excels at large, complex, high-dimensional data. It includes various architectures, but the ones most relevant for sequence data are convolutional neural networks (CNNs) and recurrent neural networks (RNNs) and, more recently, transformers. You can also get creative and combine architectures into hybrid approaches, depending on the scale of the problem.
+
+The point: deep learning isn't replacing these other methods. It's another tool, suited to specific kinds of problems where traditional approaches hit their limits.
+
+## Why Deep Learning for Biology?
+
+Let's use a concrete example: finding regulatory elements in DNA
+
+Traditionally, researchers have used motif scanning tools to predict where transcription factors bind based on experimental data. These methods work by searching DNA sequences for known patterns - short stretches of nucleotides that match previously experimentally identified binding sites in a closely related organism. While useful for generating large databases of motifs, they come with significant limitations: they can't discover new regulatory sequences, and by design, they're reductionist, treating motifs in isolation without much certainty about whether a motif is even functional in context.
+
+This is where deep learning becomes powerful. Neural networks can learn local features like short motifs, but they can also capture higher-order patterns - motif spacing, combinations, orientation, and context. Crucially, they don't require prior knowledge. They learn regulatory features directly from sequence data, discovering patterns that might not match any known motif but still drive gene expression.
+
+It's also become feasible. Hardware advances - particularly GPUs enabling parallel computing - mean you can train models with millions of parameters in hours instead of weeks. Software frameworks like Keras, PyTorch, and TensorFlow have made building and implementing these models much more accessible. You don't need to code the algorithms from scratch anymore.
+
+## The Building Block: What's a Perceptron?
+
+Before we can understand neural networks, we need to understand their basic unit: the perceptron.
+
+The concept of an artificial neuron traces back to the 1940s, when neurophysiologist Warren McCulloch and logician Walter Pitts proposed a simplified mathematical model loosely inspired by how neurons fire in the brain. Rosenblatt's perceptron in 1958 refined this into something closer to what we use today.
+
+Here's the idea: a perceptron is a computational unit that interprets signals from multiple inputs. Each input has a weight - a learned parameter that determines how much that input matters. The perceptron calculates a weighted sum of its inputs, adds a bias term, and then applies a threshold test. If the result exceeds the threshold, the perceptron "fires" and passes a signal forward. If not, it stays silent. The perceptron learns, through training, which weights to assign to each input.
+
+If you want the full history and a clear walkthrough of how perceptrons actually work under the hood, [this YouTube video](https://www.youtube.com/watch?v=l-9ALe3U-Fg) is excellent. It covers the evolution of neural networks from their origins to modern implementations in a way that makes the concept click.
+
+## What Actually Is a Neural Network?
+
+Now that we understand perceptrons, a neural network is simply a collection of these computational units arranged into layers. Instead of a single perceptron making a decision, you have multiple perceptrons working together, each learning to recognize different patterns in the data.
+
+Let's look at the simplest version: a feed-forward neural network.
+
+![Anatomy of a feed-forward neural network](images/feedforwardnetwork_crop.png)
+
+In the diagram above:
+
+**Layer 0 (input layer):** Your feature vector - for example, a DNA sequence that has been numerically encoded in some way.
+
+**Layer 1 (hidden layer):** Where the processing happens. Each neuron receives signals from all input neurons, weights them according to "learned" parameters, and "decides" whether to pass the signal forward based on its threshold.
+
+**Layer 2 (output layer):** The prediction - perhaps a classification (predicted "high" or "low" expression of a gene, based on the DNA sequence and the "learned" target patterns) or a continuous value (predicted relative expression levels on a scale).
+
+During training, the network compares its predictions to the actual outcomes and adjusts the weights to minimize it's mistakes or "error". This happens iteratively, over thousands or millions of training examples, until the model converges on a set of parameters that work.
+
+The key insight is that each layer builds on the previous one. The first layer might learn simple patterns (this sequence appears here), the next layer combines those into more complex patterns (these sequences appear together), and so on. The network constructs a hierarchy of features, from simple to complex, automatically.
+
+## The "Deep" in Deep Learning
+
+So why "deep" learning?
+
+The term refers to networks with many layers. More layers means more capacity to learn complex, hierarchical relationships. A shallow network might learn simple patterns (this sequence motif is linked to higher expression), while a deep network can learn combinations of patterns (these three motifs co-occur in this configuration under these conditions).
+
+But depth comes at a cost: more layers means more parameters to train. For genomic data, this can mean millions of trainable parameters, which makes these models both data-hungry and computationally intensive.
+
+## What's Next
+
+This was the high-level view: what deep learning is, where it fits, and when it's useful. Future posts will get more technical - how training actually works, strategies for avoiding overfitting, and practical implementation.
+
+------------------------------------------------------------------------
+
+## Further Reading
+
+-   [3Blue1Brown's neural network series](https://www.youtube.com/watch?v=aircAruvnKk) - exceptional visualisations
+-   [Eraslan et al. (2019). "Deep learning: new computational modelling techniques for genomics." *Nature Reviews Genetics*](https://www.nature.com/articles/s41588-018-0295-5)

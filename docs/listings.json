@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/intro_to_dl/index.html",
       "/posts/quarto_blog_setup/quarto-biopod-setup-post.html",
       "/posts/wsl_setup/index.html"
     ]
@@ -9,6 +10,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/intro_to_dl/index.html",
       "/posts/quarto_blog_setup/quarto-biopod-setup-post.html",
       "/posts/wsl_setup/index.html"
     ]
