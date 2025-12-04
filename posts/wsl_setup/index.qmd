@@ -1,0 +1,215 @@
+---
+title: "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment"
+author: "Larysha"
+date: "2025-01-28"
+categories: [bioinformatics, tutorial, WSL, setup]
+description: "A practical guide to setting up Windows Subsystem for Linux for bioinformatics work—from installation to prettification"
+---
+
+## Why WSL?
+
+The Unix command line is the foundational tool for bioinformatics. It's where you access servers, wrangle large files, and automate analysis by chaining together customisable commands. Most bioinformatics software is built to run in this environment because it's simply the most efficient way to work with biological data at scale.
+
+If you're on Linux or macOS, you're sorted—the terminal is already there. But Windows users have historically been stuck. PowerShell works fundamentally differently to Unix shells, leaving you with awkward workarounds: dual-booting, virtual machines, or third-party tools like Cygwin. None of these provide a smooth experience.
+
+Enter the Windows Subsystem for Linux (WSL), first released in 2016. WSL2 offers a proper Linux kernel running directly on Windows—no virtual machine overhead, full access to both file systems, and seamless integration. For bioinformatics, you'll want Ubuntu, a Debian distribution compatible with virtually all third-party tools.
+
+## Installing WSL
+
+**Requirements:** Windows 10 (build 19041+) or Windows 11
+
+1. Open Command Prompt as administrator (`Win Key` → search "command prompt" → "run as administrator")
+2. Type: `wsl.exe --install`
+3. Restart your computer when prompted
+
+That's it. Ubuntu installs by default.
+
+When you first open Ubuntu:
+- Create a username and password (doesn't need to match your Windows credentials)
+- Remember this password—you'll need it for any `sudo` commands
+- Note: you won't see characters when typing passwords in terminal. This is normal.
+
+Update your system:
+```bash
+sudo apt update
+sudo apt full-upgrade
+```
+
+Your WSL is now set up.
+
+## Terminal Options
+
+WSL runs from the Ubuntu terminal by default, which works perfectly fine. But if you want a more polished experience with multiple tabs and better aesthetics, consider:
+
+**Windows Terminal** — Microsoft's modern terminal app, available from the [Microsoft Store](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701). Supports multiple tabs, custom themes, and sets WSL as the default profile easily.
+
+**Fluent Terminal (recommended for the aethetics) ** — An alternative with similar features, available on [GitHub](https://github.com/felixse/FluentTerminal) or the [MS Store](https://apps.microsoft.com/detail/fluent-terminal/9P2KRLMFXF9T). Open Menu → New Tab → WSL, then set it as default in Settings → Profiles.
+
+Both let you run multiple shells (WSL, PowerShell, Command Prompt) in one window.
+
+### Making It Pretty (Optional)
+
+This won't affect functionality, but if you want your terminal to look good:
+
+**Easy option:** Use the built-in themes in Windows Terminal (`Settings` → `Appearance`) or Fluent Terminal (`Settings` → `Themes`).
+
+**Customisation:** Edit your `~/.bashrc` file to change your prompt colours and format. Modify the `PS1=` variable—[this guide](https://phoenixnap.com/kb/change-bash-prompt-linux) covers the details.
+
+**Pre-built themes:** Install [oh-my-bash](https://github.com/ohmybash/oh-my-bash) for ready-made themes. Note: installation creates a new `.bashrc` file. Your old one gets backed up as `.bashrc.omb-backup-[date]`. Copy any custom aliases or settings from the backup to the new file. Browse themes [here](https://github.com/ohmybash/oh-my-bash/wiki/Themes) and set your choice by editing the `OSH_THEME` variable in `.bashrc`.
+
+## Navigating Between Windows and Linux
+
+Your WSL home directory lives at `/home/your_username/`, separate from your Windows files. To access Windows files from WSL, mount your C: drive:
+
+```bash
+cd /mnt/c/Users/your_windows_username/
+```
+
+All Windows drives are accessible under `/mnt/`. External drives usually appear automatically as `/mnt/d/`, `/mnt/e/`, etc.
+
+If an external drive doesn't mount automatically:
+```bash
+sudo fdisk -l  # list all partitions
+sudo mount -t drvfs d: /mnt/d  # mount drive d:
+```
+
+**Shortcuts:** Create aliases in `~/.bashrc` to jump to frequently used directories:
+```bash
+nano ~/.bashrc
+# Add at the end:
+alias docs="cd /mnt/c/Users/your_name/Documents"
+# Save, then: source ~/.bashrc
+```
+
+Now typing `docs` takes you straight there.
+
+**Key points:**
+- Access Windows from WSL: `/mnt/c/`
+- The leading `/` is essential (represents root)
+- Hidden files (starting with `.`) appear with `ls -a`
+
+## Adding Programs to PATH
+
+When you install third-party software in your home directory (`~/`), you'll want it accessible from any working directory. Add the executable's location to your `$PATH` variable:
+
+```bash
+nano ~/.bashrc
+# Add at the end (replace paths with your software locations):
+export PATH="/usr/local/sbin:/home/bin/your/software:$PATH"
+# Save and reload:
+source ~/.bashrc
+
+# Verify:
+echo $PATH
+which your_program  # shows where the executable is located
+```
+
+Once in `PATH`, your software works from anywhere—including Windows directories.
+
+## Essential Tools
+
+### Conda
+
+[Miniconda](https://docs.conda.io/projects/miniconda/en/latest/) provides Python package management and virtual environments:
+
+```bash
+cd ~
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda.sh
+~/miniconda3/bin/conda init bash
+```
+
+Restart your terminal. You should see `(base)` before your prompt, indicating the base conda environment is active. Learn conda basics [here](https://learning.anaconda.cloud/conda-basics).
+
+**Alternative:** If you prefer `pip` and `venv`:
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install python3 python3-pip python3-venv ipython3
+```
+
+### Git
+
+Git comes pre-installed with WSL2. Configure it:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"  # use your GitHub email
+git config --global core.editor "nano"  # or "code" for VSCode
+```
+
+Check your settings: `git config --list`
+
+### R and Devtools
+
+```bash
+sudo apt update
+sudo apt install r-base
+
+# Optional but useful R dependencies:
+sudo apt install \
+  r-base-core \
+  r-recommended \
+  r-base-dev \
+  build-essential \
+  libcurl4-gnutls-dev \
+  libxml2-dev \
+  libssl-dev
+```
+
+Launch R by typing `R`, then install devtools:
+```r
+install.packages("devtools")
+```
+Exit R with `q()` and `n`.
+
+### Docker
+
+Docker containers eliminate dependency headaches by packaging everything an application needs to run. Many bioinformatics tools are available as Docker images.
+
+1. Download [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe)
+2. During installation, enable WSL2 integration
+3. Open Docker Desktop → Settings → General → ensure "Use the WSL 2 based engine" is enabled
+
+Verify in terminal: `docker --version`
+
+Note: Docker only works in WSL whilst Docker Desktop is running in Windows.
+
+Full setup guide: [Docker WSL documentation](https://docs.docker.com/desktop/wsl/)
+
+### Nextflow
+
+Nextflow creates scalable, reproducible bioinformatics pipelines. Setup is straightforward:
+
+```bash
+# Check Java version (needs v11+):
+java --version
+
+# If you need to install Java:
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install java 17.0.10-tem
+
+# Install Nextflow:
+wget -qO- https://get.nextflow.io | bash
+chmod +x nextflow
+sudo mv nextflow /usr/local/bin/  # makes it globally accessible
+```
+
+Explore community pipelines at [nf-core](https://nf-co.re/).
+
+### VSCode Integration
+
+Install [VSCode](https://code.visualstudio.com/) on Windows, then add the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+
+From WSL, open any directory in VSCode:
+```bash
+code .
+```
+
+VSCode will connect to WSL automatically and you can edit files, run terminals, and debug directly through the WSL environment.
+
+---
+
+You now have a fully functional bioinformatics environment: Unix tools running natively on Windows, access to both file systems, and all the major software frameworks installed. Time to start analysing data.
+

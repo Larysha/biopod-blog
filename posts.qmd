@@ -1,0 +1,15 @@
+---
+title: "Blog Posts"
+page-layout: full
+listing:
+  contents: posts
+  id: blog-listing
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description]
+  date-format: "DD MMMM YYYY"
+  feed: true
+---

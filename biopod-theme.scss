@@ -1,0 +1,685 @@
+/*-- scss:defaults --*/
+/*
+ * BioPod Theme for Quarto
+ * A warm, academic-styled theme for science and research blogs
+ * Created by Larysha Rothmann for The BioPod
+ * https://github.com/Larysha/rish-blogs
+ */
+
+// Import Crimson Text from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+// Load Apricots font from local file
+@font-face {
+  font-family: 'Apricots';
+  src: url('fonts/apricots.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Brand Colors
+$bg-primary: #e0cdc5;
+$bg-secondary: #d5c3b3;
+$text-heading: #323619;
+$text-body: #000000;
+
+// Color Variables for Quarto
+$body-bg: $bg-primary;
+$body-color: $text-body;
+$link-color: $text-heading;
+$link-hover-color: $text-heading;
+
+// Typography
+$font-family-sans-serif: 'Crimson Text', serif;
+$font-family-monospace: 'Courier New', monospace;
+$headings-font-family: 'Crimson Text', serif;
+$headings-color: $text-heading;
+$font-size-base: 1rem; // 16px
+
+// Heading sizes
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.1rem;
+$h6-font-size: 1rem;
+
+// Spacing (you can now control this!)
+$spacer: 1rem;
+$paragraph-margin-bottom: 1rem;
+$headings-margin-bottom: 0.5rem;
+
+// Navbar
+$navbar-bg: $bg-primary;
+$navbar-fg: $text-heading;
+$navbar-hl: rgba($text-heading, 0.7);
+
+// Links
+$link-decoration: underline;
+
+// Code blocks
+$code-bg: #f5f5f5;
+$code-color: $text-body;
+
+// Cards (for blog listings)
+$card-border-color: transparent;
+$card-border-width: 0;
+$card-bg: transparent;
+
+/*-- scss:rules --*/
+
+// Apply Apricots font to script/display headings
+.navbar-brand,
+.site-title,
+.hero-title,
+.section-title {
+  font-family: 'Apricots', cursive !important;
+  font-weight: 400 !important;
+}
+
+// Body styling
+body {
+  font-family: 'Crimson Text', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $text-body;
+  background-color: $bg-primary;
+}
+
+// Navbar styling
+.navbar {
+  background-color: $bg-primary !important;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Apricots', cursive !important;
+  font-size: 2.5rem !important;
+  color: $text-heading !important;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Crimson Text', serif !important;
+  font-size: 16px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase;
+  color: $text-heading !important;
+  font-weight: 400 !important;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  opacity: 0.7;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  color: $text-heading;
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+// Paragraphs
+p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+// Ensure consistent text sizing in main content areas
+.about-page p,
+.resources-page p,
+main p {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+// === HOME PAGE HERO SECTION ===
+.hero-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center; // Center the text block vertically with the image
+  margin-bottom: 3rem;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem; // Reduced left padding
+  padding-right: 2rem;
+
+  // Apply minimal left margin to all direct children
+  > * {
+    margin-left: 1rem !important;
+  }
+
+  // Style the hero heading div (replaces h1)
+  .hero-heading {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    text-align: left !important;
+  }
+
+  // Ensure h1 is part of the text block with tight spacing (if any remain)
+  h1 {
+    margin-top: 0 !important;
+    margin-bottom: 0.3rem !important;
+    text-align: left !important;
+  }
+
+  // Tight spacing for subtitle paragraph
+  p {
+    margin-top: 0 !important;
+    margin-bottom: 0.3rem !important;
+    text-align: left !important;
+  }
+
+  // Body paragraphs get slightly more spacing above
+  p:nth-of-type(2) {
+    margin-top: 1rem !important;
+  }
+}
+
+// Hide the empty title block that Quarto generates for the home page
+body:has(.hero-container) #title-block-header {
+  display: none !important;
+}
+
+// Style page titles for Blog Posts and Resources pages with Apricots font
+#title-block-header .title {
+  font-family: 'Apricots', cursive !important;
+  font-weight: 400 !important;
+}
+
+// Add left padding and larger size to Resources page title
+.resources-page #title-block-header {
+  padding-left: 4rem !important;
+
+  .title {
+    font-size: 3rem !important;
+  }
+}
+
+// Add left padding, larger size and bottom padding to Blog Posts page title
+body:has(#blog-listing) #title-block-header {
+  padding-left: 4rem !important;
+  margin-bottom: 3rem !important;
+
+  .title {
+    font-size: 3rem !important;
+  }
+}
+
+// Style Inspiration page title similarly to Resources
+.inspiration-page #title-block-header {
+  padding-left: 4rem !important;
+
+  .title {
+    font-size: 3rem !important;
+  }
+}
+
+.hero-image-container {
+  flex: 0 0 55%;
+  max-width: none;
+  width: 55%;
+  margin-right: 0;
+
+  // Make image extend to page edge
+  p {
+    margin: 0 !important;
+  }
+}
+
+.hero-image-side {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  object-fit: cover;
+}
+
+// Remove figure captions
+figure figcaption {
+  display: none;
+}
+
+// === ABOUT PAGE STYLING ===
+.about-page {
+  background-color: $bg-primary;
+  min-height: auto;
+  padding: 2rem 0 2rem 0; // Reduced bottom padding
+}
+
+// Hide the title block on about page (heading is inline)
+.about-page #title-block-header {
+  display: none !important;
+}
+
+// Custom about page layout
+.about-custom-container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 2rem; // Reduced bottom margin
+}
+
+.about-image-wrapper {
+  flex: 0 0 280px; // Slightly smaller to accommodate larger text
+}
+
+.about-text-content {
+  flex: 1;
+  min-width: 0;
+
+  // Style the about heading div (replaces h1)
+  .about-heading {
+    margin-top: 0 !important;
+    margin-bottom: 0.2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  // Tight spacing for heading and name to form one block (if h1 remains)
+  h1 {
+    margin-top: 0 !important;
+    margin-bottom: 0.2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  // Make the name subtitle larger and tight
+  p:first-of-type {
+    font-size: 1.8rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+.profile-photo-custom {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: none;
+  display: block;
+}
+
+// Override body background for all main content pages (not individual blog posts)
+body:has(.about-page),
+body:has(.inspiration-page) {
+  background-color: $bg-primary;
+}
+
+body:has(.resources-page),
+body:has(.hero-container),
+body:has(#blog-listing) {
+  background-color: $bg-secondary;
+}
+
+// Profile photo (backwards compatibility)
+.profile-photo {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: none;
+  display: block;
+}
+
+// === RESOURCES PAGE ===
+.resources-page {
+  background-color: $bg-secondary;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.resource-category {
+  margin-bottom: 2rem;
+}
+
+.resource-category h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: none;
+  padding-bottom: 0.5rem;
+}
+
+// Remove underline from all h2 headings on resources page
+// Target by checking if the page has the machine-learning section (unique to resources page)
+body:has(#machine-learning-deep-learning) h2 {
+  border-bottom: none !important;
+}
+
+// === INSPIRATION PAGE ===
+.inspiration-page {
+  background-color: $bg-primary;
+  min-height: 100vh;
+  padding: 2rem 0;
+
+  h2 {
+    font-family: 'Apricots', cursive !important;
+    font-size: 2.5rem !important;
+    color: $text-heading;
+    margin-bottom: 1.5rem;
+  }
+
+  // Style quote text paragraphs - larger font
+  p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: $text-body;
+    margin-bottom: 0.8rem;
+  }
+
+  // Reduced spacing between quotes with horizontal rules
+  hr {
+    border: none;
+    border-top: 1px solid rgba($text-heading, 0.2);
+    margin: 1.5rem 0;
+  }
+}
+
+// === BLOG POST LISTINGS ===
+.quarto-listing {
+  background-color: transparent !important;
+}
+
+.quarto-listing-default .list {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Default list items (blog page) - transparent with borders
+.quarto-listing-default .list .quarto-grid-item {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 1.6rem 0 1.6rem 2rem;
+  border-bottom: 1px solid rgba($text-heading, 0.2);
+  margin-bottom: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.quarto-listing-default .list .quarto-grid-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: none;
+}
+
+// Blog listing layout: date on left, content on right
+.quarto-listing-default .body {
+  flex: 1;
+  min-width: 0;
+  order: 2;
+}
+
+.quarto-listing-default .metadata {
+  flex: 0 0 140px;
+  min-width: 140px;
+  order: 1;
+}
+
+
+// Hide grid format on blog page (only show default list)
+.quarto-listing-default ~ .quarto-listing-grid,
+.quarto-listing-default + .quarto-listing-grid {
+  display: none !important;
+}
+
+// On blog page, hide any grid items that aren't in the default list
+body:not(:has(#recent-posts)) .quarto-listing-grid {
+  display: none !important;
+}
+
+// Listing text styling
+.quarto-listing .listing-title,
+.quarto-listing .listing-title a {
+  font-family: 'Crimson Text', serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 600;
+  color: $text-heading !important;
+  text-decoration: none;
+}
+
+.quarto-listing .listing-title a:hover {
+  text-decoration: underline;
+}
+
+.quarto-listing .listing-description {
+  font-family: 'Crimson Text', serif !important;
+  font-size: 1rem !important;
+  color: $text-body !important;
+  margin-top: 0.5rem;
+}
+
+.quarto-listing .listing-date {
+  font-family: 'Crimson Text', serif !important;
+  font-size: 0.9rem !important;
+  color: rgba($text-heading, 0.7) !important;
+}
+
+.quarto-listing .listing-categories,
+.quarto-listing .listing-reading-time {
+  font-family: 'Crimson Text', serif !important;
+  font-size: 0.9rem !important;
+  color: rgba($text-heading, 0.7) !important;
+}
+
+// Control blog listing layout spacing
+.quarto-listing-default .listing-date {
+  margin-right: 1rem;
+  min-width: 100px;
+}
+
+.quarto-listing-default .listing-title {
+  margin-left: 0;
+}
+
+.quarto-listing-default .listing-description {
+  margin-left: 0;
+}
+
+// Remove white boxes from card layouts
+.quarto-listing .card {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.quarto-listing .card-body {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+// Hide listings on pages that shouldn't have them
+.about-page .quarto-listing,
+.resources-page .quarto-listing,
+.about-page #quarto-margin-sidebar,
+body:has(.about-page) .quarto-listing:not(#recent-posts .quarto-listing),
+body:has(.resources-page) .quarto-listing:not(#recent-posts .quarto-listing) {
+  display: none !important;
+}
+
+// Hide ALL listing-related elements on about/resources
+.about-page .listing-item,
+.about-page .quarto-grid-item,
+.about-page div[id^="listing-"],
+.resources-page .listing-item,
+.resources-page .quarto-grid-item,
+.resources-page div[id^="listing-"] {
+  display: none !important;
+}
+
+// === HOME PAGE "LATELY..." GRID ===
+#recent-posts .quarto-listing-grid .list.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+#recent-posts .quarto-grid-item {
+  background-color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 1.5rem !important;
+  transition: transform 0.2s ease;
+}
+
+#recent-posts .quarto-grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+#recent-posts .card {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+#recent-posts .card-body {
+  padding: 1.5rem !important;
+}
+
+// === TABLE OF CONTENTS (Blog Posts) ===
+.sidebar nav[role="doc-toc"] {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.sidebar nav[role="doc-toc"] h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-heading;
+}
+
+// === CODE BLOCKS ===
+pre {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border-left: 4px solid $text-heading;
+  padding: 1rem;
+
+  code {
+    color: #1a1a1a !important;
+    font-weight: 600;
+    background-color: transparent;
+  }
+}
+
+code {
+  background-color: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+// === LINKS ===
+a {
+  color: $text-heading;
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+// === FOOTER ===
+.nav-footer {
+  background-color: $bg-primary !important;
+  color: $text-heading !important;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.nav-footer a {
+  color: $text-heading !important;
+  transition: opacity 0.3s ease;
+}
+
+.nav-footer a:hover {
+  opacity: 0.7;
+}
+
+// === RESPONSIVE DESIGN ===
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+  }
+  
+  .hero-image-container {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  
+  .hero-image-side {
+    margin: 1rem auto;
+  }
+  
+  .about-custom-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-image-wrapper {
+    flex: 0 0 auto;
+  }
+  
+  .about-text-content {
+    text-align: center;
+  }
+  
+  .navbar-brand {
+    font-size: 2rem !important;
+  }
+  
+  .profile-photo,
+  .profile-photo-custom {
+    max-width: 200px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+// === SPACING CONTROL ===
+// You can now easily adjust spacing throughout the site
+// by modifying these values
+
+// Container max-widths
+.container,
+.container-fluid {
+  max-width: 1400px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+// Section spacing
+section {
+  margin-bottom: 3rem;
+}
+
+// Tighter spacing for specific elements
+.tight-spacing {
+  margin-bottom: 0.5rem;
+}
+
+.very-tight-spacing {
+  margin-bottom: 0.1rem;
+  line-height: 1;
+}

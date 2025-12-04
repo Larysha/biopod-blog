@@ -1,0 +1,22 @@
+# options specified here will apply to all posts in this folder
+
+freeze: auto
+
+# Default author
+author: "Larysha Rothmann"
+
+# Enable table of contents on the right side for all posts
+toc: true
+toc-location: right
+toc-depth: 3
+
+# Date format
+date-format: "DD MMMM YYYY"
+
+# Code options
+code-fold: false
+code-tools: true
+code-copy: true
+
+# Other options
+link-external-newwindow: true

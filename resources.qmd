@@ -1,0 +1,148 @@
+---
+title: "Resources"
+toc: true
+toc-location: right
+---
+
+A collection of free, open-source tools and resources I've found useful over the years. Some I've worked through extensively, others I'm still exploring. If it's here, it's worth your time.
+
+## Machine Learning & Deep Learning
+
+[Deep Learning with R for Beginners](https://github.com/TrainingByPackt/Deep-Learning-with-R-for-Beginners) – Hands-on introduction to deep learning using R.
+
+[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) – Free online book that builds intuition from the ground up.
+
+[But what is a neural network?](https://www.youtube.com/watch?v=l-9ALe3U-Fg) – Honestly the best and most intuitive explanation of how neural networks work I've heard. 
+
+[Towards Data Science](https://towardsdatascience.com/) – Fantastic blog covering a broad range of topics in data science and ML.
+
+[Deep Learning with R (2nd Edition)](https://livebook.manning.com/book/deep-learning-with-r-second-edition/chapter-1) – A very underrated book that's well-written and accessible. Free to read at this link.
+
+[Machine Learning A-Z: Tips and Resources](https://datamastersclub.com/machine-learning-a-z-tips-and-resources/) – Curated collection of ML learning materials.
+
+---
+
+## Blogs & Portfolios Worth Following
+
+[Tom Jenkins](https://tomjenkins.netlify.app/) – Clean portfolio with solid bioinformatics content.
+
+[Dave Tang's Blog](https://davetang.org/muse/) – Long-running blog with practical bioinformatics tutorials and musings.
+
+[David Goodsell's Molecular Illustrations](https://ccsb.scripps.edu/goodsell/) – Making science come alive with art. An utter inspiration.
+
+[Diving into Genetics and Genomics](https://divingintogeneticsandgenomics.com/) – I've been following Tommy for over seven years—he was one of the first bioinformaticians I found online. Produces an insane amount of content on a wide range of topics.
+
+---
+
+## Programming & Bioinformatics
+
+[SIB Swiss Institute of Bioinformatics Training Materials](https://www.sib.swiss/training/training-materials) – High-quality courses and tutorials.
+
+[LibreTexts: Computational Biology](https://bio.libretexts.org/Bookshelves/Computational_Biology) – Free textbook covering core concepts.
+
+[Bioinformatics Workbook](https://bioinformaticsworkbook.org/#gsc.tab=0) – Comprehensive resource covering data analysis workflows.
+
+[Computational Genomics with R](https://compgenomr.github.io/book/) – Builds from basic biology through to multi-omics. Excellent progression.
+
+[Coddy](https://coddy.tech/) – Interactive coding tutorials.
+
+[Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) – A popular book that makes learning Python feel useful and practical. Free to read online.
+
+[Rosalind](https://rosalind.info/problems/locations/) – Practice problems for brushing up on bioinformatics and programming concepts.
+
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/) – Nice introduction to R.
+
+[Hadley Wickham](https://hadley.nz/) – The legend of the tidyverse. Books available free online, including:
+  - [Tidy Modeling with R](https://www.tmwr.org/)
+
+[MIT Computational Biology Course Materials](https://compbio.mit.edu/teaching.html) – Free MIT course content in computational biology taught by Manolis Kellis.
+
+---
+
+## Grapevine Resources
+
+A little niche—for those looking for up-to-date community tools.
+
+[Grapedia](https://grapedia.org/) – Comprehensive grapevine genomics and genetics database.
+
+---
+
+## Useful Tools & Repositories
+
+[Our World in Data](https://ourworldindata.org/) – Research and data on global challenges. Invaluable for context.
+
+[csvtk](https://github.com/shenwei356/csvtk) – Command-line toolkit for working with CSV files.
+
+[BioNumbers](https://book.bionumbers.org/) – The cell biology by the numbers book. Fascinating reference.
+
+[Friends Don't Let Friends Make Bad Graphs](https://github.com/cxli233/FriendsDontLetFriends) – A guide to data visualisation best practices.
+
+[Academic Workflow: Zotero + Obsidian](https://medium.com/@alexandraphelan/an-updated-academic-workflow-zotero-obsidian-cffef080addd) – This post became my key guide for setting up a writing system I now can't imagine functioning without. The ideal organisational backbone for research and writing.
+
+[PLOS Ten Simple Rules Collection](https://collections.plos.org/collection/ten-simple-rules/) – A surprisingly helpful and practical collection of tips for academics.
+
+[Sticky by YesChat AI](https://www.yeschat.ai/gpts-9t557WCZP3m-Sticky) – In case your drawing skills don't extend to stick figures.
+
+---
+
+## AI Tools for Literature Management
+
+[Research Rabbit](https://app.researchrabbit.ai/?auth-open=sign-in) – Visual citation networks and paper discovery.
+
+[Anara AI](https://anara.com/) – AI-powered literature review assistant.
+
+[SciSpace](https://scispace.com/) – Simplifies reading and understanding research papers.
+
+[NotebookLM](https://notebooklm.google/) – Google's AI notebook for synthesising research.
+
+[Consensus](https://consensus.app/) - AI-powered search engine
+
+There are honestly too many of these now, but these are the ones I've found useful in "free" tier for gathering, organising and querying papers.
+
+---
+
+## Because It's Important to Have Hobbies
+
+[Marty Music](https://www.martymusic.com/) – Guitar tutorials for absolute beginners.
+
+[JustinGuitar](https://www.justinguitar.com/) – Structured, free guitar course.
+
+[Drawabox](https://drawabox.com/lessons) – Learn to draw through deliberate practice.
+
+[Free Learning List](https://freelearninglist.org/) – Massive collection of free online courses across all subjects.
+
+---
+
+## YouTube Channels
+
+### Learning & Explainers
+
+[3Blue1Brown](https://www.youtube.com/@3blue1brown) – Incredible maths visualisations and explanations.
+
+[Primer](https://www.youtube.com/@PrimerBlobs) – Simulations of evolution and game theory. Also very cute.
+
+[freeCodeCamp](https://www.youtube.com/@freecodecamp) – Full programming courses for free.
+
+[Alex The Analyst](https://www.youtube.com/@AlexTheAnalyst) – Data analysis and career advice.
+
+[Up and Atom](https://www.youtube.com/@upandatom) – Physics made approachable.
+
+[Domain of Science](https://www.youtube.com/@domainofscience) – Maps of scientific knowledge.
+
+### Thought-Provoking Content
+
+[Yuval Noah Harari: A Short Chat](https://www.youtube.com/watch?v=K1OvbwY6GPM) – On technology, humanity, and attention.
+
+[Global Birth Rates](https://youtu.be/m2GeVG0XYTc?si=4qAcpA9MqC_LNHmm) – Context on demographic shifts.
+
+### For procrastinating...
+
+[How to make a carrot whistle](https://www.youtube.com/watch?v=ro8xEvYLR_Q&t=39s) – Peak internet.
+
+[Getting Started in Something Creative](https://youtu.be/M6NsEDwHHiE?si=8HYng4c6xNdNR8cq) – Practical advice for when you don't know where to start with drawing. This guy's entire channel is just great fun.
+
+[Chinggis khaanii Magtaal - Batzorig Vaanchig](https://www.youtube.com/watch?v=p_5yt5IX38I&list=RDg8_g5WXmMC0&index=12) - I can't stop listening to this..
+
+[The Promised Land Series](https://www.youtube.com/@ThePromisedLandSeries) – If the Old Testament was told "Office"-style.
+
+[Foil Arms and Hog](https://www.youtube.com/@foilarmsandhog) – Irish comedy sketch group. Innocent humour for when you need a laugh.

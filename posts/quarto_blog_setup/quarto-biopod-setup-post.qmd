@@ -1,0 +1,484 @@
+---
+title: "Building a Personal Academic Site with Quarto"
+author: "Larysha Rothmann"
+date: "2025-04-20"
+categories: [web development, tools, quarto]
+description: "How I set up this blog using Quarto and a custom theme—and why you might want to do the same"
+image: images/quarto-setup-thumbnail.png
+---
+
+## Why setup a blog?
+
+Academic blogs have become more accessible than ever, and is a great way to keep a personal portfolio and record of your work
+
+I recently migrated from Hugo to Quarto for this site, and while it took some time to set up and learn, I'm happy I did. Not just becuase of aesthetics—though the BioPod theme you're looking at is entirely custom—but in how the whole thing works. Faster builds, cleaner code, and a system that makes sense when you're already working in R or Python.
+
+This post walks through how I set up The BioPod using Quarto's website framework and a custom SCSS theme. It's aimed at anyone who codes enough to use notebooks but isn't necessarily a web developer, and who wants a professional site without wrestling WordPress into submission.
+
+## What actually is Quarto?
+
+[Quarto](https://quarto.org/) is an open-source scientific publishing system. Think of it as Markdown Pro: write content in `.qmd` files (Quarto Markdown), and it renders to HTML, PDF, Word docs, presentations, or entire websites.
+
+Here's why it matters for science communication:
+
+**It's built for data science workflows.** You can embed R or Python code directly in your documents, execute it during rendering, and include the outputs (plots, tables, analysis results) automatically. Write once, render everywhere.
+
+**It's fast and portable.** Static site generation means no database, no server-side processing, just HTML/CSS/JS files that load instantly. Host it on GitHub Pages for free.
+
+**It handles citations natively.** BibTeX integration, cross-references, figure numbering - all the academic infrastructure without third-party plugins.
+
+**It scales from notebooks to books.** Same syntax works for [Jupyter-style notebooks](https://quarto.org/docs/tools/jupyter-lab.html), [scientific papers](https://quarto.org/docs/authoring/article-layout.html), [presentations](https://quarto.org/docs/presentations/), and [full websites](https://quarto.org/docs/websites/). Your lab report and your blog post use the same toolchain.
+
+Ther perks aren't just in ease of note rendering, but also the custom aethetics you want to add to your site. With Quarto, you can write SCSS that compiles directly to CSS. You control exactly what gets rendered. No mystery CSS from seventeen different plugins competing for specificity. No surprise JavaScript breaking your site after a theme update. Just your code, doing what you told it to.
+
+Finally, because academic work should be reproducible, your entire site is version-controlled plain text files in Quarto. You can see exactly what changed between versions, roll back mistakes, and rebuild the site identically on any machine with Quarto installed. 
+
+Sold yet? Before we start building, let's get a high level understanding of how Quarto works with custom SCSS
+
+## The Technical Architecture
+
+Here's what happens when you build a Quarto site:
+
+```
+Your content (.qmd files)
+         ↓
+Quarto processes Markdown + code chunks
+         ↓
+Executes R/Python/Julia code (optional)
+         ↓
+Applies theme (SCSS → CSS)
+         ↓
+Renders to HTML
+         ↓
+Static site in _site/ or docs/
+```
+
+Everything from your `.qmd` source to the final HTML happens in a single render step. The output is pure static files—HTML, CSS, JavaScript, images—that you can host anywhere.
+
+### How SCSS Extends CSS
+
+Standard CSS is great but repetitive. Want to use the same colour scheme across your site? You're copying hex codes everywhere. Need to adjust all your heading sizes proportionally? Find-and-replace time.
+
+SCSS (Sassy CSS) adds programming features to CSS:
+
+**Variables:**
+```scss
+// Define once
+$bg-primary: #e0cdc5;
+$text-heading: #323619;
+
+// Use everywhere
+body {
+  background-color: $bg-primary;
+}
+h1 {
+  color: $text-heading;
+}
+```
+
+**Nesting:**
+
+Instead of writing separate CSS rules for related elements, SCSS lets you nest them hierarchically. This mirrors your HTML structure and makes relationships between elements clearer:
+
+```scss
+.navbar {
+  background: $bg-primary;
+  
+  .nav-link {
+    color: $text-heading;
+    
+    &:hover {
+      color: darken($text-heading, 10%);
+    }
+  }
+}
+```
+
+**Functions and mixins:**
+
+Mixins are reusable chunks of CSS that you can include wherever you need them, with optional parameters. They're perfect for repeated patterns:
+
+```scss
+@mixin rounded($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+.box {
+  @include rounded(10px);
+}
+```
+
+When you run `quarto render`, it compiles your SCSS to standard CSS automatically. You write the human-readable SCSS with variables and logic, browsers get optimised CSS.
+
+### Quarto's Theme System
+
+Quarto uses [Bootstrap 5](https://getbootstrap.com/) as its base framework, which means you get a solid foundation of responsive design, typography, and components out of the box. Your custom theme **extends** Bootstrap by overriding its default variables and adding your own rules.
+
+A Quarto SCSS theme has two sections:
+
+```scss
+/*-- scss:defaults --*/
+// Variable overrides go here
+// These change Bootstrap's default values
+$body-bg: #e0cdc5;
+$body-color: #000000;
+$font-family-sans-serif: 'Crimson Text', serif;
+
+/*-- scss:rules --*/
+// Custom CSS rules go here
+// These add new styles or override specific elements
+.hero-container {
+  display: flex;
+  gap: 4rem;
+}
+```
+
+The `defaults` section runs first, setting up your design variables. Then Bootstrap compiles with your variables. Finally, the `rules` section applies your custom styles on top.
+
+This means you're not fighting Bootstrap—you're configuring it, then adding your own layer where needed.
+
+## The BioPod Theme
+
+The theme you're looking at was built around a few specific goals:
+
+1. **Warm, academic aesthetic** — softer colours than the usual stark-white-background blog
+2. **Readable code blocks** — high contrast, bold text, clear syntax highlighting
+3. **Custom typography** — Crimson Text for body, Apricots for display elements
+4. **Flexible page layouts** — different background colours for different page types
+
+Here's the colour palette:
+
+```scss
+$bg-primary: #e0cdc5;      // Warm beige (headers/footers)
+$bg-secondary: #d5c3b3;    // Light tan (page backgrounds)
+$text-heading: #323619;    // Dark olive (headings)
+$text-body: #000000;       // Black (body text)
+```
+
+And the font stack:
+
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+$font-family-sans-serif: 'Crimson Text', serif;
+$headings-font-family: 'Crimson Text', serif;
+```
+
+The Apricots font is a local file in `fonts/apricots.woff2`, loaded via `@font-face` and used selectively for decorative elements like the site title.
+
+## Setting Up Your Own Quarto Site
+
+### Prerequisites
+
+- [Quarto installed](https://quarto.org/docs/get-started/) (works on Windows, Mac, Linux)
+- A text editor (VS Code, RStudio, whatever you prefer)
+- Git (for version control and GitHub Pages deployment)
+- Basic familiarity with Markdown
+
+### Project Structure
+
+```
+my-blog/
+├── _quarto.yml           # Site configuration
+├── custom-theme.scss     # Your theme (optional)
+├── index.qmd             # Home page
+├── about.qmd             # About page
+├── posts.qmd             # Blog listing
+├── posts/                # Blog posts directory
+│   └── post-name/
+│       ├── index.qmd
+│       └── images/
+├── images/               # Site-wide images
+├── fonts/                # Custom fonts (optional)
+└── docs/                 # Rendered output (for GitHub Pages)
+```
+
+### Step 1: Initialise the Project
+
+```bash
+# Create project directory
+mkdir my-blog
+cd my-blog
+
+# Initialise Quarto website
+quarto create project website .
+```
+
+This generates a basic site structure with `_quarto.yml`, `index.qmd`, and `about.qmd`.
+
+### Step 2: Configure `_quarto.yml`
+
+This file controls your entire site. Here's a minimal setup:
+
+```yaml
+project:
+  type: website
+  output-dir: docs        # For GitHub Pages
+
+website:
+  title: "Your Site Name"
+  navbar:
+    background: "#e0cdc5"
+    left:
+      - text: "HOME"
+        href: index.qmd
+      - text: "BLOG"
+        href: posts.qmd
+      - text: "ABOUT"
+        href: about.qmd
+
+format:
+  html:
+    theme: default        # Or your custom theme
+    toc: true
+    toc-location: right
+```
+
+Key settings:
+
+- `output-dir: docs` tells Quarto to build to `docs/` instead of `_site/`, which GitHub Pages can serve directly
+- `navbar` defines your site navigation
+- `format: html: theme` specifies your theme (use `default`, a [built-in theme](https://quarto.org/docs/output-formats/html-themes.html), or a custom `.scss` file)
+
+### Step 3: Create Your First Post
+
+Create `posts/my-first-post/index.qmd`:
+
+```markdown
+---
+title: "My First Post"
+author: "Your Name"
+date: "2025-01-28"
+categories: [news, tutorial]
+description: "A brief description for the blog listing"
+---
+
+## Introduction
+
+Your content here. Write in Markdown, embed code, include images.
+
+```
+
+The frontmatter (YAML between `---` lines) defines post metadata. The rest is standard Markdown.
+
+### Step 4: Set Up Blog Listing
+
+Create `posts.qmd` to display all posts:
+
+```yaml
+---
+title: "Blog"
+listing:
+  contents: posts          # Folder to scan
+  sort: "date desc"
+  type: default            # Options: default, grid, table
+  categories: true
+  fields: [date, title, description]
+  date-format: "DD MMMM YYYY"
+---
+```
+
+This page automatically lists all posts in the `posts/` directory, sorted by date.
+
+### Step 5: Build and Preview
+
+```bash
+# Preview locally (opens in browser, live-reloads on changes)
+quarto preview
+
+# Build for production
+quarto render
+```
+
+Your site is now in the `docs/` directory, ready to deploy.
+
+## Using the BioPod Theme
+
+If you want to use the exact theme from this site, you're welcome to. The theme is [available on GitHub](https://github.com/yourusername/your-repo) (replace with actual repo link) for anyone to use and adapt.
+
+**A small request though:** if you do use BioPod as your starting point, please credit the original by linking back to this site or the GitHub repo. And more importantly, make it your own. Tweak the colours, swap the fonts, adjust the spacing —academic sites should reflect the person behind them, not just a template. And I'd genuinely love to see what you do differently with it.
+
+Now, here's how to get started:
+
+### Step 1: Get the Theme Files
+
+Download or copy:
+- [`biopod-theme.scss`](https://github.com/yourusername/your-repo/blob/main/biopod-theme.scss) (the theme file)
+- `fonts/apricots.woff2` (optional custom font)
+
+Place them in your project root.
+
+### Step 2: Update `_quarto.yml`
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - fonts/              # Include fonts directory in output
+
+format:
+  html:
+    theme: biopod-theme.scss
+    toc: true
+```
+
+### Step 3: Render
+
+```bash
+quarto render
+```
+
+That's it. Your site now uses the BioPod theme.
+
+## Customising the Theme
+
+Want to tweak colours or fonts? Open `biopod-theme.scss` and edit the variables in the `/*-- scss:defaults --*/` section:
+
+```scss
+/*-- scss:defaults --*/
+
+// Brand colours
+$bg-primary: #e0cdc5;      // Change this to your preferred colour
+$bg-secondary: #d5c3b3;    // And this
+$text-heading: #323619;    // And this
+$text-body: #000000;       // You get the idea
+
+// Typography
+$font-family-sans-serif: 'Crimson Text', serif;  // Or your font
+$h1-font-size: 2.5rem;     // Adjust heading sizes
+$h2-font-size: 2rem;
+```
+
+Then re-render:
+
+```bash
+quarto render
+```
+
+The changes apply immediately. No cache clearing, no fighting with specificity—just change the variable, rebuild, done.
+
+### Adding Your Own Fonts
+
+**Google Fonts** (easiest):
+
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');
+
+$font-family-sans-serif: 'Your Font', sans-serif;
+```
+
+**Local fonts** (more control):
+
+1. Place font file (`.woff2` preferred) in `fonts/your-font.woff2`
+2. Add to theme:
+
+```scss
+@font-face {
+  font-family: 'Your Font';
+  src: url('fonts/your-font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-family-sans-serif: 'Your Font', sans-serif;
+```
+
+3. Make sure `fonts/` is included in `_quarto.yml` resources (see Step 2 above)
+
+### Page-Specific Styling
+
+Different pages can have different backgrounds or layouts. The BioPod theme uses CSS selectors to target specific pages:
+
+```scss
+// Home page and blog listing get secondary background
+body:has(.quarto-title-block) {
+  background-color: $bg-secondary;
+}
+
+// Individual blog posts get primary background
+body:has(article) {
+  background-color: $bg-primary;
+}
+```
+
+You can extend this pattern to style any page uniquely based on its content or metadata.
+
+## Deploying to GitHub Pages
+
+### Step 1: Create a GitHub Repository
+First create a place for your blog to "live" on your GitHub, the open your terminal where you project "lives" locally and type the following commands:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/yourusername/your-blog.git
+git push -u origin main
+```
+
+### Step 2: Configure GitHub Pages
+
+1. Go to your repository on GitHub
+2. Settings → Pages
+3. Source: Deploy from a branch
+4. Branch: `main`, folder: `/docs`
+5. Save
+
+Your site will be live at `https://yourusername.github.io/your-blog/` within a few minutes.
+
+### Step 3: Automate with GitHub Actions (Optional)
+
+Create `.github/workflows/publish.yml`:
+
+```yaml
+name: Publish Quarto Site
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+      - name: Render site
+        run: quarto render
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+```
+
+Now every push to `main` automatically rebuilds and deploys your site.
+
+## What You Get
+
+After following this setup, you'll have:
+
+- A fast, clean static site hosted for free on GitHub Pages
+- Full control over design and functionality via SCSS
+- Version-controlled content as plain text files
+- Native support for code execution, citations, and cross-references
+- A publishing workflow that integrates with your research tools
+
+It's not the easiest option—WordPress is still easier if you've never touched code. But if you're already working in R or Python, and you want a professional site that you actually understand and control, Quarto hits a sweet spot.
+
+## Further Resources
+
+- [Quarto documentation](https://quarto.org/docs/guide/)
+- [Quarto websites guide](https://quarto.org/docs/websites/)
+- [SCSS documentation](https://sass-lang.com/documentation/)
+- [Bootstrap variables reference](https://getbootstrap.com/docs/5.3/customize/sass/)
+
+

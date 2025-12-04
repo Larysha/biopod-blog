@@ -1,0 +1,91 @@
+---
+title: "Inspiration"
+page-layout: full
+toc: true
+---
+
+::: {.inspiration-page}
+::: {style="max-width: 900px; margin: 0 auto; padding: 0 2rem;"}
+
+## snippets from people that knew how to write 
+
+"As humans we are inclined to feel that life must have a point. We have plans and aspirations and desires. We want to take constant advantage of all the intoxicating existence we've been endowed with. But what's life to a lichen? Yet its impulse to exist, to be, is every bit as strong as ours—arguably even stronger. If I were told that I had to spend decades being a furry growth on a rock in the woods, I believe I would lose the will to go on. Lichens don't. Like virtually all living things, they will suffer any hardship, endure any insult, for a moment's additional existence. Life, in short, just wants to be.”  
+
+― _Bill Bryson, A Short History of Nearly Everything_
+
+“Geologists are never at a loss for paperweights.”  \
+
+― _Bill Bryson_
+
+---
+
+"Nature has given us a brain that survives in a changing world by changing itself"
+
+— _Norman Doidge_
+
+"Gradually, the observer realizes that organisms are connected to each other. Not linearly but in a net-like, entangled fabric."
+
+— _Alexander von Humboldt_
+
+"To use the world well, to be able to stop wasting it and our time in it, we need to re-learn our being in it."
+
+— _Ursula Le Guin_
+
+"The difference between animals and fungi is simple: Animals put food in their bodies, whereas fungi put their bodies in the food."
+
+— _Merlin Sheldrake, *Entangled Life*_
+
+"Science isn't an exercise in cold-blooded rationality. Scientists are and always have been emotional, creative, intuitive whole human beings asking questions about a world that was never meant to be cataloged and systematized."
+
+— _Merlin Sheldrake, *Entangled Life*_
+
+---
+
+"Science is not about building a body of known facts. It is a method for asking awkward questions and subjecting them to reality check, thus avoiding the human tendency to believe whatever makes us feel good."
+
+— _Terry Pratchett, *The Science of The Discworld*_
+
+"The problem, of course, with having an open mind is that people will insist on coming along and trying to put things in it."
+
+— _Terry Pratchett_
+
+"It doesn't stop being magic just because you know how it works."
+
+— _Terry Pratchett_
+
+---
+
+“For better or worse, intelligence can come to nothing when the emotions hold sway.” 
+
+― _Daniel Goleman, Emotional Intelligence_ 
+
+“If you want to lift a hundred pounds, you don't expect to succeed the first time. You start with a lighter weight and work up little by little. You actually fail to lift a hundred pounds, every day, until the day you succeed.”  
+
+― _Norman Doidge, The Brain that Changes Itself: Stories of Personal Triumph from the Frontiers of Brain Science_
+
+---
+
+“The soul becomes dyed with the colour of its thoughts.” 
+
+― _Marcus Aurelius, Meditations_
+
+“The first rule is to keep an untroubled spirit. The second is to look things in the face and know them for what they are.”  
+
+― _Marcus Aurelius_
+
+“Think of yourself as dead. You have lived your life. Now, take what's left and live it properly."
+
+― _Marcus Aurelius_
+
+---
+
+“Yet such is oft the course of deeds that move the wheels of the world: small hands do them because they must, while the eyes of the great are elsewhere.”  
+
+― _J.R.R. Tolkien, The Lord of the Rings_
+
+“There is a stubbornness about me that never can bear to be frightened at the will of others. My courage always rises at every attempt to intimidate me.”  
+
+― _Jane Austen, Pride and Prejudice_
+
+:::
+:::

@@ -1,0 +1,43 @@
+---
+title: ""
+page-layout: full
+title-block-banner: false
+toc: false
+listing:
+  - id: recent-posts
+    contents: posts
+    sort: "date desc"
+    type: grid
+    max-items: 3
+    fields: [date, title, description]
+    date-format: "DD MMM YYYY"
+    grid-columns: 3
+---
+
+:::: {style="max-width: 1200px; margin: 1rem auto 3rem auto; padding: 0 2rem;"}
+
+::: {.hero-container}
+::: {.hero-text}
+<div class="hero-heading" style="font-family: 'Apricots', cursive; font-size: 5rem; color: #323619; margin-bottom: 1rem; line-height: 1.1; margin-top: 0; font-weight: 400;">The BioPod</div>
+
+<p style="font-family: 'Crimson Text', serif; font-size: 3rem; color: #323619; font-style: italic; margin-top: 0; margin-bottom: 0.3rem;">all things genomics, bioinformatics & sustainability</p>
+
+
+Computational work is often a solo activity-just you, your code, and a gene network. But the big challenges aren't tackled alone: crops failing, climates shifting, farmers adapting. These need collective solutions.
+
+This blog is my way of connecting the dots and engaging beyond the screen. I write about the technical stuff I'm learning and the broader issues it touches (and some other things inbetween). Light on jargon, heavy on curiosity.
+:::
+
+::: {.hero-image-container}
+![](images/hero-collage.png){.hero-image-side}
+:::
+:::
+
+::: {style="margin-top: 5rem;"}
+<h2 style="font-family: 'Apricots', cursive; font-size: 2.5rem; color: #323619; margin-bottom: 2rem;">Lately...</h2>
+
+::: {#recent-posts}
+:::
+:::
+
+::::

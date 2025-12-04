@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - fonts/
+
+website:
+  title: ""
+  favicon: images/favicon.png
+  site-url: "https://larysha.github.io/rish-blogs"
+  repo-url: "https://github.com/Larysha/rish-blogs"
+  
+  navbar:
+    background: "#e0cdc5"
+    foreground: "#323619"
+    left:
+      - text: "HOME"
+        href: index.qmd
+      - text: "BLOG"
+        href: posts.qmd
+      - text: "ABOUT"
+        href: about.qmd
+      - text: "RESOURCES"
+        href: resources.qmd
+      - text: "INSPIRATION"
+        href: inspiration.qmd
+  
+  page-footer:
+    background: "#e0cdc5"
+    foreground: "#323619"
+    center: |
+      This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+    right: |
+      Built with [Quarto](https://quarto.org/)
+
+format:
+  html:
+    theme: biopod-theme.scss
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+execute:
+  freeze: auto
+
+search: true

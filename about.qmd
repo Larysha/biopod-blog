@@ -1,0 +1,39 @@
+---
+title: ""
+page-layout: full
+toc: false
+---
+
+::: {.about-page}
+::: {style="max-width: 1000px; margin: 1rem auto 1rem auto; padding: 0 2rem;"}
+
+::: {.about-custom-container}
+::: {.about-image-wrapper}
+![](images/profile3.jpg){.profile-photo-custom}
+:::
+
+::: {.about-text-content}
+<div class="about-heading" style="font-family: 'Apricots', cursive; font-size: 3rem; color: #323619; margin-bottom: 0.2rem; line-height: 1.2; margin-top: 0; font-weight: 400;">Bioinformatician & writer</div>
+
+<p style="font-family: 'Crimson Text', serif; font-size: 1.8rem; color: #323619; font-style: italic; margin-top: 0; margin-bottom: 1.2rem;">Larysha Rothmann</p>
+
+
+I'm Larysha, a bioinformatics PhD student at Stellenbosch University in South Africa.
+My work involves teaching computers to understand how grapevines handle drought - specifically, which genetic variants matter enough to test in the lab rather than just existing in massive datasets.
+This blog is where I make sense of what I'm learning because I enjoy making technical work accessible without stripping out what makes it interesting.
+If you’re curious about computational biology, you might find something useful here. 
+
+Besides my work, I'm interested in too many things for my own good, but the hobbies that I've stuck with include sketching, yoga and making sourdough. 
+And if you'd like to have a chin-wag my links are below:  
+
+
+<p style="margin-top: 2rem;">
+<a href="https://github.com/Larysha" style="color: #323619; text-decoration: underline; margin-right: 2rem;"><i class="bi bi-github"></i> GitHub</a>
+<a href="https://www.linkedin.com/in/larysha-rothmann-6aa78418a/" style="color: #323619; text-decoration: underline; margin-right: 2rem;"><i class="bi bi-linkedin"></i> LinkedIn</a>
+<a href="mailto:biopod.blog@gmail.com" style="color: #323619; text-decoration: underline;"><i class="bi bi-envelope"></i> Email</a>
+</p>
+:::
+:::
+
+:::
+:::
