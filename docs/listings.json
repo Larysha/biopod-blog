@@ -4,6 +4,7 @@
     "items": [
       "/posts/intro_to_dl/index.html",
       "/posts/quarto_blog_setup/quarto-biopod-setup-post.html",
+      "/posts/unsupervied_learning_intro/index.html",
       "/posts/wsl_setup/index.html"
     ]
   },
@@ -12,6 +13,7 @@
     "items": [
       "/posts/intro_to_dl/index.html",
       "/posts/quarto_blog_setup/quarto-biopod-setup-post.html",
+      "/posts/unsupervied_learning_intro/index.html",
       "/posts/wsl_setup/index.html"
     ]
   }
