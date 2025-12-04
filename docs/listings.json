@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/quarto_blog_setup/quarto-biopod-setup-post.html",
+      "/posts/wsl_setup/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/quarto_blog_setup/quarto-biopod-setup-post.html",
+      "/posts/wsl_setup/index.html"
+    ]
+  }
+]

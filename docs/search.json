@@ -1,0 +1,506 @@
+[
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "A collection of free, open-source tools and resources I’ve found useful over the years. Some I’ve worked through extensively, others I’m still exploring. If it’s here, it’s worth your time."
+  },
+  {
+    "objectID": "resources.html#machine-learning-deep-learning",
+    "href": "resources.html#machine-learning-deep-learning",
+    "title": "Resources",
+    "section": "Machine Learning & Deep Learning",
+    "text": "Machine Learning & Deep Learning\nDeep Learning with R for Beginners – Hands-on introduction to deep learning using R.\nNeural Networks and Deep Learning – Free online book that builds intuition from the ground up.\nBut what is a neural network? – Honestly the best and most intuitive explanation of how neural networks work I’ve heard.\nTowards Data Science – Fantastic blog covering a broad range of topics in data science and ML.\nDeep Learning with R (2nd Edition) – A very underrated book that’s well-written and accessible. Free to read at this link.\nMachine Learning A-Z: Tips and Resources – Curated collection of ML learning materials."
+  },
+  {
+    "objectID": "resources.html#blogs-portfolios-worth-following",
+    "href": "resources.html#blogs-portfolios-worth-following",
+    "title": "Resources",
+    "section": "Blogs & Portfolios Worth Following",
+    "text": "Blogs & Portfolios Worth Following\nTom Jenkins – Clean portfolio with solid bioinformatics content.\nDave Tang’s Blog – Long-running blog with practical bioinformatics tutorials and musings.\nDavid Goodsell’s Molecular Illustrations – Making science come alive with art. An utter inspiration.\nDiving into Genetics and Genomics – I’ve been following Tommy for over seven years—he was one of the first bioinformaticians I found online. Produces an insane amount of content on a wide range of topics."
+  },
+  {
+    "objectID": "resources.html#programming-bioinformatics",
+    "href": "resources.html#programming-bioinformatics",
+    "title": "Resources",
+    "section": "Programming & Bioinformatics",
+    "text": "Programming & Bioinformatics\nSIB Swiss Institute of Bioinformatics Training Materials – High-quality courses and tutorials.\nLibreTexts: Computational Biology – Free textbook covering core concepts.\nBioinformatics Workbook – Comprehensive resource covering data analysis workflows.\nComputational Genomics with R – Builds from basic biology through to multi-omics. Excellent progression.\nCoddy – Interactive coding tutorials.\nAutomate the Boring Stuff with Python – A popular book that makes learning Python feel useful and practical. Free to read online.\nRosalind – Practice problems for brushing up on bioinformatics and programming concepts.\nHands-On Programming with R – Nice introduction to R.\nHadley Wickham – The legend of the tidyverse. Books available free online, including: - Tidy Modeling with R\nMIT Computational Biology Course Materials – Free MIT course content in computational biology taught by Manolis Kellis."
+  },
+  {
+    "objectID": "resources.html#grapevine-resources",
+    "href": "resources.html#grapevine-resources",
+    "title": "Resources",
+    "section": "Grapevine Resources",
+    "text": "Grapevine Resources\nA little niche—for those looking for up-to-date community tools.\nGrapedia – Comprehensive grapevine genomics and genetics database."
+  },
+  {
+    "objectID": "resources.html#useful-tools-repositories",
+    "href": "resources.html#useful-tools-repositories",
+    "title": "Resources",
+    "section": "Useful Tools & Repositories",
+    "text": "Useful Tools & Repositories\nOur World in Data – Research and data on global challenges. Invaluable for context.\ncsvtk – Command-line toolkit for working with CSV files.\nBioNumbers – The cell biology by the numbers book. Fascinating reference.\nFriends Don’t Let Friends Make Bad Graphs – A guide to data visualisation best practices.\nAcademic Workflow: Zotero + Obsidian – This post became my key guide for setting up a writing system I now can’t imagine functioning without. The ideal organisational backbone for research and writing.\nPLOS Ten Simple Rules Collection – A surprisingly helpful and practical collection of tips for academics.\nSticky by YesChat AI – In case your drawing skills don’t extend to stick figures."
+  },
+  {
+    "objectID": "resources.html#ai-tools-for-literature-management",
+    "href": "resources.html#ai-tools-for-literature-management",
+    "title": "Resources",
+    "section": "AI Tools for Literature Management",
+    "text": "AI Tools for Literature Management\nResearch Rabbit – Visual citation networks and paper discovery.\nAnara AI – AI-powered literature review assistant.\nSciSpace – Simplifies reading and understanding research papers.\nNotebookLM – Google’s AI notebook for synthesising research.\nConsensus - AI-powered search engine\nThere are honestly too many of these now, but these are the ones I’ve found useful in “free” tier for gathering, organising and querying papers."
+  },
+  {
+    "objectID": "resources.html#because-its-important-to-have-hobbies",
+    "href": "resources.html#because-its-important-to-have-hobbies",
+    "title": "Resources",
+    "section": "Because It’s Important to Have Hobbies",
+    "text": "Because It’s Important to Have Hobbies\nMarty Music – Guitar tutorials for absolute beginners.\nJustinGuitar – Structured, free guitar course.\nDrawabox – Learn to draw through deliberate practice.\nFree Learning List – Massive collection of free online courses across all subjects."
+  },
+  {
+    "objectID": "resources.html#youtube-channels",
+    "href": "resources.html#youtube-channels",
+    "title": "Resources",
+    "section": "YouTube Channels",
+    "text": "YouTube Channels\n\nLearning & Explainers\n3Blue1Brown – Incredible maths visualisations and explanations.\nPrimer – Simulations of evolution and game theory. Also very cute.\nfreeCodeCamp – Full programming courses for free.\nAlex The Analyst – Data analysis and career advice.\nUp and Atom – Physics made approachable.\nDomain of Science – Maps of scientific knowledge.\n\n\nThought-Provoking Content\nYuval Noah Harari: A Short Chat – On technology, humanity, and attention.\nGlobal Birth Rates – Context on demographic shifts.\n\n\nFor procrastinating…\nHow to make a carrot whistle – Peak internet.\nGetting Started in Something Creative – Practical advice for when you don’t know where to start with drawing. This guy’s entire channel is just great fun.\nChinggis khaanii Magtaal - Batzorig Vaanchig - I can’t stop listening to this..\nThe Promised Land Series – If the Old Testament was told “Office”-style.\nFoil Arms and Hog – Irish comedy sketch group. Innocent humour for when you need a laugh."
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html",
+    "href": "posts/wsl_setup/index.html",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "",
+    "text": "The Unix command line is the foundational tool for bioinformatics. It’s where you access servers, wrangle large files, and automate analysis by chaining together customisable commands. Most bioinformatics software is built to run in this environment because it’s simply the most efficient way to work with biological data at scale.\nIf you’re on Linux or macOS, you’re sorted—the terminal is already there. But Windows users have historically been stuck. PowerShell works fundamentally differently to Unix shells, leaving you with awkward workarounds: dual-booting, virtual machines, or third-party tools like Cygwin. None of these provide a smooth experience.\nEnter the Windows Subsystem for Linux (WSL), first released in 2016. WSL2 offers a proper Linux kernel running directly on Windows—no virtual machine overhead, full access to both file systems, and seamless integration. For bioinformatics, you’ll want Ubuntu, a Debian distribution compatible with virtually all third-party tools."
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html#why-wsl",
+    "href": "posts/wsl_setup/index.html#why-wsl",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "",
+    "text": "The Unix command line is the foundational tool for bioinformatics. It’s where you access servers, wrangle large files, and automate analysis by chaining together customisable commands. Most bioinformatics software is built to run in this environment because it’s simply the most efficient way to work with biological data at scale.\nIf you’re on Linux or macOS, you’re sorted—the terminal is already there. But Windows users have historically been stuck. PowerShell works fundamentally differently to Unix shells, leaving you with awkward workarounds: dual-booting, virtual machines, or third-party tools like Cygwin. None of these provide a smooth experience.\nEnter the Windows Subsystem for Linux (WSL), first released in 2016. WSL2 offers a proper Linux kernel running directly on Windows—no virtual machine overhead, full access to both file systems, and seamless integration. For bioinformatics, you’ll want Ubuntu, a Debian distribution compatible with virtually all third-party tools."
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html#installing-wsl",
+    "href": "posts/wsl_setup/index.html#installing-wsl",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "Installing WSL",
+    "text": "Installing WSL\nRequirements: Windows 10 (build 19041+) or Windows 11\n\nOpen Command Prompt as administrator (Win Key → search “command prompt” → “run as administrator”)\nType: wsl.exe --install\nRestart your computer when prompted\n\nThat’s it. Ubuntu installs by default.\nWhen you first open Ubuntu: - Create a username and password (doesn’t need to match your Windows credentials) - Remember this password—you’ll need it for any sudo commands - Note: you won’t see characters when typing passwords in terminal. This is normal.\nUpdate your system:\nsudo apt update\nsudo apt full-upgrade\nYour WSL is now set up."
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html#terminal-options",
+    "href": "posts/wsl_setup/index.html#terminal-options",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "Terminal Options",
+    "text": "Terminal Options\nWSL runs from the Ubuntu terminal by default, which works perfectly fine. But if you want a more polished experience with multiple tabs and better aesthetics, consider:\nWindows Terminal — Microsoft’s modern terminal app, available from the Microsoft Store. Supports multiple tabs, custom themes, and sets WSL as the default profile easily.\nFluent Terminal (recommended for the aethetics)  — An alternative with similar features, available on GitHub or the MS Store. Open Menu → New Tab → WSL, then set it as default in Settings → Profiles.\nBoth let you run multiple shells (WSL, PowerShell, Command Prompt) in one window.\n\nMaking It Pretty (Optional)\nThis won’t affect functionality, but if you want your terminal to look good:\nEasy option: Use the built-in themes in Windows Terminal (Settings → Appearance) or Fluent Terminal (Settings → Themes).\nCustomisation: Edit your ~/.bashrc file to change your prompt colours and format. Modify the PS1= variable—this guide covers the details.\nPre-built themes: Install oh-my-bash for ready-made themes. Note: installation creates a new .bashrc file. Your old one gets backed up as .bashrc.omb-backup-[date]. Copy any custom aliases or settings from the backup to the new file. Browse themes here and set your choice by editing the OSH_THEME variable in .bashrc."
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html#navigating-between-windows-and-linux",
+    "href": "posts/wsl_setup/index.html#navigating-between-windows-and-linux",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "Navigating Between Windows and Linux",
+    "text": "Navigating Between Windows and Linux\nYour WSL home directory lives at /home/your_username/, separate from your Windows files. To access Windows files from WSL, mount your C: drive:\ncd /mnt/c/Users/your_windows_username/\nAll Windows drives are accessible under /mnt/. External drives usually appear automatically as /mnt/d/, /mnt/e/, etc.\nIf an external drive doesn’t mount automatically:\nsudo fdisk -l  # list all partitions\nsudo mount -t drvfs d: /mnt/d  # mount drive d:\nShortcuts: Create aliases in ~/.bashrc to jump to frequently used directories:\nnano ~/.bashrc\n# Add at the end:\nalias docs=\"cd /mnt/c/Users/your_name/Documents\"\n# Save, then: source ~/.bashrc\nNow typing docs takes you straight there.\nKey points: - Access Windows from WSL: /mnt/c/ - The leading / is essential (represents root) - Hidden files (starting with .) appear with ls -a"
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html#adding-programs-to-path",
+    "href": "posts/wsl_setup/index.html#adding-programs-to-path",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "Adding Programs to PATH",
+    "text": "Adding Programs to PATH\nWhen you install third-party software in your home directory (~/), you’ll want it accessible from any working directory. Add the executable’s location to your $PATH variable:\nnano ~/.bashrc\n# Add at the end (replace paths with your software locations):\nexport PATH=\"/usr/local/sbin:/home/bin/your/software:$PATH\"\n# Save and reload:\nsource ~/.bashrc\n\n# Verify:\necho $PATH\nwhich your_program  # shows where the executable is located\nOnce in PATH, your software works from anywhere—including Windows directories."
+  },
+  {
+    "objectID": "posts/wsl_setup/index.html#essential-tools",
+    "href": "posts/wsl_setup/index.html#essential-tools",
+    "title": "WSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment",
+    "section": "Essential Tools",
+    "text": "Essential Tools\n\nConda\nMiniconda provides Python package management and virtual environments:\ncd ~\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh\nbash ~/miniconda.sh -b -u -p ~/miniconda3\nrm ~/miniconda.sh\n~/miniconda3/bin/conda init bash\nRestart your terminal. You should see (base) before your prompt, indicating the base conda environment is active. Learn conda basics here.\nAlternative: If you prefer pip and venv:\nsudo apt update && sudo apt upgrade\nsudo apt install python3 python3-pip python3-venv ipython3\n\n\nGit\nGit comes pre-installed with WSL2. Configure it:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"  # use your GitHub email\ngit config --global core.editor \"nano\"  # or \"code\" for VSCode\nCheck your settings: git config --list\n\n\nR and Devtools\nsudo apt update\nsudo apt install r-base\n\n# Optional but useful R dependencies:\nsudo apt install \\\n  r-base-core \\\n  r-recommended \\\n  r-base-dev \\\n  build-essential \\\n  libcurl4-gnutls-dev \\\n  libxml2-dev \\\n  libssl-dev\nLaunch R by typing R, then install devtools:\ninstall.packages(\"devtools\")\nExit R with q() and n.\n\n\nDocker\nDocker containers eliminate dependency headaches by packaging everything an application needs to run. Many bioinformatics tools are available as Docker images.\n\nDownload Docker Desktop for Windows\nDuring installation, enable WSL2 integration\nOpen Docker Desktop → Settings → General → ensure “Use the WSL 2 based engine” is enabled\n\nVerify in terminal: docker --version\nNote: Docker only works in WSL whilst Docker Desktop is running in Windows.\nFull setup guide: Docker WSL documentation\n\n\nNextflow\nNextflow creates scalable, reproducible bioinformatics pipelines. Setup is straightforward:\n# Check Java version (needs v11+):\njava --version\n\n# If you need to install Java:\ncurl -s \"https://get.sdkman.io\" | bash\nsource \"$HOME/.sdkman/bin/sdkman-init.sh\"\nsdk install java 17.0.10-tem\n\n# Install Nextflow:\nwget -qO- https://get.nextflow.io | bash\nchmod +x nextflow\nsudo mv nextflow /usr/local/bin/  # makes it globally accessible\nExplore community pipelines at nf-core.\n\n\nVSCode Integration\nInstall VSCode on Windows, then add the Remote Development Extension Pack.\nFrom WSL, open any directory in VSCode:\ncode .\nVSCode will connect to WSL automatically and you can edit files, run terminals, and debug directly through the WSL environment.\n\nYou now have a fully functional bioinformatics environment: Unix tools running natively on Windows, access to both file systems, and all the major software frameworks installed. Time to start analysing data."
+  },
+  {
+    "objectID": "notes/theme_guide.html",
+    "href": "notes/theme_guide.html",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "rish-blogs/\n├── _quarto.yml                 # Site configuration\n├── custom-theme.scss           # Your custom theme (THE MAIN FILE)\n├── fonts/\n│   └── apricots.woff2          # Custom Apricots font\n├── images/\n│   ├── favicon.png\n│   ├── profile.png\n│   ├── hero-collage.png\n├── index.qmd                   # Home page\n├── about.qmd                   # About page\n├── posts.qmd                   # Blog listing\n├── resources.qmd               # Resources page\n└── posts/                      # Blog posts directory\n\n\n\n\nThe theme file has two main sections:\n\n\nThis is where you control everything about your design:\n// Colors\n$bg-primary: #e0cdc5;          // Home/Blog background\n$bg-secondary: #d5c3b3;        // About/Resources background\n$text-heading: #323619;        // Heading color\n$text-body: #000000;           // Body text color\n\n// Fonts\n$font-family-sans-serif: 'Crimson Text', serif;  // Body font\n$headings-font-family: 'Crimson Text', serif;     // Headings font\n\n// Spacing (THIS IS THE KEY!)\n$spacer: 1rem;                    // Base spacing unit\n$paragraph-margin-bottom: 1rem;   // Space after paragraphs\n$headings-margin-bottom: 0.5rem;  // Space after headings\n\n// Font sizes\n$h1-font-size: 2.5rem;\n$h2-font-size: 2rem;\n// ... etc\n\n\n\nThis is where you write actual CSS rules that use the variables above.\n\n\n\n\n\n\nEdit the color variables in the /*-- scss:defaults --*/ section:\n$bg-primary: #your-hex-color;\n$text-heading: #your-hex-color;\n\n\n\nThe theme includes spacing control classes:\n\n.tight-spacing - Slightly reduced spacing (margin-bottom: 0.5rem)\n.very-tight-spacing - Very tight spacing (margin-bottom: 0.1rem, line-height: 1)\n\nUse these in your .qmd files:\n&lt;h1 class=\"very-tight-spacing\"&gt;Title&lt;/h1&gt;\n&lt;p&gt;Subtitle right below&lt;/p&gt;\n\n\n\nAdjust heading sizes in the defaults section:\n$h1-font-size: 3rem;    // Make h1 bigger\n$h2-font-size: 2.5rem;  // Make h2 bigger\n\n\n\nFind the relevant section in /*-- scss:rules --*/:\n.about-entity .about-image img {\n  max-width: 300px;  // Change this value\n}\n\n.hero-image-container {\n  flex: 0 0 45%;      // Change percentage for hero image width\n  max-width: 500px;   // Change max width\n}\n\n\n\nIf you want additional accent colors:\n// In defaults section:\n$accent-primary: #your-color;\n$accent-secondary: #another-color;\n\n// Then use them in rules section:\n.special-element {\n  background-color: $accent-primary;\n  border-color: $accent-secondary;\n}\n\n\n\n\n\n\nThe custom Apricots font is loaded like this:\n@font-face {\n  font-family: 'Apricots';\n  src: url('fonts/apricots.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\nImportant: The fonts/ directory is listed as a resource in _quarto.yml so Quarto copies it to the output directory.\n\n\n\n\nGet the .woff2 file\nPut it in the fonts/ directory\nMake sure _quarto.yml has fonts/ listed as a resource (already done)\nAdd this to the top of custom-theme.scss:\n\n@font-face {\n  font-family: 'YourFontName';\n  src: url('fonts/your-font-file.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\nUse it in your theme:\n\n$font-family-sans-serif: 'YourFontName', sans-serif;\n\n\n\n\n\n\n.about-entity .about-image img {\n  border-radius: 50%;  // Circular\n  // border-radius: 10px;  // Slightly rounded\n  // border-radius: 0;  // Square\n}\n\n\n\n.container,\n.container-fluid {\n  max-width: 1400px;  // Change this value\n}\n\n\n\n.hero-image-container {\n  flex: 0 0 45%;  // Change 45% to adjust image width\n  // 30% = smaller image, more text space\n  // 60% = bigger image, less text space\n}\n\n\n\n#recent-posts .quarto-listing-grid .list.grid {\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  //                                        ↑ Change this value\n  // 300px = bigger cards\n  // 200px = smaller cards, more columns\n  gap: 1.5rem;  // Space between cards\n}\n\n\n\n\n\n\nDO NOT DELETE IT! This is where Quarto builds your website.\n\ndocs/ = Your compiled, ready-to-deploy website\nGitHub Pages serves your site FROM this folder\nContains: HTML files, CSS, images, all site assets\n\nShould it be in .gitignore? - ❌ NO for GitHub Pages deployment - ✅ YES if using GitHub Actions to build (it rebuilds on every push)\nYour setup: You’re using GitHub Actions, so: 1. The .gitignore excludes docs/ from version control 2. GitHub Actions builds the site on each push 3. The action deploys the built site automatically\nIf you want to commit docs/ (alternative approach): 1. Remove docs/ from .gitignore 2. Commit the built site: git add docs/ 3. GitHub Pages serves directly from docs/ folder 4. No need for GitHub Actions\n\n\n\ncd /home/rish/rish-blogs\nquarto preview\n\n\n\nquarto render\nQuarto will automatically: 1. Compile your .scss file into CSS 2. Generate all your pages 3. Output to docs/ directory\n\n\n\ngit add .\ngit commit -m \"Updated custom theme\"\ngit push origin main\nGitHub Actions will automatically deploy your site.\n\n\n\n\nThe theme includes mobile breakpoints at 768px. To customize:\n@media (max-width: 768px) {\n  // Your mobile styles here\n  h1 {\n    font-size: 2rem;  // Smaller on mobile\n  }\n}\n\n// Add additional breakpoints:\n@media (max-width: 1200px) {\n  // Tablet styles\n}\n\n@media (max-width: 480px) {\n  // Small mobile styles\n}\n\n\n\nCurrently applied to: - Main site title “The BioPod” (home page) - Section headings like “Lately…” - Navbar brand (if you add one)\nTo apply elsewhere, use:\n&lt;h1 style=\"font-family: 'Apricots', cursive;\"&gt;Your Title&lt;/h1&gt;\nOr add a class in the theme:\n.apricots-heading {\n  font-family: 'Apricots', cursive;\n}\nThen use: &lt;h1 class=\"apricots-heading\"&gt;Title&lt;/h1&gt;\n\n\n\n\n\n\nCheck the font file exists at: fonts/apricots.woff2\nVerify _quarto.yml has fonts/ listed under project: resources:\nThe path in @font-face should be: url('fonts/apricots.woff2')\nClear your browser cache (Ctrl+Shift+R)\nRe-run quarto preview\n\n\n\n\n\nMake sure you edited the $variable in the defaults section\nClear your browser cache (Ctrl+Shift+R)\nRe-run quarto preview\n\n\n\n\n\nCheck if inline styles are overriding theme styles\nUse .very-tight-spacing class for tight spacing\nAdjust $spacer variable for global spacing changes\n\n\n\n\n\nVerify _quarto.yml has: theme: custom-theme.scss\nCheck for SCSS syntax errors\nRun quarto render to see error messages\n\n\n\n\n\n\nUse Variables: Define colors/spacing as variables at the top, use them throughout\nMobile First: Test on mobile as you build\nSpacing Classes: Use .tight-spacing and .very-tight-spacing liberally\nComments: Add comments in your SCSS to remember what things do\nVersion Control: Commit changes incrementally so you can roll back if needed\n\n\n\n\n\nQuarto Themes: https://quarto.org/docs/output-formats/html-themes.html\nSass Basics: https://sass-lang.com/guide\nBootstrap Icons: https://icons.getbootstrap.com/\nFont Formats: https://web.dev/learn/design/web-fonts/\n\n\nNeed Help? Check the Quarto docs or edit custom-theme.scss directly. The file has comments explaining each section."
+  },
+  {
+    "objectID": "notes/theme_guide.html#file-structure",
+    "href": "notes/theme_guide.html#file-structure",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "rish-blogs/\n├── _quarto.yml                 # Site configuration\n├── custom-theme.scss           # Your custom theme (THE MAIN FILE)\n├── fonts/\n│   └── apricots.woff2          # Custom Apricots font\n├── images/\n│   ├── favicon.png\n│   ├── profile.png\n│   ├── hero-collage.png\n├── index.qmd                   # Home page\n├── about.qmd                   # About page\n├── posts.qmd                   # Blog listing\n├── resources.qmd               # Resources page\n└── posts/                      # Blog posts directory"
+  },
+  {
+    "objectID": "notes/theme_guide.html#your-custom-theme-custom-theme.scss",
+    "href": "notes/theme_guide.html#your-custom-theme-custom-theme.scss",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "The theme file has two main sections:\n\n\nThis is where you control everything about your design:\n// Colors\n$bg-primary: #e0cdc5;          // Home/Blog background\n$bg-secondary: #d5c3b3;        // About/Resources background\n$text-heading: #323619;        // Heading color\n$text-body: #000000;           // Body text color\n\n// Fonts\n$font-family-sans-serif: 'Crimson Text', serif;  // Body font\n$headings-font-family: 'Crimson Text', serif;     // Headings font\n\n// Spacing (THIS IS THE KEY!)\n$spacer: 1rem;                    // Base spacing unit\n$paragraph-margin-bottom: 1rem;   // Space after paragraphs\n$headings-margin-bottom: 0.5rem;  // Space after headings\n\n// Font sizes\n$h1-font-size: 2.5rem;\n$h2-font-size: 2rem;\n// ... etc\n\n\n\nThis is where you write actual CSS rules that use the variables above."
+  },
+  {
+    "objectID": "notes/theme_guide.html#how-to-customize",
+    "href": "notes/theme_guide.html#how-to-customize",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "Edit the color variables in the /*-- scss:defaults --*/ section:\n$bg-primary: #your-hex-color;\n$text-heading: #your-hex-color;\n\n\n\nThe theme includes spacing control classes:\n\n.tight-spacing - Slightly reduced spacing (margin-bottom: 0.5rem)\n.very-tight-spacing - Very tight spacing (margin-bottom: 0.1rem, line-height: 1)\n\nUse these in your .qmd files:\n&lt;h1 class=\"very-tight-spacing\"&gt;Title&lt;/h1&gt;\n&lt;p&gt;Subtitle right below&lt;/p&gt;\n\n\n\nAdjust heading sizes in the defaults section:\n$h1-font-size: 3rem;    // Make h1 bigger\n$h2-font-size: 2.5rem;  // Make h2 bigger\n\n\n\nFind the relevant section in /*-- scss:rules --*/:\n.about-entity .about-image img {\n  max-width: 300px;  // Change this value\n}\n\n.hero-image-container {\n  flex: 0 0 45%;      // Change percentage for hero image width\n  max-width: 500px;   // Change max width\n}\n\n\n\nIf you want additional accent colors:\n// In defaults section:\n$accent-primary: #your-color;\n$accent-secondary: #another-color;\n\n// Then use them in rules section:\n.special-element {\n  background-color: $accent-primary;\n  border-color: $accent-secondary;\n}"
+  },
+  {
+    "objectID": "notes/theme_guide.html#font-setup",
+    "href": "notes/theme_guide.html#font-setup",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "The custom Apricots font is loaded like this:\n@font-face {\n  font-family: 'Apricots';\n  src: url('fonts/apricots.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\nImportant: The fonts/ directory is listed as a resource in _quarto.yml so Quarto copies it to the output directory.\n\n\n\n\nGet the .woff2 file\nPut it in the fonts/ directory\nMake sure _quarto.yml has fonts/ listed as a resource (already done)\nAdd this to the top of custom-theme.scss:\n\n@font-face {\n  font-family: 'YourFontName';\n  src: url('fonts/your-font-file.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\nUse it in your theme:\n\n$font-family-sans-serif: 'YourFontName', sans-serif;"
+  },
+  {
+    "objectID": "notes/theme_guide.html#common-customizations",
+    "href": "notes/theme_guide.html#common-customizations",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": ".about-entity .about-image img {\n  border-radius: 50%;  // Circular\n  // border-radius: 10px;  // Slightly rounded\n  // border-radius: 0;  // Square\n}\n\n\n\n.container,\n.container-fluid {\n  max-width: 1400px;  // Change this value\n}\n\n\n\n.hero-image-container {\n  flex: 0 0 45%;  // Change 45% to adjust image width\n  // 30% = smaller image, more text space\n  // 60% = bigger image, less text space\n}\n\n\n\n#recent-posts .quarto-listing-grid .list.grid {\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  //                                        ↑ Change this value\n  // 300px = bigger cards\n  // 200px = smaller cards, more columns\n  gap: 1.5rem;  // Space between cards\n}"
+  },
+  {
+    "objectID": "notes/theme_guide.html#build-deploy",
+    "href": "notes/theme_guide.html#build-deploy",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "DO NOT DELETE IT! This is where Quarto builds your website.\n\ndocs/ = Your compiled, ready-to-deploy website\nGitHub Pages serves your site FROM this folder\nContains: HTML files, CSS, images, all site assets\n\nShould it be in .gitignore? - ❌ NO for GitHub Pages deployment - ✅ YES if using GitHub Actions to build (it rebuilds on every push)\nYour setup: You’re using GitHub Actions, so: 1. The .gitignore excludes docs/ from version control 2. GitHub Actions builds the site on each push 3. The action deploys the built site automatically\nIf you want to commit docs/ (alternative approach): 1. Remove docs/ from .gitignore 2. Commit the built site: git add docs/ 3. GitHub Pages serves directly from docs/ folder 4. No need for GitHub Actions\n\n\n\ncd /home/rish/rish-blogs\nquarto preview\n\n\n\nquarto render\nQuarto will automatically: 1. Compile your .scss file into CSS 2. Generate all your pages 3. Output to docs/ directory\n\n\n\ngit add .\ngit commit -m \"Updated custom theme\"\ngit push origin main\nGitHub Actions will automatically deploy your site."
+  },
+  {
+    "objectID": "notes/theme_guide.html#responsive-design",
+    "href": "notes/theme_guide.html#responsive-design",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "The theme includes mobile breakpoints at 768px. To customize:\n@media (max-width: 768px) {\n  // Your mobile styles here\n  h1 {\n    font-size: 2rem;  // Smaller on mobile\n  }\n}\n\n// Add additional breakpoints:\n@media (max-width: 1200px) {\n  // Tablet styles\n}\n\n@media (max-width: 480px) {\n  // Small mobile styles\n}"
+  },
+  {
+    "objectID": "notes/theme_guide.html#where-apricots-font-is-used",
+    "href": "notes/theme_guide.html#where-apricots-font-is-used",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "Currently applied to: - Main site title “The BioPod” (home page) - Section headings like “Lately…” - Navbar brand (if you add one)\nTo apply elsewhere, use:\n&lt;h1 style=\"font-family: 'Apricots', cursive;\"&gt;Your Title&lt;/h1&gt;\nOr add a class in the theme:\n.apricots-heading {\n  font-family: 'Apricots', cursive;\n}\nThen use: &lt;h1 class=\"apricots-heading\"&gt;Title&lt;/h1&gt;"
+  },
+  {
+    "objectID": "notes/theme_guide.html#troubleshooting",
+    "href": "notes/theme_guide.html#troubleshooting",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "Check the font file exists at: fonts/apricots.woff2\nVerify _quarto.yml has fonts/ listed under project: resources:\nThe path in @font-face should be: url('fonts/apricots.woff2')\nClear your browser cache (Ctrl+Shift+R)\nRe-run quarto preview\n\n\n\n\n\nMake sure you edited the $variable in the defaults section\nClear your browser cache (Ctrl+Shift+R)\nRe-run quarto preview\n\n\n\n\n\nCheck if inline styles are overriding theme styles\nUse .very-tight-spacing class for tight spacing\nAdjust $spacer variable for global spacing changes\n\n\n\n\n\nVerify _quarto.yml has: theme: custom-theme.scss\nCheck for SCSS syntax errors\nRun quarto render to see error messages"
+  },
+  {
+    "objectID": "notes/theme_guide.html#pro-tips",
+    "href": "notes/theme_guide.html#pro-tips",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "Use Variables: Define colors/spacing as variables at the top, use them throughout\nMobile First: Test on mobile as you build\nSpacing Classes: Use .tight-spacing and .very-tight-spacing liberally\nComments: Add comments in your SCSS to remember what things do\nVersion Control: Commit changes incrementally so you can roll back if needed"
+  },
+  {
+    "objectID": "notes/theme_guide.html#resources",
+    "href": "notes/theme_guide.html#resources",
+    "title": "Custom Quarto Theme Setup - The BioPod",
+    "section": "",
+    "text": "Quarto Themes: https://quarto.org/docs/output-formats/html-themes.html\nSass Basics: https://sass-lang.com/guide\nBootstrap Icons: https://icons.getbootstrap.com/\nFont Formats: https://web.dev/learn/design/web-fonts/\n\n\nNeed Help? Check the Quarto docs or edit custom-theme.scss directly. The file has comments explaining each section."
+  },
+  {
+    "objectID": "notes/setup-guide.html",
+    "href": "notes/setup-guide.html",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "A comprehensive guide to creating a Quarto blog from scratch, with or without the BioPod custom theme.\n\n\n\n\nQuick Start\nSetting Up Quarto from Scratch\nUsing the BioPod Theme\nCreating Your Own Custom Theme\nKey Components Explained\nTips & Tricks\nCommon Issues & Solutions\n\n\n\n\n\nIf you just want to use the BioPod theme for your own blog:\n\nCopy these files to your Quarto project:\n\nbiopod-theme.scss (the custom theme)\nfonts/ directory (if using custom fonts)\n\nUpdate your _quarto.yml:\nformat:\n  html:\n    theme: biopod-theme.scss\nRender your site:\nquarto render\n\n\n\n\n\n\n\n\nQuarto installed on your system\nA text editor (VS Code, RStudio, etc.)\nBasic understanding of Markdown\n\n\n\n\n# Create project directory\nmkdir my-blog\ncd my-blog\n\n# Initialize a Quarto website\nquarto create project website .\n\n\n\nA minimal Quarto blog needs:\nmy-blog/\n├── _quarto.yml          # Site configuration\n├── index.qmd            # Home page\n├── about.qmd            # About page\n├── posts/               # Blog posts folder\n│   └── post1/\n│       └── index.qmd\n└── images/              # Images folder\n\n\n\nThis is your site’s control center:\nproject:\n  type: website\n  output-dir: docs        # For GitHub Pages\n\nwebsite:\n  title: \"My Blog\"\n  navbar:\n    background: \"#e0cdc5\"\n    left:\n      - text: \"HOME\"\n        href: index.qmd\n      - text: \"BLOG\"\n        href: posts.qmd\n      - text: \"ABOUT\"\n        href: about.qmd\n\nformat:\n  html:\n    theme: default        # Or your custom theme\n    toc: true\n    toc-location: right\n\n\n\nCreate posts/my-first-post/index.qmd:\n---\ntitle: \"My First Post\"\nauthor: \"Your Name\"\ndate: \"2025-01-28\"\ncategories: [news, tutorial]\ndescription: \"A brief description\"\n---\n\n## Introduction\n\nYour content here...\n\n\n\n# Preview locally\nquarto preview\n\n# Build for production\nquarto render\n\n\n\n\n\n\n\nBioPod is a warm, academic-styled theme designed for science and research blogs. It features:\n\nSoft beige/cream color palette (#e0cdc5, #d5c3b3)\nCustom fonts (Crimson Text + Apricots display font)\nClean, readable code blocks\nResponsive design\nCustomizable page backgrounds\n\n\n\n\n\nCopy theme file:\n# Copy biopod-theme.scss to your project root\ncp path/to/biopod-theme.scss ./\nCopy fonts (if using custom fonts):\n# Copy the fonts directory\ncp -r path/to/fonts ./\nUpdate _quarto.yml:\nformat:\n  html:\n    theme: biopod-theme.scss\n\n\n\n\nThe theme is built with SCSS variables that are easy to modify:\n// Brand Colors (lines 16-19 in biopod-theme.scss)\n$bg-primary: #e0cdc5;      // Main background (header/footer)\n$bg-secondary: #d5c3b3;    // Page backgrounds\n$text-heading: #323619;    // Headings color\n$text-body: #000000;       // Body text color\nTo customize: 1. Open biopod-theme.scss 2. Find the /*-- scss:defaults --*/ section at the top 3. Modify the color variables 4. Run quarto render to see changes\n\n\n\n\n\n\n\nQuarto uses SCSS (Sassy CSS) for theming. A theme file has two main sections:\n/*-- scss:defaults --*/\n// Variables and settings\n\n/*-- scss:rules --*/\n// Custom CSS rules\n\n\n\nCreate my-theme.scss in your project root:\n/*-- scss:defaults --*/\n\n// Import fonts\n@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');\n\n// Define colors\n$bg-primary: #yourcolor;\n$text-body: #yourcolor;\n$link-color: #yourcolor;\n\n// Typography\n$font-family-sans-serif: 'Your Font', sans-serif;\n$font-size-base: 1rem;\n\n/*-- scss:rules --*/\n\n// Custom styling\nbody {\n  font-family: $font-family-sans-serif;\n  background-color: $bg-primary;\n}\n\n\n\nColors: - $body-bg - Page background - $body-color - Text color - $link-color - Link color - $navbar-bg - Navigation background\nTypography: - $font-family-sans-serif - Body font - $headings-font-family - Heading font - $font-size-base - Base font size - $h1-font-size through $h6-font-size - Heading sizes\nCode Blocks: - $code-bg - Code background - $code-color - Code text color\n\n\n\nOption 1: Google Fonts\n@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');\n\n$font-family-sans-serif: 'Crimson Text', serif;\nOption 2: Local Fonts\n@font-face {\n  font-family: 'MyFont';\n  src: url('fonts/myfont.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n}\n\n$font-family-sans-serif: 'MyFont', sans-serif;\n\n\n\n\n\n\n\nQuarto offers several page layouts:\n---\ntitle: \"My Page\"\npage-layout: full     # Options: default, full, article\n---\n\ndefault - Standard width with margins\nfull - Full width of page\narticle - Optimized for reading (narrower)\n\n\n\n\nEnable navigation sidebar:\n---\ntitle: \"My Page\"\ntoc: true\ntoc-location: right    # Options: right, left, body\ntoc-depth: 3           # How many heading levels to show\n---\nImportant: TOC won’t generate if headings are inside custom div wrappers (:::).\n\n\n\nCreate posts.qmd for a blog index:\n---\ntitle: \"Blog\"\nlisting:\n  contents: posts          # Folder to scan\n  sort: \"date desc\"\n  type: default           # Options: default, grid, table\n  categories: true\n  fields: [date, title, description]\n  date-format: \"DD MMMM YYYY\"\n---\n\n\n\nAdd custom CSS classes to pages:\n---\ntitle: \"About\"\n---\n\n::: {.custom-class}\nYour content here\n:::\nThen style in your theme:\n.custom-class {\n  background-color: #yourcolor;\n}\n\n\n\n\n\n\n\nUse live preview while developing:\nquarto preview\nChanges to .qmd files reload automatically. For theme changes (.scss), you may need to refresh manually.\n\n\n\nKeep images in logical folders:\nimages/          # Site-wide images (logo, hero)\nposts/\n  post1/\n    images/      # Post-specific images\nReference images relative to the file:\n![Description](images/photo.jpg)\n\n\n\nMake code readable with proper contrast:\npre {\n  background-color: #f5f5f5;\n  border-left: 4px solid $text-heading;\n\n  code {\n    color: #1a1a1a;      // Dark text\n    font-weight: 600;    // Bold for clarity\n  }\n}\n\n\n\nAlways test mobile views. Add media queries:\n@media (max-width: 768px) {\n  .navbar-brand {\n    font-size: 1.5rem !important;\n  }\n}\n\n\n\nUse CSS selectors:\n// Hide TOC on about page only\n.about-page #quarto-margin-sidebar {\n  display: none !important;\n}\n\n\n\nStyle navbar in _quarto.yml:\nnavbar:\n  background: \"#e0cdc5\"\n  foreground: \"#323619\"\n  left:\n    - text: \"HOME\"\n      href: index.qmd\n\n\n\nTarget pages by unique IDs:\n// Resources page has unique section ID\nbody:has(#machine-learning-deep-learning) {\n  background-color: $bg-secondary;\n}\n\n\n\n\n\n\n\nCause: Headings wrapped in div containers\nSolution: Move headings outside custom divs:\n---\ntitle: \"My Page\"\ntoc: true\n---\n\nContent introduction here.\n\n## First Section\n\nMore content...\n\n\n\nCause: Incorrect path or format\nSolution: 1. Check font file exists: ls fonts/yourfont.woff2 2. Verify path in SCSS: url('fonts/yourfont.woff2') 3. Use font-display: swap for better loading\n\n\n\nCause: Browser cache or render cache\nSolution:\n# Clear Quarto cache\nquarto render --no-cache\n\n# Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)\n\n\n\nCause: Image field not in listing config OR image path incorrect\nSolution: 1. Add to posts.qmd: yaml    listing:      fields: [image, date, title, description] 2. Add to post frontmatter: yaml    image: images/thumbnail.jpg\n\n\n\nCause: Specificity issues\nSolution: Use !important sparingly:\n.my-class {\n  color: red !important;\n}\nOr increase specificity:\nbody .my-class h2 {\n  color: red;\n}\n\n\n\n\n\n\n\nMethod 1: Custom CSS Classes\nIn your .qmd file:\n::: {.inspiration-page}\nContent here\n:::\nIn theme:\n.inspiration-page {\n  background-color: $bg-primary;\n\n  h2 {\n    font-family: 'Apricots', cursive;\n  }\n}\nMethod 2: Body Has Selector\nTarget pages by unique content:\nbody:has(#unique-section-id) {\n  background-color: $bg-secondary;\n}\n\n\n\nCreate eye-catching home page layouts:\n::: {.hero-container}\n::: {.hero-text}\n# Your Title\nSubtitle text\n:::\n\n::: {.hero-image-container}\n![](images/hero.png)\n:::\n:::\nStyle with flexbox:\n.hero-container {\n  display: flex;\n  gap: 4rem;\n  align-items: center;\n}\n\n.hero-text {\n  flex: 1;\n}\n\n.hero-image-container {\n  flex: 0 0 55%;\n}\n\n\n\nMix fonts for visual hierarchy:\n// Body text\n$font-family-sans-serif: 'Crimson Text', serif;\n\n// Display/decorative\n.navbar-brand,\n.hero-title {\n  font-family: 'Apricots', cursive !important;\n}\n\n\n\n\n\n\n\n\nSet output directory in _quarto.yml:\nproject:\n  output-dir: docs\nRender site:\nquarto render\nPush to GitHub:\ngit add .\ngit commit -m \"Update blog\"\ngit push\nEnable GitHub Pages:\n\nGo to repository Settings\nPages section\nSource: Deploy from branch\nBranch: main, folder: /docs\n\n\n\n\n\n\nCreate netlify.toml:\n[build]\n  command = \"quarto render\"\n  publish = \"_site\"\nConnect repository to Netlify\nDeploy automatically on push\n\n\n\n\n\n\n\n\nPrimary Background:   #e0cdc5 (warm beige)\nSecondary Background: #d5c3b3 (light tan)\nText Heading:         #323619 (dark olive)\nText Body:            #000000 (black)\n\n\n\n\nBody: Crimson Text (serif)\nDisplay: Apricots (cursive/decorative)\nCode: Courier New (monospace)\n\n\n\n\n\nHome: Secondary (#d5c3b3)\nBlog listing: Secondary\nBlog posts: Primary (#e0cdc5)\nAbout: Primary\nResources: Primary\nInspiration: Primary\n\n\n\n\n\nWarm, academic aesthetic - Soft colors reduce eye strain\nHigh contrast code blocks - Bold, dark text on light gray\nSerif body font - Better for long-form reading\nGenerous spacing - Improves readability\nMinimal borders - Clean, modern look\n\n\n\n\n\n\nComplete BioPod blog structure:\nmy-blog/\n├── _quarto.yml              # Site configuration\n├── biopod-theme.scss        # Custom theme\n├── index.qmd                # Home page\n├── about.qmd                # About page\n├── posts.qmd                # Blog listing page\n├── resources.qmd            # Resources page\n├── inspiration.qmd          # Inspiration page\n├── fonts/                   # Custom fonts\n│   └── apricots.woff2\n├── images/                  # Site images\n│   ├── favicon.png\n│   ├── hero-collage.png\n│   └── profile.jpg\n├── posts/                   # Blog posts\n│   └── my-post/\n│       ├── index.qmd\n│       └── images/\n│           └── thumbnail.jpg\n├── notes/                   # Documentation\n│   └── setup-guide.md\n└── docs/                    # Rendered output (gitignore this)\n\n\n\n\n\nQuarto Documentation\nQuarto Websites Guide\nSCSS/Sass Documentation\nBootstrap SCSS Variables (Quarto uses Bootstrap)\nGoogle Fonts\n\n\n\n\n\nIf you make improvements to the BioPod theme:\n\nTest thoroughly across pages\nDocument color/font changes\nEnsure responsive design works\nUpdate this guide if adding major features\n\n\n\n\n\nThis theme is open source. Feel free to use, modify, and share.\nCredit: Created for The BioPod blog by Larysha Rothmann.\n\nLast updated: 2025-01-28"
+  },
+  {
+    "objectID": "notes/setup-guide.html#table-of-contents",
+    "href": "notes/setup-guide.html#table-of-contents",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Quick Start\nSetting Up Quarto from Scratch\nUsing the BioPod Theme\nCreating Your Own Custom Theme\nKey Components Explained\nTips & Tricks\nCommon Issues & Solutions"
+  },
+  {
+    "objectID": "notes/setup-guide.html#quick-start",
+    "href": "notes/setup-guide.html#quick-start",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "If you just want to use the BioPod theme for your own blog:\n\nCopy these files to your Quarto project:\n\nbiopod-theme.scss (the custom theme)\nfonts/ directory (if using custom fonts)\n\nUpdate your _quarto.yml:\nformat:\n  html:\n    theme: biopod-theme.scss\nRender your site:\nquarto render"
+  },
+  {
+    "objectID": "notes/setup-guide.html#setting-up-quarto-from-scratch",
+    "href": "notes/setup-guide.html#setting-up-quarto-from-scratch",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Quarto installed on your system\nA text editor (VS Code, RStudio, etc.)\nBasic understanding of Markdown\n\n\n\n\n# Create project directory\nmkdir my-blog\ncd my-blog\n\n# Initialize a Quarto website\nquarto create project website .\n\n\n\nA minimal Quarto blog needs:\nmy-blog/\n├── _quarto.yml          # Site configuration\n├── index.qmd            # Home page\n├── about.qmd            # About page\n├── posts/               # Blog posts folder\n│   └── post1/\n│       └── index.qmd\n└── images/              # Images folder\n\n\n\nThis is your site’s control center:\nproject:\n  type: website\n  output-dir: docs        # For GitHub Pages\n\nwebsite:\n  title: \"My Blog\"\n  navbar:\n    background: \"#e0cdc5\"\n    left:\n      - text: \"HOME\"\n        href: index.qmd\n      - text: \"BLOG\"\n        href: posts.qmd\n      - text: \"ABOUT\"\n        href: about.qmd\n\nformat:\n  html:\n    theme: default        # Or your custom theme\n    toc: true\n    toc-location: right\n\n\n\nCreate posts/my-first-post/index.qmd:\n---\ntitle: \"My First Post\"\nauthor: \"Your Name\"\ndate: \"2025-01-28\"\ncategories: [news, tutorial]\ndescription: \"A brief description\"\n---\n\n## Introduction\n\nYour content here...\n\n\n\n# Preview locally\nquarto preview\n\n# Build for production\nquarto render"
+  },
+  {
+    "objectID": "notes/setup-guide.html#using-the-biopod-theme",
+    "href": "notes/setup-guide.html#using-the-biopod-theme",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "BioPod is a warm, academic-styled theme designed for science and research blogs. It features:\n\nSoft beige/cream color palette (#e0cdc5, #d5c3b3)\nCustom fonts (Crimson Text + Apricots display font)\nClean, readable code blocks\nResponsive design\nCustomizable page backgrounds\n\n\n\n\n\nCopy theme file:\n# Copy biopod-theme.scss to your project root\ncp path/to/biopod-theme.scss ./\nCopy fonts (if using custom fonts):\n# Copy the fonts directory\ncp -r path/to/fonts ./\nUpdate _quarto.yml:\nformat:\n  html:\n    theme: biopod-theme.scss\n\n\n\n\nThe theme is built with SCSS variables that are easy to modify:\n// Brand Colors (lines 16-19 in biopod-theme.scss)\n$bg-primary: #e0cdc5;      // Main background (header/footer)\n$bg-secondary: #d5c3b3;    // Page backgrounds\n$text-heading: #323619;    // Headings color\n$text-body: #000000;       // Body text color\nTo customize: 1. Open biopod-theme.scss 2. Find the /*-- scss:defaults --*/ section at the top 3. Modify the color variables 4. Run quarto render to see changes"
+  },
+  {
+    "objectID": "notes/setup-guide.html#creating-your-own-custom-theme",
+    "href": "notes/setup-guide.html#creating-your-own-custom-theme",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Quarto uses SCSS (Sassy CSS) for theming. A theme file has two main sections:\n/*-- scss:defaults --*/\n// Variables and settings\n\n/*-- scss:rules --*/\n// Custom CSS rules\n\n\n\nCreate my-theme.scss in your project root:\n/*-- scss:defaults --*/\n\n// Import fonts\n@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');\n\n// Define colors\n$bg-primary: #yourcolor;\n$text-body: #yourcolor;\n$link-color: #yourcolor;\n\n// Typography\n$font-family-sans-serif: 'Your Font', sans-serif;\n$font-size-base: 1rem;\n\n/*-- scss:rules --*/\n\n// Custom styling\nbody {\n  font-family: $font-family-sans-serif;\n  background-color: $bg-primary;\n}\n\n\n\nColors: - $body-bg - Page background - $body-color - Text color - $link-color - Link color - $navbar-bg - Navigation background\nTypography: - $font-family-sans-serif - Body font - $headings-font-family - Heading font - $font-size-base - Base font size - $h1-font-size through $h6-font-size - Heading sizes\nCode Blocks: - $code-bg - Code background - $code-color - Code text color\n\n\n\nOption 1: Google Fonts\n@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');\n\n$font-family-sans-serif: 'Crimson Text', serif;\nOption 2: Local Fonts\n@font-face {\n  font-family: 'MyFont';\n  src: url('fonts/myfont.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n}\n\n$font-family-sans-serif: 'MyFont', sans-serif;"
+  },
+  {
+    "objectID": "notes/setup-guide.html#key-components-explained",
+    "href": "notes/setup-guide.html#key-components-explained",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Quarto offers several page layouts:\n---\ntitle: \"My Page\"\npage-layout: full     # Options: default, full, article\n---\n\ndefault - Standard width with margins\nfull - Full width of page\narticle - Optimized for reading (narrower)\n\n\n\n\nEnable navigation sidebar:\n---\ntitle: \"My Page\"\ntoc: true\ntoc-location: right    # Options: right, left, body\ntoc-depth: 3           # How many heading levels to show\n---\nImportant: TOC won’t generate if headings are inside custom div wrappers (:::).\n\n\n\nCreate posts.qmd for a blog index:\n---\ntitle: \"Blog\"\nlisting:\n  contents: posts          # Folder to scan\n  sort: \"date desc\"\n  type: default           # Options: default, grid, table\n  categories: true\n  fields: [date, title, description]\n  date-format: \"DD MMMM YYYY\"\n---\n\n\n\nAdd custom CSS classes to pages:\n---\ntitle: \"About\"\n---\n\n::: {.custom-class}\nYour content here\n:::\nThen style in your theme:\n.custom-class {\n  background-color: #yourcolor;\n}"
+  },
+  {
+    "objectID": "notes/setup-guide.html#tips-tricks",
+    "href": "notes/setup-guide.html#tips-tricks",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Use live preview while developing:\nquarto preview\nChanges to .qmd files reload automatically. For theme changes (.scss), you may need to refresh manually.\n\n\n\nKeep images in logical folders:\nimages/          # Site-wide images (logo, hero)\nposts/\n  post1/\n    images/      # Post-specific images\nReference images relative to the file:\n![Description](images/photo.jpg)\n\n\n\nMake code readable with proper contrast:\npre {\n  background-color: #f5f5f5;\n  border-left: 4px solid $text-heading;\n\n  code {\n    color: #1a1a1a;      // Dark text\n    font-weight: 600;    // Bold for clarity\n  }\n}\n\n\n\nAlways test mobile views. Add media queries:\n@media (max-width: 768px) {\n  .navbar-brand {\n    font-size: 1.5rem !important;\n  }\n}\n\n\n\nUse CSS selectors:\n// Hide TOC on about page only\n.about-page #quarto-margin-sidebar {\n  display: none !important;\n}\n\n\n\nStyle navbar in _quarto.yml:\nnavbar:\n  background: \"#e0cdc5\"\n  foreground: \"#323619\"\n  left:\n    - text: \"HOME\"\n      href: index.qmd\n\n\n\nTarget pages by unique IDs:\n// Resources page has unique section ID\nbody:has(#machine-learning-deep-learning) {\n  background-color: $bg-secondary;\n}"
+  },
+  {
+    "objectID": "notes/setup-guide.html#common-issues-solutions",
+    "href": "notes/setup-guide.html#common-issues-solutions",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Cause: Headings wrapped in div containers\nSolution: Move headings outside custom divs:\n---\ntitle: \"My Page\"\ntoc: true\n---\n\nContent introduction here.\n\n## First Section\n\nMore content...\n\n\n\nCause: Incorrect path or format\nSolution: 1. Check font file exists: ls fonts/yourfont.woff2 2. Verify path in SCSS: url('fonts/yourfont.woff2') 3. Use font-display: swap for better loading\n\n\n\nCause: Browser cache or render cache\nSolution:\n# Clear Quarto cache\nquarto render --no-cache\n\n# Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)\n\n\n\nCause: Image field not in listing config OR image path incorrect\nSolution: 1. Add to posts.qmd: yaml    listing:      fields: [image, date, title, description] 2. Add to post frontmatter: yaml    image: images/thumbnail.jpg\n\n\n\nCause: Specificity issues\nSolution: Use !important sparingly:\n.my-class {\n  color: red !important;\n}\nOr increase specificity:\nbody .my-class h2 {\n  color: red;\n}"
+  },
+  {
+    "objectID": "notes/setup-guide.html#advanced-customization",
+    "href": "notes/setup-guide.html#advanced-customization",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Method 1: Custom CSS Classes\nIn your .qmd file:\n::: {.inspiration-page}\nContent here\n:::\nIn theme:\n.inspiration-page {\n  background-color: $bg-primary;\n\n  h2 {\n    font-family: 'Apricots', cursive;\n  }\n}\nMethod 2: Body Has Selector\nTarget pages by unique content:\nbody:has(#unique-section-id) {\n  background-color: $bg-secondary;\n}\n\n\n\nCreate eye-catching home page layouts:\n::: {.hero-container}\n::: {.hero-text}\n# Your Title\nSubtitle text\n:::\n\n::: {.hero-image-container}\n![](images/hero.png)\n:::\n:::\nStyle with flexbox:\n.hero-container {\n  display: flex;\n  gap: 4rem;\n  align-items: center;\n}\n\n.hero-text {\n  flex: 1;\n}\n\n.hero-image-container {\n  flex: 0 0 55%;\n}\n\n\n\nMix fonts for visual hierarchy:\n// Body text\n$font-family-sans-serif: 'Crimson Text', serif;\n\n// Display/decorative\n.navbar-brand,\n.hero-title {\n  font-family: 'Apricots', cursive !important;\n}"
+  },
+  {
+    "objectID": "notes/setup-guide.html#publishing-your-blog",
+    "href": "notes/setup-guide.html#publishing-your-blog",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Set output directory in _quarto.yml:\nproject:\n  output-dir: docs\nRender site:\nquarto render\nPush to GitHub:\ngit add .\ngit commit -m \"Update blog\"\ngit push\nEnable GitHub Pages:\n\nGo to repository Settings\nPages section\nSource: Deploy from branch\nBranch: main, folder: /docs\n\n\n\n\n\n\nCreate netlify.toml:\n[build]\n  command = \"quarto render\"\n  publish = \"_site\"\nConnect repository to Netlify\nDeploy automatically on push"
+  },
+  {
+    "objectID": "notes/setup-guide.html#biopod-theme-reference",
+    "href": "notes/setup-guide.html#biopod-theme-reference",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Primary Background:   #e0cdc5 (warm beige)\nSecondary Background: #d5c3b3 (light tan)\nText Heading:         #323619 (dark olive)\nText Body:            #000000 (black)\n\n\n\n\nBody: Crimson Text (serif)\nDisplay: Apricots (cursive/decorative)\nCode: Courier New (monospace)\n\n\n\n\n\nHome: Secondary (#d5c3b3)\nBlog listing: Secondary\nBlog posts: Primary (#e0cdc5)\nAbout: Primary\nResources: Primary\nInspiration: Primary\n\n\n\n\n\nWarm, academic aesthetic - Soft colors reduce eye strain\nHigh contrast code blocks - Bold, dark text on light gray\nSerif body font - Better for long-form reading\nGenerous spacing - Improves readability\nMinimal borders - Clean, modern look"
+  },
+  {
+    "objectID": "notes/setup-guide.html#file-structure-reference",
+    "href": "notes/setup-guide.html#file-structure-reference",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Complete BioPod blog structure:\nmy-blog/\n├── _quarto.yml              # Site configuration\n├── biopod-theme.scss        # Custom theme\n├── index.qmd                # Home page\n├── about.qmd                # About page\n├── posts.qmd                # Blog listing page\n├── resources.qmd            # Resources page\n├── inspiration.qmd          # Inspiration page\n├── fonts/                   # Custom fonts\n│   └── apricots.woff2\n├── images/                  # Site images\n│   ├── favicon.png\n│   ├── hero-collage.png\n│   └── profile.jpg\n├── posts/                   # Blog posts\n│   └── my-post/\n│       ├── index.qmd\n│       └── images/\n│           └── thumbnail.jpg\n├── notes/                   # Documentation\n│   └── setup-guide.md\n└── docs/                    # Rendered output (gitignore this)"
+  },
+  {
+    "objectID": "notes/setup-guide.html#resources",
+    "href": "notes/setup-guide.html#resources",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "Quarto Documentation\nQuarto Websites Guide\nSCSS/Sass Documentation\nBootstrap SCSS Variables (Quarto uses Bootstrap)\nGoogle Fonts"
+  },
+  {
+    "objectID": "notes/setup-guide.html#contributing-to-biopod-theme",
+    "href": "notes/setup-guide.html#contributing-to-biopod-theme",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "If you make improvements to the BioPod theme:\n\nTest thoroughly across pages\nDocument color/font changes\nEnsure responsive design works\nUpdate this guide if adding major features"
+  },
+  {
+    "objectID": "notes/setup-guide.html#license",
+    "href": "notes/setup-guide.html#license",
+    "title": "Setting Up a Quarto Blog with BioPod Theme",
+    "section": "",
+    "text": "This theme is open source. Feel free to use, modify, and share.\nCredit: Created for The BioPod blog by Larysha Rothmann.\n\nLast updated: 2025-01-28"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog Posts",
+    "section": "",
+    "text": "Building a Personal Academic Site with Quarto\n\n\nHow I set up this blog using Quarto and a custom theme—and why you might want to do the same\n\n\n\n\n\n20 April 2025\n\n\n\n\n\n\n\nWSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment\n\n\nA practical guide to setting up Windows Subsystem for Linux for bioinformatics work—from installation to prettification\n\n\n\n\n\n28 January 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "",
+    "section": "",
+    "text": "Bioinformatician & writer\n\n\nLarysha Rothmann\n\nI’m Larysha, a bioinformatics PhD student at Stellenbosch University in South Africa. My work involves teaching computers to understand how grapevines handle drought - specifically, which genetic variants matter enough to test in the lab rather than just existing in massive datasets. This blog is where I make sense of what I’m learning because I enjoy making technical work accessible without stripping out what makes it interesting. If you’re curious about computational biology, you might find something useful here.\nBesides my work, I’m interested in too many things for my own good, but the hobbies that I’ve stuck with include sketching, yoga and making sourdough. And if you’d like to have a chin-wag my links are below:\n\n GitHub  LinkedIn  Email"
+  },
+  {
+    "objectID": "inspiration.html",
+    "href": "inspiration.html",
+    "title": "Inspiration",
+    "section": "",
+    "text": "“As humans we are inclined to feel that life must have a point. We have plans and aspirations and desires. We want to take constant advantage of all the intoxicating existence we’ve been endowed with. But what’s life to a lichen? Yet its impulse to exist, to be, is every bit as strong as ours—arguably even stronger. If I were told that I had to spend decades being a furry growth on a rock in the woods, I believe I would lose the will to go on. Lichens don’t. Like virtually all living things, they will suffer any hardship, endure any insult, for a moment’s additional existence. Life, in short, just wants to be.”\n― Bill Bryson, A Short History of Nearly Everything\n“Geologists are never at a loss for paperweights.”\n\n― Bill Bryson\n\n“Nature has given us a brain that survives in a changing world by changing itself”\n— Norman Doidge\n“Gradually, the observer realizes that organisms are connected to each other. Not linearly but in a net-like, entangled fabric.”\n— Alexander von Humboldt\n“To use the world well, to be able to stop wasting it and our time in it, we need to re-learn our being in it.”\n— Ursula Le Guin\n“The difference between animals and fungi is simple: Animals put food in their bodies, whereas fungi put their bodies in the food.”\n— Merlin Sheldrake, Entangled Life\n“Science isn’t an exercise in cold-blooded rationality. Scientists are and always have been emotional, creative, intuitive whole human beings asking questions about a world that was never meant to be cataloged and systematized.”\n— Merlin Sheldrake, Entangled Life\n\n“Science is not about building a body of known facts. It is a method for asking awkward questions and subjecting them to reality check, thus avoiding the human tendency to believe whatever makes us feel good.”\n— Terry Pratchett, The Science of The Discworld\n“The problem, of course, with having an open mind is that people will insist on coming along and trying to put things in it.”\n— Terry Pratchett\n“It doesn’t stop being magic just because you know how it works.”\n— Terry Pratchett\n\n“For better or worse, intelligence can come to nothing when the emotions hold sway.”\n― Daniel Goleman, Emotional Intelligence\n“If you want to lift a hundred pounds, you don’t expect to succeed the first time. You start with a lighter weight and work up little by little. You actually fail to lift a hundred pounds, every day, until the day you succeed.”\n― Norman Doidge, The Brain that Changes Itself: Stories of Personal Triumph from the Frontiers of Brain Science\n\n“The soul becomes dyed with the colour of its thoughts.”\n― Marcus Aurelius, Meditations\n“The first rule is to keep an untroubled spirit. The second is to look things in the face and know them for what they are.”\n― Marcus Aurelius\n“Think of yourself as dead. You have lived your life. Now, take what’s left and live it properly.”\n― Marcus Aurelius\n\n“Yet such is oft the course of deeds that move the wheels of the world: small hands do them because they must, while the eyes of the great are elsewhere.”\n― J.R.R. Tolkien, The Lord of the Rings\n“There is a stubbornness about me that never can bear to be frightened at the will of others. My courage always rises at every attempt to intimidate me.”\n― Jane Austen, Pride and Prejudice"
+  },
+  {
+    "objectID": "inspiration.html#snippets-from-people-that-knew-how-to-write",
+    "href": "inspiration.html#snippets-from-people-that-knew-how-to-write",
+    "title": "Inspiration",
+    "section": "",
+    "text": "“As humans we are inclined to feel that life must have a point. We have plans and aspirations and desires. We want to take constant advantage of all the intoxicating existence we’ve been endowed with. But what’s life to a lichen? Yet its impulse to exist, to be, is every bit as strong as ours—arguably even stronger. If I were told that I had to spend decades being a furry growth on a rock in the woods, I believe I would lose the will to go on. Lichens don’t. Like virtually all living things, they will suffer any hardship, endure any insult, for a moment’s additional existence. Life, in short, just wants to be.”\n― Bill Bryson, A Short History of Nearly Everything\n“Geologists are never at a loss for paperweights.”\n\n― Bill Bryson\n\n“Nature has given us a brain that survives in a changing world by changing itself”\n— Norman Doidge\n“Gradually, the observer realizes that organisms are connected to each other. Not linearly but in a net-like, entangled fabric.”\n— Alexander von Humboldt\n“To use the world well, to be able to stop wasting it and our time in it, we need to re-learn our being in it.”\n— Ursula Le Guin\n“The difference between animals and fungi is simple: Animals put food in their bodies, whereas fungi put their bodies in the food.”\n— Merlin Sheldrake, Entangled Life\n“Science isn’t an exercise in cold-blooded rationality. Scientists are and always have been emotional, creative, intuitive whole human beings asking questions about a world that was never meant to be cataloged and systematized.”\n— Merlin Sheldrake, Entangled Life\n\n“Science is not about building a body of known facts. It is a method for asking awkward questions and subjecting them to reality check, thus avoiding the human tendency to believe whatever makes us feel good.”\n— Terry Pratchett, The Science of The Discworld\n“The problem, of course, with having an open mind is that people will insist on coming along and trying to put things in it.”\n— Terry Pratchett\n“It doesn’t stop being magic just because you know how it works.”\n— Terry Pratchett\n\n“For better or worse, intelligence can come to nothing when the emotions hold sway.”\n― Daniel Goleman, Emotional Intelligence\n“If you want to lift a hundred pounds, you don’t expect to succeed the first time. You start with a lighter weight and work up little by little. You actually fail to lift a hundred pounds, every day, until the day you succeed.”\n― Norman Doidge, The Brain that Changes Itself: Stories of Personal Triumph from the Frontiers of Brain Science\n\n“The soul becomes dyed with the colour of its thoughts.”\n― Marcus Aurelius, Meditations\n“The first rule is to keep an untroubled spirit. The second is to look things in the face and know them for what they are.”\n― Marcus Aurelius\n“Think of yourself as dead. You have lived your life. Now, take what’s left and live it properly.”\n― Marcus Aurelius\n\n“Yet such is oft the course of deeds that move the wheels of the world: small hands do them because they must, while the eyes of the great are elsewhere.”\n― J.R.R. Tolkien, The Lord of the Rings\n“There is a stubbornness about me that never can bear to be frightened at the will of others. My courage always rises at every attempt to intimidate me.”\n― Jane Austen, Pride and Prejudice"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html",
+    "href": "notes/biopod-theme-readme.html",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "A warm, academic-styled theme for Quarto blogs, designed for science and research content.\n\n\n\nCopy biopod-theme.scss to your Quarto project root\nCopy fonts/ directory (if using custom fonts)\nUpdate your _quarto.yml:\nformat:\n  html:\n    theme: biopod-theme.scss\nRun quarto render\n\n\n\n\n$bg-primary: #e0cdc5;      // Warm beige (headers/footers)\n$bg-secondary: #d5c3b3;    // Light tan (page backgrounds)\n$text-heading: #323619;    // Dark olive (headings)\n$text-body: #000000;       // Black (body text)\n\n\n\n\nBody: Crimson Text (Google Fonts)\nDisplay: Apricots (local custom font - optional)\nCode: Courier New\n\n\n\n\n\nClean, readable design optimized for long-form content\nResponsive layout\nBold, high-contrast code blocks\nCustomizable page backgrounds\nBuilt-in support for blog listings\nTable of contents styling\nNavbar and footer theming\n\n\n\n\nOpen biopod-theme.scss and modify the variables in the /*-- scss:defaults --*/ section:\n// Change colors\n$bg-primary: #yourcolor;\n$text-heading: #yourcolor;\n\n// Change fonts\n$font-family-sans-serif: 'Your Font', sans-serif;\n\n\n\nThe theme supports different backgrounds for different page types:\n\nHome page: Uses $bg-secondary\nBlog listing: Uses $bg-secondary\nIndividual blog posts: Uses $bg-primary\nAbout/Resources/Inspiration: Uses $bg-primary\n\nTo change this behavior, modify the body background rules in the /*-- scss:rules --*/ section.\n\n\n\nRequired: - Quarto 1.2+ - Internet connection (for Google Fonts)\nOptional: - Custom fonts in fonts/ directory\n\n\n\n\n\n\nPlace font files in fonts/ directory\nFont is already configured in theme\nRemove these lines if not using custom display font:\n@font-face {\n  font-family: 'Apricots';\n  src: url('fonts/apricots.woff2') format('woff2');\n}\n\n\n\n\nKeep the Google Fonts import and remove the @font-face declaration and any .navbar-brand custom font styling.\n\n\n\n\n\nChrome/Edge (latest)\nFirefox (latest)\nSafari (latest)\nMobile browsers (iOS Safari, Chrome Mobile)\n\n\n\n\nOpen source - free to use and modify.\n\n\n\nCreated for The BioPod blog by Larysha Rothmann.\nFor detailed setup instructions, see notes/setup-guide.md."
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#quick-start",
+    "href": "notes/biopod-theme-readme.html#quick-start",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Copy biopod-theme.scss to your Quarto project root\nCopy fonts/ directory (if using custom fonts)\nUpdate your _quarto.yml:\nformat:\n  html:\n    theme: biopod-theme.scss\nRun quarto render"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#color-palette",
+    "href": "notes/biopod-theme-readme.html#color-palette",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "$bg-primary: #e0cdc5;      // Warm beige (headers/footers)\n$bg-secondary: #d5c3b3;    // Light tan (page backgrounds)\n$text-heading: #323619;    // Dark olive (headings)\n$text-body: #000000;       // Black (body text)"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#typography",
+    "href": "notes/biopod-theme-readme.html#typography",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Body: Crimson Text (Google Fonts)\nDisplay: Apricots (local custom font - optional)\nCode: Courier New"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#features",
+    "href": "notes/biopod-theme-readme.html#features",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Clean, readable design optimized for long-form content\nResponsive layout\nBold, high-contrast code blocks\nCustomizable page backgrounds\nBuilt-in support for blog listings\nTable of contents styling\nNavbar and footer theming"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#customization",
+    "href": "notes/biopod-theme-readme.html#customization",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Open biopod-theme.scss and modify the variables in the /*-- scss:defaults --*/ section:\n// Change colors\n$bg-primary: #yourcolor;\n$text-heading: #yourcolor;\n\n// Change fonts\n$font-family-sans-serif: 'Your Font', sans-serif;"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#page-background-colors",
+    "href": "notes/biopod-theme-readme.html#page-background-colors",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "The theme supports different backgrounds for different page types:\n\nHome page: Uses $bg-secondary\nBlog listing: Uses $bg-secondary\nIndividual blog posts: Uses $bg-primary\nAbout/Resources/Inspiration: Uses $bg-primary\n\nTo change this behavior, modify the body background rules in the /*-- scss:rules --*/ section."
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#dependencies",
+    "href": "notes/biopod-theme-readme.html#dependencies",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Required: - Quarto 1.2+ - Internet connection (for Google Fonts)\nOptional: - Custom fonts in fonts/ directory"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#font-setup",
+    "href": "notes/biopod-theme-readme.html#font-setup",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Place font files in fonts/ directory\nFont is already configured in theme\nRemove these lines if not using custom display font:\n@font-face {\n  font-family: 'Apricots';\n  src: url('fonts/apricots.woff2') format('woff2');\n}\n\n\n\n\nKeep the Google Fonts import and remove the @font-face declaration and any .navbar-brand custom font styling."
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#browser-support",
+    "href": "notes/biopod-theme-readme.html#browser-support",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Chrome/Edge (latest)\nFirefox (latest)\nSafari (latest)\nMobile browsers (iOS Safari, Chrome Mobile)"
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#license",
+    "href": "notes/biopod-theme-readme.html#license",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Open source - free to use and modify."
+  },
+  {
+    "objectID": "notes/biopod-theme-readme.html#credits",
+    "href": "notes/biopod-theme-readme.html#credits",
+    "title": "BioPod Theme",
+    "section": "",
+    "text": "Created for The BioPod blog by Larysha Rothmann.\nFor detailed setup instructions, see notes/setup-guide.md."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "",
+    "text": "Academic blogs have become more accessible than ever, and is a great way to keep a personal portfolio and record of your work\nI recently migrated from Hugo to Quarto for this site, and while it took some time to set up and learn, I’m happy I did. Not just becuase of aesthetics—though the BioPod theme you’re looking at is entirely custom—but in how the whole thing works. Faster builds, cleaner code, and a system that makes sense when you’re already working in R or Python.\nThis post walks through how I set up The BioPod using Quarto’s website framework and a custom SCSS theme. It’s aimed at anyone who codes enough to use notebooks but isn’t necessarily a web developer, and who wants a professional site without wrestling WordPress into submission."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#why-setup-a-blog",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#why-setup-a-blog",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "",
+    "text": "Academic blogs have become more accessible than ever, and is a great way to keep a personal portfolio and record of your work\nI recently migrated from Hugo to Quarto for this site, and while it took some time to set up and learn, I’m happy I did. Not just becuase of aesthetics—though the BioPod theme you’re looking at is entirely custom—but in how the whole thing works. Faster builds, cleaner code, and a system that makes sense when you’re already working in R or Python.\nThis post walks through how I set up The BioPod using Quarto’s website framework and a custom SCSS theme. It’s aimed at anyone who codes enough to use notebooks but isn’t necessarily a web developer, and who wants a professional site without wrestling WordPress into submission."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#what-actually-is-quarto",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#what-actually-is-quarto",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "What actually is Quarto?",
+    "text": "What actually is Quarto?\nQuarto is an open-source scientific publishing system. Think of it as Markdown Pro: write content in .qmd files (Quarto Markdown), and it renders to HTML, PDF, Word docs, presentations, or entire websites.\nHere’s why it matters for science communication:\nIt’s built for data science workflows. You can embed R or Python code directly in your documents, execute it during rendering, and include the outputs (plots, tables, analysis results) automatically. Write once, render everywhere.\nIt’s fast and portable. Static site generation means no database, no server-side processing, just HTML/CSS/JS files that load instantly. Host it on GitHub Pages for free.\nIt handles citations natively. BibTeX integration, cross-references, figure numbering - all the academic infrastructure without third-party plugins.\nIt scales from notebooks to books. Same syntax works for Jupyter-style notebooks, scientific papers, presentations, and full websites. Your lab report and your blog post use the same toolchain.\nTher perks aren’t just in ease of note rendering, but also the custom aethetics you want to add to your site. With Quarto, you can write SCSS that compiles directly to CSS. You control exactly what gets rendered. No mystery CSS from seventeen different plugins competing for specificity. No surprise JavaScript breaking your site after a theme update. Just your code, doing what you told it to.\nFinally, because academic work should be reproducible, your entire site is version-controlled plain text files in Quarto. You can see exactly what changed between versions, roll back mistakes, and rebuild the site identically on any machine with Quarto installed.\nSold yet? Before we start building, let’s get a high level understanding of how Quarto works with custom SCSS"
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#the-technical-architecture",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#the-technical-architecture",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "The Technical Architecture",
+    "text": "The Technical Architecture\nHere’s what happens when you build a Quarto site:\nYour content (.qmd files)\n         ↓\nQuarto processes Markdown + code chunks\n         ↓\nExecutes R/Python/Julia code (optional)\n         ↓\nApplies theme (SCSS → CSS)\n         ↓\nRenders to HTML\n         ↓\nStatic site in _site/ or docs/\nEverything from your .qmd source to the final HTML happens in a single render step. The output is pure static files—HTML, CSS, JavaScript, images—that you can host anywhere.\n\nHow SCSS Extends CSS\nStandard CSS is great but repetitive. Want to use the same colour scheme across your site? You’re copying hex codes everywhere. Need to adjust all your heading sizes proportionally? Find-and-replace time.\nSCSS (Sassy CSS) adds programming features to CSS:\nVariables:\n// Define once\n$bg-primary: #e0cdc5;\n$text-heading: #323619;\n\n// Use everywhere\nbody {\n  background-color: $bg-primary;\n}\nh1 {\n  color: $text-heading;\n}\nNesting:\nInstead of writing separate CSS rules for related elements, SCSS lets you nest them hierarchically. This mirrors your HTML structure and makes relationships between elements clearer:\n.navbar {\n  background: $bg-primary;\n  \n  .nav-link {\n    color: $text-heading;\n    \n    &:hover {\n      color: darken($text-heading, 10%);\n    }\n  }\n}\nFunctions and mixins:\nMixins are reusable chunks of CSS that you can include wherever you need them, with optional parameters. They’re perfect for repeated patterns:\n@mixin rounded($radius) {\n  border-radius: $radius;\n  -webkit-border-radius: $radius;\n  -moz-border-radius: $radius;\n}\n\n.box {\n  @include rounded(10px);\n}\nWhen you run quarto render, it compiles your SCSS to standard CSS automatically. You write the human-readable SCSS with variables and logic, browsers get optimised CSS.\n\n\nQuarto’s Theme System\nQuarto uses Bootstrap 5 as its base framework, which means you get a solid foundation of responsive design, typography, and components out of the box. Your custom theme extends Bootstrap by overriding its default variables and adding your own rules.\nA Quarto SCSS theme has two sections:\n/*-- scss:defaults --*/\n// Variable overrides go here\n// These change Bootstrap's default values\n$body-bg: #e0cdc5;\n$body-color: #000000;\n$font-family-sans-serif: 'Crimson Text', serif;\n\n/*-- scss:rules --*/\n// Custom CSS rules go here\n// These add new styles or override specific elements\n.hero-container {\n  display: flex;\n  gap: 4rem;\n}\nThe defaults section runs first, setting up your design variables. Then Bootstrap compiles with your variables. Finally, the rules section applies your custom styles on top.\nThis means you’re not fighting Bootstrap—you’re configuring it, then adding your own layer where needed."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#the-biopod-theme",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#the-biopod-theme",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "The BioPod Theme",
+    "text": "The BioPod Theme\nThe theme you’re looking at was built around a few specific goals:\n\nWarm, academic aesthetic — softer colours than the usual stark-white-background blog\nReadable code blocks — high contrast, bold text, clear syntax highlighting\nCustom typography — Crimson Text for body, Apricots for display elements\nFlexible page layouts — different background colours for different page types\n\nHere’s the colour palette:\n$bg-primary: #e0cdc5;      // Warm beige (headers/footers)\n$bg-secondary: #d5c3b3;    // Light tan (page backgrounds)\n$text-heading: #323619;    // Dark olive (headings)\n$text-body: #000000;       // Black (body text)\nAnd the font stack:\n@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');\n\n$font-family-sans-serif: 'Crimson Text', serif;\n$headings-font-family: 'Crimson Text', serif;\nThe Apricots font is a local file in fonts/apricots.woff2, loaded via @font-face and used selectively for decorative elements like the site title."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#setting-up-your-own-quarto-site",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#setting-up-your-own-quarto-site",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "Setting Up Your Own Quarto Site",
+    "text": "Setting Up Your Own Quarto Site\n\nPrerequisites\n\nQuarto installed (works on Windows, Mac, Linux)\nA text editor (VS Code, RStudio, whatever you prefer)\nGit (for version control and GitHub Pages deployment)\nBasic familiarity with Markdown\n\n\n\nProject Structure\nmy-blog/\n├── _quarto.yml           # Site configuration\n├── custom-theme.scss     # Your theme (optional)\n├── index.qmd             # Home page\n├── about.qmd             # About page\n├── posts.qmd             # Blog listing\n├── posts/                # Blog posts directory\n│   └── post-name/\n│       ├── index.qmd\n│       └── images/\n├── images/               # Site-wide images\n├── fonts/                # Custom fonts (optional)\n└── docs/                 # Rendered output (for GitHub Pages)\n\n\nStep 1: Initialise the Project\n# Create project directory\nmkdir my-blog\ncd my-blog\n\n# Initialise Quarto website\nquarto create project website .\nThis generates a basic site structure with _quarto.yml, index.qmd, and about.qmd.\n\n\nStep 2: Configure _quarto.yml\nThis file controls your entire site. Here’s a minimal setup:\nproject:\n  type: website\n  output-dir: docs        # For GitHub Pages\n\nwebsite:\n  title: \"Your Site Name\"\n  navbar:\n    background: \"#e0cdc5\"\n    left:\n      - text: \"HOME\"\n        href: index.qmd\n      - text: \"BLOG\"\n        href: posts.qmd\n      - text: \"ABOUT\"\n        href: about.qmd\n\nformat:\n  html:\n    theme: default        # Or your custom theme\n    toc: true\n    toc-location: right\nKey settings:\n\noutput-dir: docs tells Quarto to build to docs/ instead of _site/, which GitHub Pages can serve directly\nnavbar defines your site navigation\nformat: html: theme specifies your theme (use default, a built-in theme, or a custom .scss file)\n\n\n\nStep 3: Create Your First Post\nCreate posts/my-first-post/index.qmd:\n---\ntitle: \"My First Post\"\nauthor: \"Your Name\"\ndate: \"2025-01-28\"\ncategories: [news, tutorial]\ndescription: \"A brief description for the blog listing\"\n---\n\n## Introduction\n\nYour content here. Write in Markdown, embed code, include images.\nThe frontmatter (YAML between --- lines) defines post metadata. The rest is standard Markdown.\n\n\nStep 4: Set Up Blog Listing\nCreate posts.qmd to display all posts:\n---\ntitle: \"Blog\"\nlisting:\n  contents: posts          # Folder to scan\n  sort: \"date desc\"\n  type: default            # Options: default, grid, table\n  categories: true\n  fields: [date, title, description]\n  date-format: \"DD MMMM YYYY\"\n---\nThis page automatically lists all posts in the posts/ directory, sorted by date.\n\n\nStep 5: Build and Preview\n# Preview locally (opens in browser, live-reloads on changes)\nquarto preview\n\n# Build for production\nquarto render\nYour site is now in the docs/ directory, ready to deploy."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#using-the-biopod-theme",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#using-the-biopod-theme",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "Using the BioPod Theme",
+    "text": "Using the BioPod Theme\nIf you want to use the exact theme from this site, you’re welcome to. The theme is available on GitHub (replace with actual repo link) for anyone to use and adapt.\nA small request though: if you do use BioPod as your starting point, please credit the original by linking back to this site or the GitHub repo. And more importantly, make it your own. Tweak the colours, swap the fonts, adjust the spacing —academic sites should reflect the person behind them, not just a template. And I’d genuinely love to see what you do differently with it.\nNow, here’s how to get started:\n\nStep 1: Get the Theme Files\nDownload or copy: - biopod-theme.scss (the theme file) - fonts/apricots.woff2 (optional custom font)\nPlace them in your project root.\n\n\nStep 2: Update _quarto.yml\nproject:\n  type: website\n  output-dir: docs\n  resources:\n    - fonts/              # Include fonts directory in output\n\nformat:\n  html:\n    theme: biopod-theme.scss\n    toc: true\n\n\nStep 3: Render\nquarto render\nThat’s it. Your site now uses the BioPod theme."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#customising-the-theme",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#customising-the-theme",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "Customising the Theme",
+    "text": "Customising the Theme\nWant to tweak colours or fonts? Open biopod-theme.scss and edit the variables in the /*-- scss:defaults --*/ section:\n/*-- scss:defaults --*/\n\n// Brand colours\n$bg-primary: #e0cdc5;      // Change this to your preferred colour\n$bg-secondary: #d5c3b3;    // And this\n$text-heading: #323619;    // And this\n$text-body: #000000;       // You get the idea\n\n// Typography\n$font-family-sans-serif: 'Crimson Text', serif;  // Or your font\n$h1-font-size: 2.5rem;     // Adjust heading sizes\n$h2-font-size: 2rem;\nThen re-render:\nquarto render\nThe changes apply immediately. No cache clearing, no fighting with specificity—just change the variable, rebuild, done.\n\nAdding Your Own Fonts\nGoogle Fonts (easiest):\n@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');\n\n$font-family-sans-serif: 'Your Font', sans-serif;\nLocal fonts (more control):\n\nPlace font file (.woff2 preferred) in fonts/your-font.woff2\nAdd to theme:\n\n@font-face {\n  font-family: 'Your Font';\n  src: url('fonts/your-font.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\n$font-family-sans-serif: 'Your Font', sans-serif;\n\nMake sure fonts/ is included in _quarto.yml resources (see Step 2 above)\n\n\n\nPage-Specific Styling\nDifferent pages can have different backgrounds or layouts. The BioPod theme uses CSS selectors to target specific pages:\n// Home page and blog listing get secondary background\nbody:has(.quarto-title-block) {\n  background-color: $bg-secondary;\n}\n\n// Individual blog posts get primary background\nbody:has(article) {\n  background-color: $bg-primary;\n}\nYou can extend this pattern to style any page uniquely based on its content or metadata."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#deploying-to-github-pages",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#deploying-to-github-pages",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "Deploying to GitHub Pages",
+    "text": "Deploying to GitHub Pages\n\nStep 1: Create a GitHub Repository\nFirst create a place for your blog to “live” on your GitHub, the open your terminal where you project “lives” locally and type the following commands:\ngit init\ngit add .\ngit commit -m \"Initial commit\"\ngit remote add origin https://github.com/yourusername/your-blog.git\ngit push -u origin main\n\n\nStep 2: Configure GitHub Pages\n\nGo to your repository on GitHub\nSettings → Pages\nSource: Deploy from a branch\nBranch: main, folder: /docs\nSave\n\nYour site will be live at https://yourusername.github.io/your-blog/ within a few minutes.\n\n\nStep 3: Automate with GitHub Actions (Optional)\nCreate .github/workflows/publish.yml:\nname: Publish Quarto Site\n\non:\n  push:\n    branches: main\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n      \n      - name: Render site\n        run: quarto render\n      \n      - name: Deploy to GitHub Pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./docs\nNow every push to main automatically rebuilds and deploys your site."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#what-you-get",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#what-you-get",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "What You Get",
+    "text": "What You Get\nAfter following this setup, you’ll have:\n\nA fast, clean static site hosted for free on GitHub Pages\nFull control over design and functionality via SCSS\nVersion-controlled content as plain text files\nNative support for code execution, citations, and cross-references\nA publishing workflow that integrates with your research tools\n\nIt’s not the easiest option—WordPress is still easier if you’ve never touched code. But if you’re already working in R or Python, and you want a professional site that you actually understand and control, Quarto hits a sweet spot."
+  },
+  {
+    "objectID": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#further-resources",
+    "href": "posts/quarto_blog_setup/quarto-biopod-setup-post.html#further-resources",
+    "title": "Building a Personal Academic Site with Quarto",
+    "section": "Further Resources",
+    "text": "Further Resources\n\nQuarto documentation\nQuarto websites guide\nSCSS documentation\nBootstrap variables reference"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "The BioPod\n\n\nall things genomics, bioinformatics & sustainability\n\nComputational work is often a solo activity-just you, your code, and a gene network. But the big challenges aren’t tackled alone: crops failing, climates shifting, farmers adapting. These need collective solutions.\nThis blog is my way of connecting the dots and engaging beyond the screen. I write about the technical stuff I’m learning and the broader issues it touches (and some other things inbetween). Light on jargon, heavy on curiosity.\n\n\n\n\n\n\n\nLately…\n\n\n\n\n\n\n\n\nBuilding a Personal Academic Site with Quarto\n\n\nHow I set up this blog using Quarto and a custom theme—and why you might want to do the same\n\n\n\n20 Apr 2025\n\n\n\n\n\n\n\n\n\n\nWSL for Bioinformatics: Setting Up a Functional (and Pretty) Environment\n\n\nA practical guide to setting up Windows Subsystem for Linux for bioinformatics work—from installation to prettification\n\n\n\n28 Jan 2025\n\n\n\n\n\n\nNo matching items"
+  }
+]
