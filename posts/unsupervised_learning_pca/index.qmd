@@ -1,0 +1,599 @@
+---
+title: "A deep dive into PCA for biological data"
+author: "Larysha Rothmann"
+date: "2025-02-22"
+categories: [machine learning, PCA, bioinformatics, tutorial]
+description: "A comprehensive walkthrough of Principal Component Analysis from theory to implementation in R"
+image: images/pca-tutorial-thumbnail.png
+editor:
+  markdown:
+    wrap: 72
+format:
+  html:
+    fig-width: 6
+    fig-height: 4
+---
+
+## Why Dimensionality Reduction Matters
+
+The scale of genomics data requires "cutting through the fluff" methods.
+An RNA-seq experiment might measure expression for 20,000+ genes. A
+genotyping study might include millions of SNPs across hundreds of
+samples. You can plot one gene easily, two genes on a 2D scatter plot,
+three genes in 3D - but what about ten genes? A thousand? Twenty
+thousand?
+
+Principal Component Analysis (PCA) lets you take multi-dimensional data
+and produce a 2D plot that shows how samples cluster together and which
+variables drive those patterns. It's an unsupervised machine learning
+method that transforms your original variables (genes, SNPs,
+metabolites) into a new set of independent variables called principal
+components.
+
+**PCA aims to:** 1. Identify which attributes contribute most to
+differences between samples 2. Cluster samples into groups based on
+these attributes 3. Reveal which variables are driving those patterns
+
+This tutorial walks through PCA from mathematical intuition to practical
+implementation in R using SNPRelate - a package designed for genomic
+data that handles VCF files directly. We'll build understanding, then
+apply it to real genotypic data.
+
+## The Problem: Visualizing Multiple Dimensions
+
+Let's put this onto a scale that's easier to illustrate. Suppose you've
+done an RNA-seq experiment measuring gene expression across six samples.
+If you plot expression for **one gene**, you can see that samples 1, 2,
+and 3 cluster together, distinct from samples 4, 5, and 6:
+
+![Expression of a single gene across six samples. Samples 1-3 cluster
+separately from samples 4-6.](images/pca-one-gene.png){width="60%"}
+
+For **two genes**, you can plot this on a 2D graph:
+
+![Expression of two genes across six samples. Samples 1-3 cluster in the
+bottom left; samples 4-6 in the top right.](images/pca-two-genes.png){width="60%"}
+
+Each variable is an axis spanning one dimension. For **three genes**,
+you'd need a 3D plot. But what about four genes? Ten? You can't plot
+four dimensions, let alone thousands.
+
+PCA solves this by finding new axes (principal components) that capture
+the most variance in your data, allowing you to plot high-dimensional
+data in 2D while preserving meaningful structure.
+
+## How PCA Works: A Visual Walkthrough
+
+We'll use two variables here for visualization, but the principles apply
+to datasets with thousands of dimensions. You just can't draw them
+anymore - but the math still works.
+
+### Step 1: Center the Data
+
+First, calculate the mean for each variable. This gives you the center
+of your data.
+
+![Finding the center of the data by averaging each
+variable.](images/pca-center.png){width="55%"}
+
+Then shift the data so this center sits on the origin (0, 0). This
+normalizes your data to have a mean of 0 and standard deviation of 1.
+Note that shifting doesn't change the relative position of points to
+each other - it just relocates the entire dataset.
+
+![Data shifted to center on the origin. This is normalization - mean of
+0, standard deviation of 1.](images/pca-normalized.png){width="55%"}
+
+### Step 2: Find the Line of Best Fit (PC1)
+
+Now we need to find the line that best describes the data. There are two
+equivalent ways to think about this:
+
+1.  **Minimize the distance** from each data point to the line (the
+    residuals)
+2.  **Maximize the distance** from projected points on the line to the
+    origin
+
+PCA uses the second approach because it's computationally easier. But
+why are these equivalent?
+
+![Demonstrating the equivalence of minimizing residuals and maximizing
+projected distances using the Pythagorean
+theorem.](images/pca-pythagorean.png){width="55%"}
+
+Consider one data point, say sample 5. Draw a line from the origin to
+the sample point (distance $a$), from the sample point perpendicular to
+the fitted line (distance $b$), and from the projected point to the
+origin (distance $c$). You've formed a right-angled triangle.
+
+By the Pythagorean theorem: $a^2 = b^2 + c^2$
+
+Since $a$ is fixed (the distance from origin to the sample doesn't
+change), maximizing $c$ is the same as minimizing $b$. PCA algorithms
+maximize $c$ - the distances from projected points to the origin.
+
+![The sum of squared distances (SSD) from projected points to the
+origin. When SSD is maximized, we've found PC1.](images/pca-ssd.png){width="55%"}
+
+This distance is squared for each point (to remove negative values),
+then summed. This is the **Sum of Squared Distances (SSD)**. When the
+SSD is largest, you've found the line of best fit. **This line is PC1**
+(Principal Component 1).
+
+The average of the SSD (divided by $n-1$, where $n$ is the number of
+samples) is the **eigenvalue** for PC1 - a measure of how much variation
+PC1 captures. The square root of the eigenvalue is the **eigenvector**
+or singular value for PC1.
+
+### Step 3: Interpreting PC1's Composition
+
+If PC1 has a slope of 0.25, it means that for every 4 units along the
+x-axis (gene 1), you go up 1 unit on the y-axis (gene 2). The data is
+mostly spread out along the gene 1 axis.
+
+![PC1 with a slope of 0.25 means it's composed of 4 parts gene 1 and 1
+part gene 2.](images/pca-slope.png){width="55%"}
+
+In other words, PC1 is made up of 4 parts gene 1 and 1 part gene 2. This
+ratio shows that gene 1 is more important for describing the spread of
+the data. PC1 captures the **linear combination** of genes 1 and 2.
+
+We can calculate the length of this vector using Pythagoras:
+$\sqrt{4^2 + 1^2} = \sqrt{17} = 4.12$
+
+If you're using Singular Value Decomposition (SVD) - a common method for
+computing PCA - the vector is scaled so its length equals 1. Divide each
+component by the length: $4 \div 4.12 = 0.97$ and $1 \div 4.12 = 0.24$.
+
+This gives you **loading scores**: 0.97 parts gene 1 and 0.24 parts gene
+2. These scores tell you how much each original variable contributes to
+PC1.
+
+### Step 4: Finding PC2
+
+PC2 is the line through the origin that is **perpendicular (orthogonal)
+to PC1**:
+
+![PC2 is orthogonal to PC1 and captures the second-most
+variance.](images/pca-pc2-orthogonal.png){width="55%"}
+
+If we scale this vector to length 1, we get loading scores of -0.24
+parts gene 1 and 0.97 parts gene 2 - the eigenvector for PC2.
+
+To draw the final PCA plot, rotate the graph so the projected points
+fall along the x and y axes (which are now PC1 and PC2). The
+intersection for each sample gives you the new coordinates to plot.
+
+## How Many Components Should You Include?
+
+The **eigenvalue** for each PC (remember, this is $\text{SSD} / (n-1)$)
+tells you how much variation that PC explains. You can calculate the
+proportion of total variation each PC accounts for.
+
+For example, if PC1's eigenvalue is 15 and PC2's is 3: - PC1 accounts
+for $15 / (15 + 3) \times 100 = 83\%$ of total variation - PC2 accounts
+for $3 / 18 \times 100 = 17\%$ of total variation
+
+You visualize this with a **scree plot** - a bar chart showing the
+percentage of variation each PC explains:
+
+![Scree plot showing the proportion of variance explained by each
+principal component.](images/scree-plot-example.png){width="35%"}
+
+If the first two PCs capture most of the variance (say, 70-80%), a 2D
+PCA plot is a good representation. If variance is spread across many
+components, you might need a 3D plot or accept that a 2D visualization
+is incomplete.
+
+## Extending to Higher Dimensions
+
+Everything we've described works the same way for datasets with hundreds
+or thousands of variables. You can't visualize it, but the math is
+identical:
+
+1.  Center the data (normalize to mean 0, standard deviation 1)
+2.  Find PC1 - the line that maximizes SSD, now a linear combination of
+    all your variables
+3.  Find PC2 - perpendicular to PC1
+4.  Find PC3 - perpendicular to both PC1 and PC2
+5.  Continue until you have one PC per variable (or one per sample,
+    whichever is smaller)
+
+In practice, you rarely need all the PCs. The first few capture most of
+the variation, and that's what you plot.
+
+## Summary: What Actually Is a Principal Component?
+
+A principal component is a **scaled vector** representing the line that
+best fits the data (maximizing SSD). It describes the **linear
+combination or ratio of variables** that account for the spread of the
+data.
+
+Multiple PCs can be produced, each weighting the variables differently
+and independent of the others. The number of PCs equals the number of
+samples or variables, whichever is lower. PC1 represents the largest
+sample variation, PC2 the second-largest, and so on.
+
+PCA plots typically show PC1 vs. PC2 - the two components representing
+the attributes contributing most to differences between samples. This is
+best for pattern recognition.
+
+## Practical Application: PCA for Genotypic Data in R
+
+Now let's apply this to real genomic data. We'll start with VCF files
+straight from the sequencer and walk through the entire workflow in R
+using SNPRelate.
+
+### Understanding Your Input Data: VCF Files
+
+When you sequence samples and call variants, you typically get a **VCF
+(Variant Call Format)** file. This is a tab-delimited text file
+containing:
+
+-   **Metadata lines** (starting with `##`) - information about
+    reference genome, filters, sample names
+-   **Header line** (starting with `#CHROM`) - column names
+-   **Variant records** - one line per variant with genotype data for
+    all samples
+
+A simplified example:
+
+```         
+##fileformat=VCFv4.2
+##reference=grape_genome_v2.fa
+#CHROM  POS     ID      REF  ALT  QUAL  FILTER  INFO  FORMAT  Sample1  Sample2  Sample3
+chr1    1000    .       A    T    50    PASS    .     GT      0/0      0/1      1/1
+chr1    2000    .       G    C    55    PASS    .     GT      0/1      0/1      0/0
+```
+
+The `GT` (genotype) field shows alleles: `0/0` = homozygous reference,
+`0/1` = heterozygous, `1/1` = homozygous alternate.
+
+### Installing Required Packages
+
+``` r
+# Install Bioconductor packages (if needed)
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("SNPRelate")
+BiocManager::install("gdsfmt")
+
+# Load packages
+library(SNPRelate)
+library(gdsfmt)
+library(ggplot2)
+```
+
+### Converting VCF to GDS Format
+
+SNPRelate works with **GDS (Genomic Data Structure)** files, which are
+optimized for large-scale genomic data. First, convert your VCF:
+
+``` r
+# Convert VCF to GDS format
+vcf_file <- "your_samples.vcf.gz"  # Works with compressed VCF
+gds_file <- "your_samples.gds"
+
+snpgdsVCF2GDS(vcf_file, gds_file, method = "biallelic.only")
+
+# Open the GDS file
+genofile <- snpgdsOpen(gds_file)
+
+# Check what's in the file
+snpgdsSummary(genofile)
+```
+
+### Quality Control and Filtering
+
+Before PCA, filter your data. SNPRelate provides functions for common QC
+steps:
+
+``` r
+# Get sample and SNP IDs
+sample_ids <- read.gdsn(index.gdsn(genofile, "sample.id"))
+snp_ids <- read.gdsn(index.gdsn(genofile, "snp.id"))
+
+# Filter for missing data (keep SNPs with <10% missingness)
+snp_missing <- snpgdsSNPRateFreq(genofile)
+snps_to_keep <- snp_ids[snp_missing$MissingRate < 0.1]
+
+# Filter for minor allele frequency (MAF > 0.05)
+snp_maf <- snpgdsSNPRateFreq(genofile)
+snps_to_keep <- snps_to_keep[snp_maf$MinorFreq[snp_maf$MissingRate < 0.1] > 0.05]
+
+# Prune for linkage disequilibrium
+# This keeps relatively independent SNPs
+set.seed(1000)
+snp_pruned <- snpgdsLDpruning(genofile,
+                              ld.threshold = 0.2,
+                              snp.id = snps_to_keep,
+                              method = "corr")
+
+# Get the final list of pruned SNPs
+snps_final <- unlist(snp_pruned)
+
+cat(sprintf("Starting with %d SNPs\n", length(snp_ids)))
+cat(sprintf("After QC: %d SNPs\n", length(snps_to_keep)))
+cat(sprintf("After LD pruning: %d SNPs\n", length(snps_final)))
+```
+
+**Why these filters?** - **Missing data:** SNPs with high missingness
+are unreliable - **MAF filtering:** Rare variants contribute little
+information and increase noise - **LD pruning:** If SNPs are inherited
+together (linkage disequilibrium), they're not independent. Including
+them inflates their contribution, and you capture LD structure rather
+than population structure
+
+**Missing data handling:** SNPRelate excludes missing genotypes by
+default. For advanced imputation (haplotype-based methods), use tools
+like Beagle or IMPUTE2 before converting to GDS. For most PCA
+applications, excluding missing data with the filters above is
+sufficient.
+
+### Computing Principal Components
+
+Now run the PCA:
+
+``` r
+# Compute PCA with filtered SNPs
+pca <- snpgdsPCA(genofile,
+                 snp.id = snps_final,
+                 autosome.only = FALSE,  # Set TRUE for human data
+                 num.thread = 4)
+
+# Check variance explained by each PC
+pc_percent <- pca$varprop * 100
+cat(sprintf("PC1 explains %.2f%% of variance\n", pc_percent[1]))
+cat(sprintf("PC2 explains %.2f%% of variance\n", pc_percent[2]))
+cat(sprintf("First 10 PCs explain %.2f%% of variance\n", sum(pc_percent[1:10])))
+
+# Close the GDS file
+snpgdsClose(genofile)
+```
+
+The `pca` object contains: - `pca$eigenvect` - PC scores for each sample
+(coordinates for plotting) - `pca$eigenval` - eigenvalues (variance
+explained by each PC) - `pca$varprop` - proportion of total variance
+explained by each PC - `pca$sample.id` - sample IDs in the same order as
+eigenvectors
+
+### Visualizing Results
+
+Create a comprehensive visualization including scree plot and PCA plot:
+
+``` r
+# Prepare data for plotting
+pca_data <- data.frame(
+  sample_id = pca$sample.id,
+  PC1 = pca$eigenvect[, 1],
+  PC2 = pca$eigenvect[, 2],
+  PC3 = pca$eigenvect[, 3]
+)
+
+# Add your metadata (population, treatment, etc.)
+# Assumes you have a metadata file with sample info
+metadata <- read.csv("sample_metadata.csv")
+pca_data <- merge(pca_data, metadata, by = "sample_id")
+
+# Calculate percentage variance for axis labels
+pc1_var <- round(pca$varprop[1] * 100, 2)
+pc2_var <- round(pca$varprop[2] * 100, 2)
+
+# Create scree plot
+scree_data <- data.frame(
+  PC = 1:length(pca$eigenval),
+  Variance = pca$varprop * 100
+)
+
+scree_plot <- ggplot(scree_data[1:20, ], aes(x = PC, y = Variance)) +
+  geom_bar(stat = "identity", fill = "#323619") +
+  geom_text(data = scree_data[1:10, ],
+            aes(label = sprintf("%.1f%%", Variance), y = Variance + 0.5),
+            size = 3, color = "gray40") +
+  labs(title = "Scree plot",
+       x = "Principal Component",
+       y = "Variance Explained (%)") +
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank())
+
+print(scree_plot)
+
+# Create PCA plot
+pca_plot <- ggplot(pca_data, aes(x = PC1, y = PC2, 
+                                  color = population,
+                                  shape = treatment)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dotted", color = "gray50") +
+  geom_vline(xintercept = 0, linetype = "dotted", color = "gray50") +
+  labs(title = "PCA of Genotypic Data",
+       x = paste0("PC1 (", pc1_var, "%)"),
+       y = paste0("PC2 (", pc2_var, "%)")) +
+  theme_minimal() +
+  theme(legend.position = "right",
+        panel.grid.minor = element_blank())
+
+print(pca_plot)
+
+# Optional: 3D visualization
+# BiocManager::install("plotly")
+# library(plotly)
+# plot_ly(pca_data, x = ~PC1, y = ~PC2, z = ~PC3,
+#         color = ~population, symbol = ~treatment,
+#         type = "scatter3d", mode = "markers")
+```
+
+## Interpreting the PCA Plot
+
+**Data points:** Each point represents an individual sample. These
+points have been transformed - they're no longer plotted using the
+original SNP values. Instead, each sample's position is calculated as
+the weighted sum of all SNPs:
+
+$$\text{PC1 value} = \sum_{i=1}^{n} (\text{SNP}_i \text{ value} \times \text{SNP}_i \text{ loading on PC1})$$
+
+The same calculation applies for PC2, PC3, etc.
+
+**Principal component axes:** PC1 and PC2 represent the two components
+capturing the largest proportions of genetic variation.
+
+**Distance between points:** Reflects genetic similarity. Samples close
+together are genetically similar; those far apart are dissimilar.
+
+**Loading scores:** To see which SNPs contribute most to each PC,
+examine the loadings:
+
+``` r
+# Get loadings for PC1 and PC2
+genofile <- snpgdsOpen(gds_file)
+snp_load <- snpgdsPCASNPLoading(pca, genofile)
+snpgdsClose(genofile)
+
+# Create data frame of loadings
+loading_data <- data.frame(
+  snp_id = snp_load$snp.id,
+  PC1_loading = snp_load$snploading[, 1],
+  PC2_loading = snp_load$snploading[, 2]
+)
+
+# Find SNPs with largest contributions to PC1
+top_snps_pc1 <- loading_data[order(abs(loading_data$PC1_loading), 
+                                    decreasing = TRUE)[1:20], ]
+print(top_snps_pc1)
+```
+
+Positive loading scores indicate positive correlation with the PC;
+negative scores indicate inverse correlation. SNPs with large absolute
+loadings (positive or negative) drive sample separation.
+
+## Choosing a PCA Tool
+
+Multiple tools can compute PCs for genomic data. Which should you use?
+
+**SNPRelate (R package):** Handles VCF files directly (via GDS
+conversion) - Memory-efficient for large datasets - Good integration
+with R's visualization ecosystem - Works with autosomes and sex
+chromosomes - **Best for:** Most genomics applications, especially if
+you're already working in R
+
+**PLINK (command-line):** - Widely used in human genetics - Fast for
+standard SNP datasets - Extensive documentation and established
+workflows - **Best for:** Established pipelines, very large sample sizes
+
+**EIGENSOFT (SMARTPCA/EIGENSTRAT):** - Gold standard for population
+genetics - Includes outlier detection and statistical significance
+testing - More sophisticated handling of population structure - **Best
+for:** Deep population genetics analysis, when you need Tracy-Widom
+statistics
+
+**bigsnpr (R package):** - Optimized for biobank-scale data -
+Memory-efficient for massive datasets - Modern R implementation with
+excellent performance - **Best for:** UK Biobank-scale analyses
+
+For crop genomics and most research applications, SNPRelate is a good
+choice. It's handles diverse genomic architectures, and integrates
+seamlessly with R workflows.
+
+## Limitations and Critical Considerations
+
+PCA is powerful but not perfect. Key limitations:
+
+**1. Assumes linearity** - PCA finds linear combinations of variables.
+Complex non-linear relationships might be missed.
+
+**2. Prioritizes global variance** - Local structure between closely
+related samples may be obscured.
+
+**3. Sensitive to preprocessing** - LD pruning thresholds, MAF cutoffs,
+and missing data handling all affect results. Different choices give
+different patterns.
+
+**4. Sampling bias matters** - Elhaik (2022) showed that uneven sampling
+across populations can create artificial clustering. If you sample 100
+individuals from population A and 10 from population B, PCA will reflect
+this imbalance, not necessarily true biological structure.
+
+**5. The "cluster illusion"** - PCA plots can suggest discrete groups
+even in continuously distributed data. Human pattern-seeking sees
+clusters that may not be biologically meaningful.
+
+**6. LD structure vs. population structure** - Improper LD pruning means
+you capture chromosomal LD patterns rather than genome-wide
+differentiation.
+
+**Bottom line:** Use PCA as an exploratory tool. Validate patterns with
+complementary methods (ADMIXTURE, f-statistics, phylogenetics) before
+making strong biological claims.
+
+## When PCA Isn't Appropriate: Related Samples
+
+When samples are closely related (full siblings, near-clonal lines,
+breeding populations), PCA faces challenges: - PCs may capture minor
+noise rather than meaningful variation - Interpretation becomes
+difficult - PCs may not correspond to biological differences - Limited
+variance to explain
+
+**Better alternatives for related samples:** Kinship analysis, mixed
+linear models, or ADMIXTURE for breeding populations.
+
+## Beyond PCA: When to Use Other Methods
+
+For specific biological questions, other dimensionality reduction
+methods are available:
+
+**t-SNE (t-distributed Stochastic Neighbor Embedding):** Preserves local
+structure and relationships rather than global variance. Popular in
+single-cell RNA-seq for identifying discrete cell types. Produces
+well-separated clusters that make cell type identification easier than
+PCA's often-overlapping patterns.
+
+**UMAP (Uniform Manifold Approximation and Projection):** Similar to
+t-SNE but faster and often better at preserving both local and global
+structure. Sometimes preferred in modern single-cell analysis.
+
+**Self-Organizing Maps (SOMs/Kohonen maps):** Unsupervised neural
+networks creating 2D grid representations. Useful for pattern
+recognition without labels. [Tutorial
+here](https://www.geeksforgeeks.org/self-organising-maps-kohonen-maps/).
+
+**When to use what:** - **PCA:** Most genomics applications - population
+structure, GWAS, expression analysis. Fast, interpretable,
+deterministic. - **t-SNE/UMAP:** Single-cell data, discrete cluster
+identification, exploratory analysis where local relationships matter
+more than global structure. - **PCoA:** Working with custom distance
+metrics or phylogenetic distances (analyzes pairwise dissimilarity
+matrices rather than raw data).
+
+For population genetics and crop genomics, PCA remains the standard. Its
+interpretability (you can trace patterns back to specific SNPs), speed,
+and deterministic results make it the right tool for most jobs.
+
+## Further Resources
+
+**R Packages and Documentation:** - [SNPRelate
+documentation](https://www.bioconductor.org/packages/release/bioc/html/SNPRelate.html) -
+[SNPRelate
+tutorial](https://www.bioconductor.org/packages/release/bioc/vignettes/SNPRelate/inst/doc/SNPRelate.html) -
+[gdsfmt
+package](https://www.bioconductor.org/packages/release/bioc/html/gdsfmt.html)
+
+**Tutorials:** - [PCA in R
+(DataCamp)](https://www.datacamp.com/tutorial/pca-analysis-r) - [PCA in
+Python](https://www.youtube.com/watch?v=-PCKK_nwFdA&t=2120s) - from
+Maria Nattestad, who explain this very well
+
+**Critical perspective:**
+
+\- Elhaik (2022). "Principal component analyses (PCA)-based findings in
+population genetic studies are highly biased and must be reevaluated."
+*Scientific Reports* 12:14683
+
+------------------------------------------------------------------------
+
+**Closing thoughts:** PCA is a high-dimensional data visualization
+technique, but its usefulness depends on whether the first few principal
+components capture most variation. Check your scree plot - if PC1 and
+PC2 together explain \<50% of variance, consider whether a 2D
+visualization is truly representative. And remember: PCA is exploratory.
+It suggests patterns, but you need complementary analyses to confirm
+biological meaning.
