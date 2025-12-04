@@ -1,0 +1,503 @@
+---
+title: "Getting started with the CHPC: a practical guide"
+author: "Larysha Rothmann"
+date: "2025-03-04"
+categories: [HPC, bioinformatics, tutorial, CHPC]
+description: "A bare-bones guide to getting up and running on South Africa's Centre for High Performance Computing"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Who This Is For
+
+This guide is specifically for researchers using the **Centre for High
+Performance Computing (CHPC)** in South Africa. If you're not affiliated
+with a South African research institution or don't have CHPC access,
+this won't be directly relevant to you - though the concepts apply
+broadly to other HPCs.
+
+This is written for fellow students and colleagues who've asked me how
+to get started, particularly if you're new to the command line or have
+never used an HPC before. The [CHPC wiki](https://wiki.chpc.ac.za/) is
+comprehensive and well-written, but if you're doing bioinformatics work,
+you don't need all of it. This guide extracts the essentials to get you
+from zero to running your first job.
+
+**What this covers:** Logging in, understanding the system, running
+interactive sessions, submitting jobs, and transferring files.
+
+**What this doesn't cover (yet):** Singularity containers, Conda
+environments, advanced scheduling, or specific bioinformatics pipelines.
+Those will come in future posts.
+
+## What Is an HPC and Why Do You Need One?
+
+High Performance Computing uses clusters of processors working in
+parallel to process massive datasets. Your laptop solves problems
+serially - it divides work into sequential tasks and executes them one
+after another. An HPC runs multiple tasks simultaneously across many
+processors.
+
+For bioinformatics, this matters because: - large tasks can take days or
+weeks on a single machine - for instance, mapping millions of reads
+requires substantial memory - and running the same analysis across 100+
+samples is tedious without parallelization
+
+The CHPC gives you access to thousands of CPU cores, hundreds of
+gigabytes of RAM, and GPUs - resources you can't get on a standard
+machine.
+
+### Key Terminology
+
+Before we start, some quick definitions:
+
+**Node:** A physical machine (server) in the cluster. Think of it as an
+individual computer. The CHPC has thousands of nodes.
+
+**Core:** The physical processing unit of a CPU. More cores = more
+parallel processing. A CPU with 24 cores can run 24 independent
+processes simultaneously.
+
+**Thread:** A logical or virtual core. Threading allows a single core to
+work on two tasks by switching between them rapidly. Many bioinformatics
+tools let you specify `--threads 8`, but actual speedup depends on the
+number of physical cores.
+
+**Job:** A task you submit to the cluster - a script, a command, an
+analysis pipeline.
+
+**Queue:** A holding area for jobs waiting for resources. Jobs are
+scheduled based on resource requests and availability.
+
+**Walltime:** The maximum time your job is allowed to run. If it exceeds
+this, it's killed.
+
+## About the CHPC
+
+The Centre for High Performance Computing is part of the National
+Integrated Cyberinfrastructure System (NICIS), supported by the
+Department of Science and Innovation and the CSIR. You access it either
+as a Principal Investigator (PI) or as a Normal User under a research
+program.
+
+**Key links:** - [CHPC Quick Start
+Guide](https://wiki.chpc.ac.za/quick:start) - the central hub for
+everything - [User Portal](https://users.chpc.ac.za/) - for account
+management and support tickets - [Full Wiki](https://wiki.chpc.ac.za/) -
+comprehensive documentation
+
+If you're working with a supervisor or lab that already has access,
+they'll register you under their project code. You'll get an account
+with a username and password.
+
+## Logging In
+
+The CHPC has multiple login nodes. You'll primarily use two:
+
+**login1 (scp node):** - Purpose: File transfers (secure copy) - Login:
+`ssh username@scp.chpc.ac.za` - Use for: Uploading/downloading data
+
+**login2 (lengau node):** - Purpose: Primary shared login node
+(default) - Login: `ssh username@lengau.chpc.ac.za` - Use for: Running
+commands, submitting jobs, interactive sessions
+
+**Important:** Because lengau is shared and resource-intensive,
+interactive commands are killed unless you request an interactive
+session (more on this below). You can't just run computationally heavy
+tasks directly on the login node.
+
+### Switching Between Nodes
+
+Once logged in, you can switch between nodes:
+
+``` bash
+ssh login1      # Switch to scp node
+exit            # Return to lengau
+```
+
+**Neither login node has internet access.** If you need to download data
+from online databases (e.g., NCBI SRA), use `chpclic1`:
+
+``` bash
+ssh username@chpclic1.chpc.ac.za
+```
+
+This node has internet access and is specifically for data downloads.
+
+## Understanding the File System
+
+This is critical to get right from the start.
+
+When you log in, you'll be in your home directory: `/home/username`
+
+**Don't work here.** Your home directory has a 15GB limit and isn't
+designed for analysis work.
+
+Instead, work in your Lustre directory: `/mnt/lustre/users/username/`
+
+This is your primary working space. It has much more storage and is
+where you should keep all project data, scripts, and outputs.
+
+**Important caveat:** The CHPC cleans out Lustre files every 3 months.
+Back up your analyses and download results every 90 days.
+
+### Setting Up a Shortcut
+
+Typing `/mnt/lustre/users/username/` every time is tedious. Create a
+shortcut:
+
+``` bash
+cd /home/username
+nano .bashrc
+
+# Add this line (replace with your actual path):
+alias wkd="cd /mnt/lustre/users/username/"
+
+# Save (Ctrl+O, Enter) and exit (Ctrl+X)
+```
+
+Now source the file to activate it:
+
+``` bash
+source ~/.bashrc
+```
+
+From now on, just type `wkd` to jump straight to your working directory.
+
+### Checking Disk Usage
+
+To see how much space you're using:
+
+``` bash
+du --si -s $HOME
+```
+
+## Organizing Your Projects
+
+Create a clear directory structure for each project. I use:
+
+```         
+/mnt/lustre/users/username/project_name/
+├── raw/          # Raw sequencing data
+├── bin/          # Scripts
+├── out/          # Analysis outputs
+│   ├── assembly/
+│   ├── mapping/
+│   └── qc/
+└── ref/          # Reference genomes, annotations
+```
+
+Keep everything organized from the start. Future you will thank present
+you.
+
+## Interactive Sessions: Testing and Small Jobs
+
+Interactive sessions let you work directly on a compute node rather than
+the login node. This is essential for: - Testing commands before writing
+a full script - Running quick analyses - Debugging pipelines
+
+### Requesting an Interactive Session
+
+``` bash
+qsub -I -l select=1:ncpus=4:mpiprocs=4 -q serial -P CBBI1684 -l walltime=1:00:00
+```
+
+Breaking this down: - `-I`: Interactive session - `-l select=1`: Request
+1 node - `ncpus=4`: Use 4 CPU cores - `mpiprocs=4`: 4 MPI processes per
+node - `-q serial`: Use the serial queue - `-P CBBI1684`: Your project
+code (replace with yours) - `-l walltime=1:00:00`: Request 1 hour
+
+Once allocated, you'll be dropped into a compute node where you can run
+commands directly.
+
+**Caveat:** If your terminal is idle for \~5 minutes, you'll be kicked
+out and your job is killed. If you need to step away, use `screen`.
+
+### Using screen for Persistent Sessions
+
+`screen` lets you detach from a session and reconnect later without
+stopping your work:
+
+**Start a screen session:**
+
+``` bash
+screen -S mysession
+```
+
+**Detach (leave it running):** Press `Ctrl+A`, then `D`
+
+You'll drop back to the terminal, but your session continues in the
+background.
+
+**List active sessions:**
+
+``` bash
+screen -ls
+```
+
+**Reattach to a session:**
+
+``` bash
+screen -r mysession
+```
+
+**Kill a session:** From inside: `exit` From outside:
+`screen -S mysession -X quit`
+
+**Note:** HPCs prefer you submit actual jobs through the scheduler
+rather than running long interactive sessions. Use `screen` for quick
+development and testing, but submit proper jobs for anything that takes
+more than an hour.
+
+## Loading Software: The Module System
+
+The CHPC has a huge repository of pre-installed bioinformatics software.
+To use it, you need to load the module system.
+
+### Loading BIOMODULES
+
+``` bash
+module load chpc/BIOMODULES
+```
+
+This gives you access to all bioinformatics packages available on the
+cluster.
+
+### Finding Available Software
+
+**List all available modules:**
+
+``` bash
+module avail
+```
+
+This produces a long list. To search more effectively:
+
+``` bash
+# Search with less (use / to search, q to quit)
+module avail 2>&1 | less
+
+# Search with grep
+module avail 2>&1 | grep fastqc
+module avail 2>&1 | grep spades
+```
+
+### Loading a Module
+
+Once you've found what you need:
+
+``` bash
+module load fastqc/0.11.9
+```
+
+### Checking Loaded Modules
+
+``` bash
+module list
+```
+
+### Unloading a Module
+
+``` bash
+module unload fastqc/0.11.9
+```
+
+If a tool you need isn't available, submit a ticket through the [CHPC
+helpdesk](https://users.chpc.ac.za/helpdesk/), or install it in your own
+directory if you have space.
+
+## Submitting Jobs: The PBS Scheduler
+
+For any substantial analysis, you'll submit a job to the scheduler
+rather than running it interactively. The CHPC uses **PBS Pro** as its
+job scheduler.
+
+### Available Queues
+
+Different queues have different resource limits and policies. The [CHPC
+wiki](https://wiki.chpc.ac.za/quick:start) has a full table, but for
+most bioinformatics work, you'll use:
+
+-   **serial:** Default queue, up to 24 cores per node, 48-hour walltime
+-   **smp:** Shared memory processing, more walltime available
+-   **normal:** For larger multi-node jobs
+
+### Writing a PBS Script
+
+Create a script in your `bin/` directory:
+
+``` bash
+cd /mnt/lustre/users/username/project_name/bin/
+nano fastqc_job.sh
+```
+
+Here's a template PBS script:
+
+``` bash
+#!/bin/bash
+#PBS -N fastqc_job              # Job name
+#PBS -q serial                  # Queue to submit to
+#PBS -P CBBI1684                # Project code (replace with yours)
+#PBS -l select=1:ncpus=24       # 1 node, 24 cores
+#PBS -l walltime=48:00:00       # Max runtime (48 hours)
+#PBS -e /mnt/lustre/users/username/project/logs/fastqc.err
+#PBS -o /mnt/lustre/users/username/project/logs/fastqc.out
+
+# Load required modules
+module load chpc/BIOMODULES
+module load fastqc/0.11.9
+module load multiqc/1.9
+
+# Define paths
+RAW_DATA=/mnt/lustre/users/username/project/raw
+QC_OUT=/mnt/lustre/users/username/project/out/qc
+
+# Run FastQC on all fastq files
+fastqc -t 12 ${RAW_DATA}/*.fastq.gz -o ${QC_OUT}
+
+# Aggregate results with MultiQC
+multiqc ${QC_OUT} -o ${QC_OUT}
+```
+
+**What's happening:** 1. PBS directives (lines starting with `#PBS`) set
+job parameters 2. Modules are loaded to access software 3. Paths are
+defined for clarity 4. FastQC runs on 12 threads across all fastq files
+5. MultiQC aggregates the results into a single report
+
+### Submitting the Job
+
+``` bash
+qsub fastqc_job.sh
+```
+
+You'll get a job ID back, something like `123456.sched`.
+
+### Checking Job Status
+
+``` bash
+# Check all your jobs
+qstat -u username
+
+# Check a specific job
+qstat 123456.sched
+```
+
+The `S` column shows status: - `Q`: Queued (waiting for resources) -
+`R`: Running - `C`: Completed
+
+### Cancelling a Job
+
+``` bash
+qdel 123456.sched
+```
+
+### Checking Output and Errors
+
+Your error and output files (specified in the script with `#PBS -e` and
+`#PBS -o`) will contain any messages or errors from the job. Always
+check the error log first if something goes wrong.
+
+## Transferring Files
+
+You'll need to move data between your local machine and the CHPC.
+
+### Downloading from CHPC to Local Machine
+
+``` bash
+# Copy a single file
+scp username@scp.chpc.ac.za:/mnt/lustre/users/username/project/file.html ./
+
+# Copy a directory
+scp -r username@scp.chpc.ac.za:/mnt/lustre/users/username/project/results/ ./
+
+# Using rsync (better for large transfers, resumes if interrupted)
+rsync -avzP username@scp.chpc.ac.za:/mnt/lustre/users/username/project/results/ ./
+```
+
+**rsync flags:** - `-a`: Archive mode (preserves permissions,
+timestamps) - `-v`: Verbose (shows progress) - `-z`: Compress during
+transfer - `-P`: Show progress and allow resume if interrupted
+
+### Uploading from Local Machine to CHPC
+
+``` bash
+# Copy a file
+scp file.txt username@scp.chpc.ac.za:/mnt/lustre/users/username/project/
+
+# Copy a directory
+scp -r my_data/ username@scp.chpc.ac.za:/mnt/lustre/users/username/project/
+
+# Using rsync
+rsync -avzP my_data/ username@scp.chpc.ac.za:/mnt/lustre/users/username/project/
+```
+
+## Quick Reference: Common Commands
+
+**Navigation:**
+
+``` bash
+wkd                                    # Go to working directory (if you set up alias)
+cd /mnt/lustre/users/username/         # Full path to working directory
+du --si -s $HOME                       # Check disk usage
+```
+
+**Interactive sessions:**
+
+``` bash
+qsub -I -l select=1:ncpus=4 -q serial -P PROJECT_CODE -l walltime=1:00:00
+screen -S sessionname                  # Start screen session
+Ctrl+A, D                              # Detach from screen
+screen -r sessionname                  # Reattach to screen
+```
+
+**Modules:**
+
+``` bash
+module load chpc/BIOMODULES            # Load bioinformatics modules
+module avail 2>&1 | grep tool_name     # Search for software
+module load tool_name/version          # Load a specific tool
+module list                            # Show loaded modules
+```
+
+**Jobs:**
+
+``` bash
+qsub script.sh                         # Submit job
+qstat -u username                      # Check your jobs
+qstat job_id                           # Check specific job
+qdel job_id                            # Cancel job
+```
+
+**File transfer:**
+
+``` bash
+scp file.txt username@scp.chpc.ac.za:/path/     # Upload file
+scp username@scp.chpc.ac.za:/path/file.txt ./   # Download file
+rsync -avzP local/ username@scp.chpc.ac.za:/path/  # Sync directory
+```
+
+## What's Next
+
+This gets you up and running with the basics. Topics I'll cover in
+future posts: - Using Singularity containers for reproducible
+environments - Setting up Conda for Python workflows - Parallelizing
+jobs across multiple nodes - Array jobs for running the same analysis on
+many samples - Best practices for managing large-scale genomics projects
+
+The [CHPC wiki](https://wiki.chpc.ac.za/quick:start) is your best
+resource for diving deeper - now you have enough context to make sense
+of it.
+
+## Acknowledgements
+
+Thanks to the CHPC team for maintaining the infrastructure and
+documentation. Any errors or oversimplifications in this guide are mine,
+not theirs.
+
+------------------------------------------------------------------------
+
+**Final tip:** Start small. Test your commands interactively, then write
+a script, then submit a short test job. Build complexity gradually.
+There's a learning curve, but once you're comfortable, the CHPC becomes
+an incredibly powerful research tool.
