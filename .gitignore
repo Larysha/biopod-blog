@@ -4,6 +4,11 @@
 /.quarto/
 /_site/
 /notes/
+/images/
+/docs/
+/.claude/
+
+
 
 # R and Python
 .Rproj.user
