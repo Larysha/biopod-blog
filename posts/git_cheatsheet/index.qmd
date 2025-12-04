@@ -1,0 +1,793 @@
+---
+title: "Version control with Git: from zero to hero"
+author: "Larysha Rothmann"
+date: "2025-05-04"
+categories: [git, version control, workflow, tutorial]
+description: "A practical guide to version control - why you need it, how to use it, and what's actually happening under the hood"
+---
+
+## Why Version Control Matters
+
+Here's a scenario: You're writing a script to process your data. It works. You decide to tweak something. Suddenly it doesn't work. You can't remember exactly what you changed. You have no way back to the working version except frantically pressing Ctrl+Z or digging through `script_v2_final_ACTUAL_final.py`.
+
+Or: You're collaborating with someone on an analysis pipeline. They send you `analysis.R`. You make changes and send back `analysis_edited.R`. They make more changes and send `analysis_edited_v2.R`. A week later, neither of you knows which version has the correct parameters.
+
+Version control solves this. Specifically, **Git** solves this.
+
+**What Git gives you:**
+- **Snapshots of your work** at any point in time - you can revert back if something breaks
+- **Comments on changes** - "fixed off-by-one error in loop" or "changed parameter to match paper methods"
+- **Collaboration without chaos** - multiple people can work on the same codebase without overwriting each other
+- **Experimentation without risk** - test new approaches on branches without touching your working code
+- **A complete history** - see exactly what changed, when, and why
+
+I use Git for this blog. I use it for my PhD analysis scripts. Once you get comfortable with it, you'll wonder how you ever worked without it.
+
+## Git vs. GitHub: They're Not the Same Thing
+
+**Git** is version control software that runs on your local machine. It tracks changes to files in a repository (a project folder).
+
+**GitHub** is a website that hosts Git repositories online, making it easy to:
+- Back up your code in the cloud
+- Share code with collaborators
+- Contribute to open-source projects
+- Showcase your work
+
+You can use Git without ever touching GitHub. GitHub is just one place to store remote repositories - GitLab, Bitbucket, and self-hosted servers are alternatives.
+
+**This guide focuses on Git itself.** We'll cover GitHub integration, but the core concepts work regardless of where you host your remote repositories.
+
+## Installing Git
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt-get install git
+```
+
+**Mac:**
+```bash
+brew install git
+```
+
+**Windows:**
+Download from [git-scm.com](https://git-scm.com/) or [gitforwindows.org](https://gitforwindows.org/) if you want a GUI and Unix interface.
+But I would not recommend this - if you're setting up coding projects on Windows, refer to my [previous post on WSL](https://larysha.github.io/biopod-blog/posts/wsl_setup/).
+
+Once installed, verify:
+```bash
+git --version
+```
+
+## First-Time Setup
+
+Before you use Git, configure your identity. This information is attached to every commit you make:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+Use the same email you'll use for GitHub (if you plan to use it).
+
+Set your default text editor (optional but useful):
+```bash
+git config --global core.editor "code"  # VS Code for normal people
+git config --global core.editor "nano"  # Nano if you love terminal
+git config --global core.editor "vim"   # Vim for the hardcore 
+```
+
+Full list of editor options: [Git config documentation](https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config)
+
+Check your configuration:
+```bash
+git config --list
+```
+
+This seems like a lot of setup, but you only need to do this once
+
+## Your First Repository
+
+Let's create a project and start tracking it.
+
+```bash
+mkdir shopping
+cd shopping
+```
+
+Initialize a Git repository:
+```bash
+git init
+```
+
+This creates a hidden `.git` directory where Git stores all its data. You can see it with:
+```bash
+ls -A
+cd .git
+ls -A
+```
+
+Don't edit anything in here directly - Git manages it.
+
+Now create a file:
+```bash
+touch list.txt
+```
+
+Check the status:
+```bash
+git status
+```
+
+Git knows the file exists, but it's not tracking it yet. The file is "untracked."
+
+## The Git Workflow: Add, Commit, Repeat
+
+Git has a three-stage workflow:
+
+1. **Working Directory** - where you make changes
+2. **Staging Area (Index)** - where you prepare changes for saving
+3. **Repository (.git directory)** - where Git permanently stores committed changes
+
+### Stage a File
+
+Tell Git to track the file:
+```bash
+git add list.txt
+```
+
+Check status again:
+```bash
+git status
+```
+
+The file is now "staged" - ready to be committed. Think of staging as putting items in a shopping basket before checkout.
+
+### Commit Changes
+
+Save the staged changes to the repository:
+```bash
+git commit -m "create shopping list"
+```
+
+The `-m` flag adds a commit message describing what changed. Always write meaningful messages - "fixed bug" is useless; "fixed off-by-one error in read mapping loop" is helpful.
+
+Check status:
+```bash
+git status
+```
+
+"Nothing to commit, working tree clean" - Git has saved your snapshot.
+
+### View History
+
+See all commits:
+```bash
+git log
+```
+
+You'll see the commit hash (a unique identifier), author, date, and message.
+
+## Making Changes
+
+Edit the file:
+```bash
+code list.txt  # Opens in VS Code
+# Add some items:
+# apples
+# bananas
+# milk
+```
+
+Check status:
+```bash
+git status
+```
+
+Git knows the file changed, but hasn't saved the changes yet.
+
+See exactly what changed:
+```bash
+git diff
+```
+
+This shows line-by-line differences. Lines starting with `-` were removed; lines with `+` were added.
+
+Stage and commit the changes:
+```bash
+git add list.txt
+git commit -m "add fruit and dairy"
+```
+
+Check the log:
+```bash
+git log
+git log -1  # Show only the most recent commit
+```
+
+## Understanding Git Architecture
+
+Let's clarify what's happening behind the scenes:
+
+**Working Directory:**
+- Your project folder where you edit files
+- Files here are in the "modified" state if changed since the last commit
+
+**Staging Area (Index):**
+- Lives inside `.git/`
+- A holding area for changes you want to commit
+- Use `git add` to move files here
+- Empties after each commit
+
+**.git Directory:**
+- The repository itself
+- Stores all commits, branches, history
+- Use `git commit` to save staged changes here permanently
+
+**Key operations:**
+- **Checkout:** Pull files from `.git` into your working directory (`git checkout`)
+- **Staging:** Prepare files for commit (`git add`)
+- **Commit:** Save staged files to `.git` permanently (`git commit`)
+- **Push:** Upload commits to a remote server like GitHub (`git push`)
+- **Pull:** Download commits from a remote server (`git pull`)
+
+### Why the Staging Area Exists
+
+Why not just commit changes directly? The staging area lets you:
+- Review changes before committing
+- Commit only some modified files (not everything)
+- Build logical, atomic commits (one commit = one logical change)
+
+For example, if you fix a bug and add a new feature in the same session, you can stage and commit them separately, making your history clearer.
+
+## Comparing Versions
+
+Make more changes to the file:
+```bash
+code list.txt
+# Add: ice-cream, yogurt, cheese
+```
+
+Stage the file:
+```bash
+git add list.txt
+```
+
+To see the difference between staged changes and the last commit:
+```bash
+git diff --staged
+```
+
+This shows what you're about to commit.
+
+Commit the changes:
+```bash
+git commit -m "added dairy products"
+```
+
+## The HEAD Pointer
+
+In your log, you'll see `HEAD -> main` (or `HEAD -> master` on older repos). 
+
+**HEAD** is a pointer to your current location in the repository - usually the latest commit on the current branch. Think of it as "you are here" on a map.
+
+As you commit, HEAD moves forward to the new commit. As you switch branches, HEAD moves to that branch's latest commit.
+
+## Going Back in Time
+
+Made a mistake? Want to revert to an earlier version?
+
+Check your history:
+```bash
+git log
+```
+
+Each commit has a hash - a unique identifier like `a3f2b1c...`. You can also use relative references:
+- `HEAD~1` = one commit before HEAD
+- `HEAD~2` = two commits before HEAD
+- `HEAD~3` = three commits before HEAD
+
+### Checkout an Old Version
+
+Revert `list.txt` to three commits ago:
+```bash
+git checkout HEAD~3 list.txt
+```
+
+Your file now contains the content from that commit. Check the file to verify.
+
+Return to the latest version:
+```bash
+git checkout HEAD list.txt
+```
+
+## Undoing Mistakes
+
+**Staged a file by accident?**
+```bash
+git reset list.txt
+```
+
+This unstages the file without changing your working copy.
+
+**Committed something you didn't mean to?**
+
+Three options for `git reset`, depending on how much you want to undo:
+
+```bash
+git reset HEAD~1 --soft
+```
+- Removes the commit
+- Keeps changes staged
+- Working copy unchanged
+
+```bash
+git reset HEAD~1 --mixed  # Default
+```
+- Removes the commit
+- Unstages changes
+- Working copy still contains changes
+
+```bash
+git reset HEAD~1 --hard
+```
+- Removes the commit
+- Unstages changes
+- **Deletes changes from working copy** (destructive!)
+
+Use `--soft` or `--mixed` to undo commits while keeping your work. Only use `--hard` if you truly want to delete changes.
+
+## Branches: Parallel Development
+
+Branches let you work on different versions of your project simultaneously without affecting the main codebase. This is critical for:
+- Testing experimental features
+- Working on a bug fix while keeping production code stable
+- Allowing multiple people to develop different features in parallel
+
+### Creating and Switching Branches
+
+Create a new branch:
+```bash
+git branch dairy
+```
+
+See all branches:
+```bash
+git branch
+```
+
+The `*` shows your current branch.
+
+Switch to the new branch:
+```bash
+git checkout dairy
+# Or use the newer command:
+git switch dairy
+```
+
+Make changes on this branch:
+```bash
+code list.txt
+# Add: yogurt, cream, butter
+git add list.txt
+git commit -m "expand dairy section"
+```
+
+These changes only exist on the `dairy` branch. Switch back:
+```bash
+git switch main
+```
+
+Open `list.txt` - the dairy additions are gone because you're back on the `main` branch.
+
+### Merging Branches
+
+When you're happy with changes on a branch, merge them back into main:
+
+```bash
+git switch main
+git merge dairy
+```
+
+Git combines the changes from `dairy` into `main`. If there are no conflicts, it creates a merge commit automatically.
+
+Delete the branch if you're done with it:
+```bash
+git branch -d dairy
+```
+
+### When Merges Conflict
+
+If two branches modify the same line, Git can't automatically merge them. You'll see:
+
+```
+CONFLICT (content): Merge conflict in list.txt
+```
+
+Open the file. Git marks conflicts like this:
+
+```
+<<<<<<< HEAD
+apples
+=======
+oranges
+>>>>>>> dairy
+```
+
+Edit the file to resolve the conflict (keep one version, combine them, or write something new), remove the conflict markers, then:
+
+```bash
+git add list.txt
+git commit -m "resolve merge conflict"
+```
+
+## Working with Remote Repositories (GitHub)
+
+So far, everything has been local. To collaborate or back up your work, you need a remote repository.
+
+### Connecting to GitHub
+
+1. Create a repository on GitHub (don't initialize with README or .gitignore)
+2. Copy the HTTPS URL, something like: `https://github.com/username/repo-name.git`
+
+Add the remote:
+```bash
+git remote add origin https://github.com/username/repo-name.git
+```
+
+`origin` is the conventional name for your primary remote repository. Check it worked:
+```bash
+git remote -v
+```
+
+Push your local commits to GitHub:
+```bash
+git push -u origin main
+```
+
+The `-u` flag sets `origin main` as the default upstream, so future pushes can just be `git push`.
+
+If you get an error about the branch name (main vs. master), rename your branch:
+```bash
+git branch -M main
+```
+
+### Cloning an Existing Repository
+
+To download someone else's repository (or your own from another machine):
+
+```bash
+git clone https://github.com/username/repo-name.git
+cd repo-name
+```
+
+This creates a new directory with the full repository history.
+
+### Collaboration Workflow
+
+When working with others:
+
+**1. Pull before you work:**
+```bash
+git pull origin main
+```
+
+This downloads new commits from GitHub.
+
+**2. Make your changes, commit locally:**
+```bash
+git add .
+git commit -m "add analysis script"
+```
+
+**3. Push your commits:**
+```bash
+git push origin main
+```
+
+If someone pushed commits while you were working, you'll get an error. Pull first, resolve any conflicts, then push:
+
+```bash
+git pull origin main
+git push origin main
+```
+
+## Feature Branch Workflow
+
+For larger projects, never commit directly to main. Use feature branches:
+
+**Create a branch for your feature:**
+```bash
+git branch feature/add-qc-plots
+git switch feature/add-qc-plots
+```
+
+**Make changes and commit:**
+```bash
+# Edit files
+git add src/qc_plots.R
+git commit -m "add quality control plotting functions"
+```
+
+**Push the branch to GitHub:**
+```bash
+git push -u origin feature/add-qc-plots
+```
+
+**On GitHub, open a Pull Request:**
+- Navigate to your repository
+- Click "Compare & pull request"
+- Describe your changes
+- Request review from collaborators
+- Once approved, merge into main
+
+**After merging, update your local main branch:**
+```bash
+git switch main
+git pull origin main
+```
+
+**Delete the feature branch (optional):**
+```bash
+git branch -d feature/add-qc-plots
+```
+
+## Advanced Operations
+
+### Reverting Commits
+
+If you want to undo a commit but keep the history (safer than `reset --hard`):
+
+```bash
+git log  # Find the commit hash
+git revert a3f2b1c
+```
+
+This creates a new commit that undoes the changes from the specified commit. The original commit stays in the history.
+
+### Stashing Changes
+
+You're working on something but need to switch branches without committing incomplete work:
+
+```bash
+git stash
+```
+
+Your changes are saved temporarily. Switch branches, do other work, then come back:
+
+```bash
+git switch feature-branch
+git stash pop
+```
+
+This restores your saved changes.
+
+### Resetting to a Specific Commit
+
+**Warning: This rewrites history. Only do this on commits that haven't been pushed.**
+
+Find the commit you want to reset to:
+```bash
+git log
+```
+
+Copy the hash, then:
+```bash
+git reset --hard a3f2b1c
+```
+
+Everything after that commit is deleted. If you've already pushed these commits to GitHub and want to force the remote to match:
+
+```bash
+git push --force origin main
+```
+
+**Use this cautiously.** Force pushing can cause problems for collaborators.
+
+### Combining Reset and Stash
+
+Want to reset your git history but keep your current working changes?
+
+```bash
+git stash                    # Save current changes
+git reset --hard a3f2b1c     # Reset to old commit
+git stash pop                # Restore your changes
+```
+
+## What Are Hash Values (SHA-1)?
+
+You've seen those long alphanumeric strings in `git log` output - things like `a3f2b1c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0`. These are **hash values**.
+
+**What is a hash?**
+A hash function takes input data (a file, a message, a commit) and produces a fixed-length output - the hash value. It's like a fingerprint for data.
+
+**Properties of hash functions:**
+1. **Deterministic:** Same input always produces the same hash
+2. **Fast to compute:** Generating a hash is quick
+3. **Irreversible:** You can't reconstruct the original data from the hash
+4. **Unique (practically):** Different inputs produce different hashes (collisions are astronomically rare)
+5. **Sensitive:** Changing even one character changes the entire hash
+
+**SHA-1 (Secure Hash Algorithm 1):**
+- Produces a 160-bit (20-byte) hash value
+- Displayed as a 40-character hexadecimal string
+- Example: `a94a8fe5ccb19ba61c4c0873d391e987982fbbd3`
+
+### Why Git Uses Hashes
+
+Every commit, file, and tree in Git is identified by its SHA-1 hash. This means:
+
+**1. Integrity checking:** Git can detect if any data has been corrupted. If a file changes even slightly, its hash changes, and Git knows.
+
+**2. Unique identifiers:** Each commit has a globally unique ID. No two commits will ever have the same hash (with overwhelming probability).
+
+**3. Content-addressable storage:** Git stores objects based on their content hash. If you commit the same file twice, Git stores it once because it has the same hash.
+
+**4. Distributed development:** When you clone a repository, you can verify you got exactly the same data by checking hashes.
+
+### Practical Use of Hashes
+
+**Short hashes:**
+You don't need the full 40 characters. Git accepts the first 7-10 characters:
+
+```bash
+git show a94a8fe     # Shows the commit
+git reset --hard a94a8fe
+git checkout a94a8fe script.py
+```
+
+**Finding specific commits:**
+```bash
+git log --oneline   # Shows short hashes
+git show a94a8fe    # Show details of a commit
+```
+
+**Checking integrity:**
+```bash
+git fsck            # File system check - verifies hash integrity
+```
+
+### Hash Collisions and Security
+
+In theory, two different files could produce the same hash (a collision). In practice, with SHA-1's 2^160 possible values, the probability is negligible for normal use.
+
+**Note:** SHA-1 has known cryptographic weaknesses. Git is transitioning to SHA-256 for better security, but SHA-1 is still the default and sufficient for version control purposes.
+
+## Essential Commands Reference
+
+### Setup
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --list
+```
+
+### Creating Repositories
+```bash
+git init                    # Initialize new repository
+git clone url              # Clone existing repository
+```
+
+### Basic Workflow
+```bash
+git status                 # Check what's changed
+git add file.txt           # Stage specific file
+git add .                  # Stage all changes
+git commit -m "message"    # Commit staged changes
+git log                    # View commit history
+git log --oneline          # Condensed log
+```
+
+### Viewing Changes
+```bash
+git diff                   # Changes in working directory
+git diff --staged          # Changes in staging area
+git show a3f2b1c          # Show specific commit
+```
+
+### Undoing Changes
+```bash
+git checkout HEAD file.txt    # Restore file to last commit
+git reset file.txt            # Unstage file
+git reset HEAD~1 --soft       # Undo last commit, keep changes staged
+git reset HEAD~1 --mixed      # Undo last commit, unstage changes
+git reset HEAD~1 --hard       # Undo last commit, delete changes
+git revert a3f2b1c           # Create new commit undoing old commit
+```
+
+### Branches
+```bash
+git branch                 # List branches
+git branch feature         # Create branch
+git switch feature         # Switch to branch
+git checkout feature       # Switch to branch (older syntax)
+git merge feature          # Merge branch into current branch
+git branch -d feature      # Delete branch
+```
+
+### Remote Repositories
+```bash
+git remote add origin url     # Add remote
+git remote -v                 # View remotes
+git push -u origin main       # Push and set upstream
+git push                      # Push to upstream
+git pull origin main          # Pull from remote
+git fetch                     # Download remote changes without merging
+```
+
+### Advanced
+```bash
+git stash                  # Save changes temporarily
+git stash pop              # Restore stashed changes
+git stash list             # List stashes
+git reset --hard a3f2b1c  # Reset to specific commit (destructive)
+git push --force           # Force push (use cautiously)
+```
+
+### Help
+```bash
+git --help                 # General help
+git help command           # Help for specific command
+git command --help         # Alternative help syntax
+```
+
+## Tips and Best Practices
+
+**Write good commit messages:**
+- First line: concise summary (<50 characters)
+- If needed, add details after a blank line
+- Be specific: "fix off-by-one error in loop" not "fix bug"
+
+**Commit often:**
+- Small, logical commits are easier to understand and revert
+- One commit = one logical change
+
+**Use branches:**
+- Keep main/master stable
+- Develop features on separate branches
+- Merge only when tested and working
+
+**Pull before you push:**
+- Always `git pull` before starting work
+- Reduces merge conflicts
+
+**Don't commit secrets:**
+- Never commit passwords, API keys, or credentials
+- Use `.gitignore` to exclude sensitive files
+
+**Check status frequently:**
+- `git status` is your friend
+- Use it before and after staging/committing
+
+## What to Learn Next
+
+This guide covers the fundamentals and some intermediate concepts. To go deeper:
+
+**Git internals:** Understand objects, trees, and how Git stores data
+
+**Advanced branching:** Rebase, cherry-pick, interactive rebase
+
+**Git hooks:** Automate tasks on commit, push, etc.
+
+**Collaboration workflows:** Git Flow, GitHub Flow, trunk-based development
+
+**Submodules:** Managing repositories within repositories
+
+**Git LFS:** Handling large files efficiently
+
+## Resources
+
+**Official documentation:**
+- [Git documentation](https://git-scm.com/doc)
+- [GitHub Guides](https://guides.github.com/)
+
+**Interactive tutorials:**
+- [Learn Git Branching](https://learngitbranching.js.org/) - visual, interactive
+- [GitHub Learning Lab](https://lab.github.com/)
+
+**Books:**
+- [Pro Git](https://git-scm.com/book/en/v2) - comprehensive, free online
+
+---
+
+
+Now go forth and commit...
