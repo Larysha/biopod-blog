@@ -473,12 +473,12 @@ Static site in _site/ or docs/</code></pre>
 </section>
 <section id="using-the-biopod-theme" class="level2">
 <h2 class="anchored" data-anchor-id="using-the-biopod-theme">Using the BioPod Theme</h2>
-<p>If you want to use the exact theme from this site, you’re welcome to. The theme is <a href="https://github.com/yourusername/your-repo">available on GitHub</a> (replace with actual repo link) for anyone to use and adapt.</p>
+<p>If you want to use the exact theme from this site, you’re welcome to. The theme is <a href="https://github.com/Larysha/biopod-blog">available on GitHub</a> for anyone to use and adapt.</p>
 <p><strong>A small request though:</strong> if you do use BioPod as your starting point, please credit the original by linking back to this site or the GitHub repo. And more importantly, make it your own. Tweak the colours, swap the fonts, adjust the spacing —academic sites should reflect the person behind them, not just a template. And I’d genuinely love to see what you do differently with it.</p>
 <p>Now, here’s how to get started:</p>
 <section id="step-1-get-the-theme-files" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-get-the-theme-files">Step 1: Get the Theme Files</h3>
-<p>Download or copy: - <a href="https://github.com/yourusername/your-repo/blob/main/biopod-theme.scss"><code>biopod-theme.scss</code></a> (the theme file) - <code>fonts/apricots.woff2</code> (optional custom font)</p>
+<p>Download or copy: - <a href="https://github.com/Larysha/biopod-blog/blob/main/biopod-theme.scss"><code>biopod-theme.scss</code></a> (the theme file) - <code>fonts/apricots.woff2</code> (optional custom font)</p>
 <p>Place them in your project root.</p>
 </section>
 <section id="step-2-update-_quarto.yml" class="level3">
@@ -561,7 +561,7 @@ Static site in _site/ or docs/</code></pre>
 <h2 class="anchored" data-anchor-id="deploying-to-github-pages">Deploying to GitHub Pages</h2>
 <section id="step-1-create-a-github-repository" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-create-a-github-repository">Step 1: Create a GitHub Repository</h3>
-<p>First create a place for your blog to “live” on your GitHub, the open your terminal where you project “lives” locally and type the following commands:</p>
+<p>First create a place for your blog to “live” on your GitHub, then open your terminal where you project “lives” locally and type the following commands:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial commit"</span></span>
@@ -578,6 +578,7 @@ Static site in _site/ or docs/</code></pre>
 <li>Save</li>
 </ol>
 <p>Your site will be live at <code>https://yourusername.github.io/your-blog/</code> within a few minutes.</p>
+<p>NB: make sure you have completed <code>quarto render</code> -&gt; <code>git add .</code> -&gt; <code>git commit -m "first commit"</code> -&gt; <code>git push</code> and that as a result you have a deplyable site on you GitHub in the <code>/docs</code> folder becuase otherwise deploy will fail Also remember this sequence of commands becuase this is what you will do everytime you add a new post and want to update your site It’s pretty simple - just remember you have to build locally with <code>render</code> before GitHub pages can deploy</p>
 </section>
 <section id="step-3-automate-with-github-actions-optional" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-automate-with-github-actions-optional">Step 3: Automate with GitHub Actions (Optional)</h3>
@@ -1389,7 +1390,7 @@ Static site in _site/ or docs/</code></pre>
 <span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-297"><a href="#cb23-297" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using the BioPod Theme</span></span>
 <span id="cb23-298"><a href="#cb23-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a>If you want to use the exact theme from this site, you're welcome to. The theme is <span class="co">[</span><span class="ot">available on GitHub</span><span class="co">](https://github.com/yourusername/your-repo)</span> (replace with actual repo link) for anyone to use and adapt.</span>
+<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a>If you want to use the exact theme from this site, you're welcome to. The theme is <span class="co">[</span><span class="ot">available on GitHub</span><span class="co">](https://github.com/Larysha/biopod-blog)</span> for anyone to use and adapt.</span>
 <span id="cb23-300"><a href="#cb23-300" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a>**A small request though:** if you do use BioPod as your starting point, please credit the original by linking back to this site or the GitHub repo. And more importantly, make it your own. Tweak the colours, swap the fonts, adjust the spacing —academic sites should reflect the person behind them, not just a template. And I'd genuinely love to see what you do differently with it.</span>
 <span id="cb23-302"><a href="#cb23-302" aria-hidden="true" tabindex="-1"></a></span>
@@ -1398,7 +1399,7 @@ Static site in _site/ or docs/</code></pre>
 <span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 1: Get the Theme Files</span></span>
 <span id="cb23-306"><a href="#cb23-306" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a>Download or copy:</span>
-<span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`biopod-theme.scss`</span><span class="co">](https://github.com/yourusername/your-repo/blob/main/biopod-theme.scss)</span> (the theme file)</span>
+<span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`biopod-theme.scss`</span><span class="co">](https://github.com/Larysha/biopod-blog/blob/main/biopod-theme.scss)</span> (the theme file)</span>
 <span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`fonts/apricots.woff2`</span> (optional custom font)</span>
 <span id="cb23-310"><a href="#cb23-310" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-311"><a href="#cb23-311" aria-hidden="true" tabindex="-1"></a>Place them in your project root.</span>
@@ -1503,7 +1504,7 @@ Static site in _site/ or docs/</code></pre>
 <span id="cb23-410"><a href="#cb23-410" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deploying to GitHub Pages</span></span>
 <span id="cb23-411"><a href="#cb23-411" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-412"><a href="#cb23-412" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 1: Create a GitHub Repository</span></span>
-<span id="cb23-413"><a href="#cb23-413" aria-hidden="true" tabindex="-1"></a>First create a place for your blog to "live" on your GitHub, the open your terminal where you project "lives" locally and type the following commands:</span>
+<span id="cb23-413"><a href="#cb23-413" aria-hidden="true" tabindex="-1"></a>First create a place for your blog to "live" on your GitHub, then open your terminal where you project "lives" locally and type the following commands:</span>
 <span id="cb23-414"><a href="#cb23-414" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-415"><a href="#cb23-415" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
 <span id="cb23-416"><a href="#cb23-416" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
@@ -1523,57 +1524,62 @@ Static site in _site/ or docs/</code></pre>
 <span id="cb23-430"><a href="#cb23-430" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-431"><a href="#cb23-431" aria-hidden="true" tabindex="-1"></a>Your site will be live at <span class="in">`https://yourusername.github.io/your-blog/`</span> within a few minutes.</span>
 <span id="cb23-432"><a href="#cb23-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-433"><a href="#cb23-433" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 3: Automate with GitHub Actions (Optional)</span></span>
-<span id="cb23-434"><a href="#cb23-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-435"><a href="#cb23-435" aria-hidden="true" tabindex="-1"></a>Create <span class="in">`.github/workflows/publish.yml`</span>:</span>
-<span id="cb23-436"><a href="#cb23-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-437"><a href="#cb23-437" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb23-438"><a href="#cb23-438" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Publish Quarto Site</span></span>
+<span id="cb23-433"><a href="#cb23-433" aria-hidden="true" tabindex="-1"></a>NB: make sure you have completed <span class="in">`quarto render`</span> -&gt; <span class="in">`git add .`</span> -&gt; <span class="in">`git commit -m "first commit"`</span> -&gt; <span class="in">`git push`</span> </span>
+<span id="cb23-434"><a href="#cb23-434" aria-hidden="true" tabindex="-1"></a>and that as a result you have a deplyable site on you GitHub in the <span class="in">`/docs`</span>  folder becuase otherwise deploy will fail</span>
+<span id="cb23-435"><a href="#cb23-435" aria-hidden="true" tabindex="-1"></a>Also remember this sequence of commands becuase this is what you will do everytime you add a new post and want to update your site </span>
+<span id="cb23-436"><a href="#cb23-436" aria-hidden="true" tabindex="-1"></a>It's pretty simple - just remember you have to build locally with  <span class="in">`render`</span> before GitHub pages can deploy</span>
+<span id="cb23-437"><a href="#cb23-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-438"><a href="#cb23-438" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 3: Automate with GitHub Actions (Optional)</span></span>
 <span id="cb23-439"><a href="#cb23-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-440"><a href="#cb23-440" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb23-441"><a href="#cb23-441" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> main</span></span>
-<span id="cb23-443"><a href="#cb23-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb23-445"><a href="#cb23-445" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build-deploy</span><span class="kw">:</span></span>
-<span id="cb23-446"><a href="#cb23-446" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb23-447"><a href="#cb23-447" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
-<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Quarto</span></span>
-<span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> quarto-dev/quarto-actions/setup@v2</span></span>
-<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render site</span></span>
-<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> quarto render</span></span>
-<span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
-<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v3</span></span>
-<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">publish_dir</span><span class="kw">:</span><span class="at"> ./docs</span></span>
-<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a>Now every push to <span class="in">`main`</span> automatically rebuilds and deploys your site.</span>
-<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You Get</span></span>
-<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a>After following this setup, you'll have:</span>
-<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A fast, clean static site hosted for free on GitHub Pages</span>
-<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full control over design and functionality via SCSS</span>
-<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Version-controlled content as plain text files</span>
-<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Native support for code execution, citations, and cross-references</span>
-<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A publishing workflow that integrates with your research tools</span>
-<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a>It's not the easiest option—WordPress is still easier if you've never touched code. But if you're already working in R or Python, and you want a professional site that you actually understand and control, Quarto hits a sweet spot.</span>
-<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-477"><a href="#cb23-477" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
-<span id="cb23-478"><a href="#cb23-478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto documentation</span><span class="co">](https://quarto.org/docs/guide/)</span></span>
-<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto websites guide</span><span class="co">](https://quarto.org/docs/websites/)</span></span>
-<span id="cb23-481"><a href="#cb23-481" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">SCSS documentation</span><span class="co">](https://sass-lang.com/documentation/)</span></span>
-<span id="cb23-482"><a href="#cb23-482" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Bootstrap variables reference</span><span class="co">](https://getbootstrap.com/docs/5.3/customize/sass/)</span></span>
-<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb23-440"><a href="#cb23-440" aria-hidden="true" tabindex="-1"></a>Create <span class="in">`.github/workflows/publish.yml`</span>:</span>
+<span id="cb23-441"><a href="#cb23-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb23-443"><a href="#cb23-443" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Publish Quarto Site</span></span>
+<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-445"><a href="#cb23-445" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb23-446"><a href="#cb23-446" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb23-447"><a href="#cb23-447" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> main</span></span>
+<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build-deploy</span><span class="kw">:</span></span>
+<span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
+<span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Quarto</span></span>
+<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> quarto-dev/quarto-actions/setup@v2</span></span>
+<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
+<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render site</span></span>
+<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> quarto render</span></span>
+<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
+<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
+<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v3</span></span>
+<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">publish_dir</span><span class="kw">:</span><span class="at"> ./docs</span></span>
+<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a>Now every push to <span class="in">`main`</span> automatically rebuilds and deploys your site.</span>
+<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You Get</span></span>
+<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a>After following this setup, you'll have:</span>
+<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A fast, clean static site hosted for free on GitHub Pages</span>
+<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full control over design and functionality via SCSS</span>
+<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Version-controlled content as plain text files</span>
+<span id="cb23-477"><a href="#cb23-477" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Native support for code execution, citations, and cross-references</span>
+<span id="cb23-478"><a href="#cb23-478" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A publishing workflow that integrates with your research tools</span>
+<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a>It's not the easiest option—WordPress is still easier if you've never touched code. But if you're already working in R or Python, and you want a professional site that you actually understand and control, Quarto hits a sweet spot.</span>
+<span id="cb23-481"><a href="#cb23-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-482"><a href="#cb23-482" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
+<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-484"><a href="#cb23-484" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto documentation</span><span class="co">](https://quarto.org/docs/guide/)</span></span>
+<span id="cb23-485"><a href="#cb23-485" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto websites guide</span><span class="co">](https://quarto.org/docs/websites/)</span></span>
+<span id="cb23-486"><a href="#cb23-486" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">SCSS documentation</span><span class="co">](https://sass-lang.com/documentation/)</span></span>
+<span id="cb23-487"><a href="#cb23-487" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Bootstrap variables reference</span><span class="co">](https://getbootstrap.com/docs/5.3/customize/sass/)</span></span>
+<span id="cb23-488"><a href="#cb23-488" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

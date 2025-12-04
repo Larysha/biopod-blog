@@ -296,7 +296,7 @@ Your site is now in the `docs/` directory, ready to deploy.
 
 ## Using the BioPod Theme
 
-If you want to use the exact theme from this site, you're welcome to. The theme is [available on GitHub](https://github.com/yourusername/your-repo) (replace with actual repo link) for anyone to use and adapt.
+If you want to use the exact theme from this site, you're welcome to. The theme is [available on GitHub](https://github.com/Larysha/biopod-blog) for anyone to use and adapt.
 
 **A small request though:** if you do use BioPod as your starting point, please credit the original by linking back to this site or the GitHub repo. And more importantly, make it your own. Tweak the colours, swap the fonts, adjust the spacing —academic sites should reflect the person behind them, not just a template. And I'd genuinely love to see what you do differently with it.
 
@@ -305,7 +305,7 @@ Now, here's how to get started:
 ### Step 1: Get the Theme Files
 
 Download or copy:
-- [`biopod-theme.scss`](https://github.com/yourusername/your-repo/blob/main/biopod-theme.scss) (the theme file)
+- [`biopod-theme.scss`](https://github.com/Larysha/biopod-blog/blob/main/biopod-theme.scss) (the theme file)
 - `fonts/apricots.woff2` (optional custom font)
 
 Place them in your project root.
@@ -410,7 +410,7 @@ You can extend this pattern to style any page uniquely based on its content or m
 ## Deploying to GitHub Pages
 
 ### Step 1: Create a GitHub Repository
-First create a place for your blog to "live" on your GitHub, the open your terminal where you project "lives" locally and type the following commands:
+First create a place for your blog to "live" on your GitHub, then open your terminal where you project "lives" locally and type the following commands:
 
 ```bash
 git init
@@ -429,6 +429,11 @@ git push -u origin main
 5. Save
 
 Your site will be live at `https://yourusername.github.io/your-blog/` within a few minutes.
+
+NB: make sure you have completed `quarto render` -> `git add .` -> `git commit -m "first commit"` -> `git push` 
+and that as a result you have a deplyable site on you GitHub in the `/docs`  folder becuase otherwise deploy will fail
+Also remember this sequence of commands becuase this is what you will do everytime you add a new post and want to update your site 
+It's pretty simple - just remember you have to build locally with  `render` before GitHub pages can deploy
 
 ### Step 3: Automate with GitHub Actions (Optional)
 
