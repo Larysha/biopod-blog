@@ -531,67 +531,6 @@ git pull origin main
 git branch -d feature/add-qc-plots
 ```
 
-## Advanced Operations
-
-### Reverting Commits
-
-If you want to undo a commit but keep the history (safer than `reset --hard`):
-
-```bash
-git log  # Find the commit hash
-git revert a3f2b1c
-```
-
-This creates a new commit that undoes the changes from the specified commit. The original commit stays in the history.
-
-### Stashing Changes
-
-You're working on something but need to switch branches without committing incomplete work:
-
-```bash
-git stash
-```
-
-Your changes are saved temporarily. Switch branches, do other work, then come back:
-
-```bash
-git switch feature-branch
-git stash pop
-```
-
-This restores your saved changes.
-
-### Resetting to a Specific Commit
-
-**Warning: This rewrites history. Only do this on commits that haven't been pushed.**
-
-Find the commit you want to reset to:
-```bash
-git log
-```
-
-Copy the hash, then:
-```bash
-git reset --hard a3f2b1c
-```
-
-Everything after that commit is deleted. If you've already pushed these commits to GitHub and want to force the remote to match:
-
-```bash
-git push --force origin main
-```
-
-**Use this cautiously.** Force pushing can cause problems for collaborators.
-
-### Combining Reset and Stash
-
-Want to reset your git history but keep your current working changes?
-
-```bash
-git stash                    # Save current changes
-git reset --hard a3f2b1c     # Reset to old commit
-git stash pop                # Restore your changes
-```
 
 ## What Are Hash Values (SHA-1)?
 
@@ -714,15 +653,6 @@ git pull origin main          # Pull from remote
 git fetch                     # Download remote changes without merging
 ```
 
-### Advanced
-```bash
-git stash                  # Save changes temporarily
-git stash pop              # Restore stashed changes
-git stash list             # List stashes
-git reset --hard a3f2b1c  # Reset to specific commit (destructive)
-git push --force           # Force push (use cautiously)
-```
-
 ### Help
 ```bash
 git --help                 # General help
@@ -731,11 +661,6 @@ git command --help         # Alternative help syntax
 ```
 
 ## Tips and Best Practices
-
-**Write good commit messages:**
-- First line: concise summary (<50 characters)
-- If needed, add details after a blank line
-- Be specific: "fix off-by-one error in loop" not "fix bug"
 
 **Commit often:**
 - Small, logical commits are easier to understand and revert
@@ -764,7 +689,7 @@ This guide covers the fundamentals and some intermediate concepts. To go deeper:
 
 **Git internals:** Understand objects, trees, and how Git stores data
 
-**Advanced branching:** Rebase, cherry-pick, interactive rebase
+**Advanced branching:** Stashing, rebase, cherry-pick, interactive rebase
 
 **Git hooks:** Automate tasks on commit, push, etc.
 
