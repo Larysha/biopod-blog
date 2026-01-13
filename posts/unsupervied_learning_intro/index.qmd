@@ -13,7 +13,7 @@ In this [post's plot](https://larysha.github.io/biopod-blog/posts/intro_to_dl/im
 
 Unlike supervised learning - where you provide labelled input-output pairs for training - unsupervised learning identifies patterns in data without predefined categories. You're not telling the algorithm what to look for; you're asking it to find structure on its own. This makes it particularly useful during exploratory data analysis, when you don't yet know what groups or patterns exist in your data.
 
-The two primary approaches are **clustering**, which groups similar data points together, and **dimensionality reduction**, which simplifies high-dimensional data while preserving meaningful patterns. This post focuses on clustering. We'll tackle dimensionality reduction (PCA, t-SNE) in a separate post.
+The two primary approaches are **clustering**, which groups similar data points together, and **dimensionality reduction**, which simplifies high-dimensional data while preserving meaningful patterns. This post focuses on clustering. Dimensionality reduction with PCA has been covered in a separate post, [here](https://larysha.github.io/biopod-blog/posts/unsupervised_learning_pca/).
 
 ## Clustering: Grouping the Similar
 
@@ -92,7 +92,7 @@ Phylogenetic clustering often uses sequence-specific distance measures like alig
 
 Clustering is just one branch of unsupervised learning. The other major approach - dimensionality reduction - tackles a different problem: how do you visualize or analyze data with hundreds or thousands of features?
 
-Techniques like Principal Component Analysis (PCA) and t-SNE help simplify high-dimensional datasets by transforming them into lower dimensions while preserving the most meaningful patterns. These methods are particularly useful for exploratory analysis of genomic data, where you might have expression measurements for 20,000 genes but need to understand the overall structure.
+Techniques like Principal Component Analysis (PCA) and t-SNE help simplify high-dimensional datasets by transforming them into lower dimensions while preserving the most meaningful patterns. These methods are particularly useful for exploratory analysis of genomic data, where you might have expression measurements for 20,000 genes but need to understand the overall structure. I've put together a full [PCA theory and practical tutorial](https://larysha.github.io/biopod-blog/posts/unsupervised_learning_pca/) in a seperate blog post. 
 
 
 ## Further Reading
