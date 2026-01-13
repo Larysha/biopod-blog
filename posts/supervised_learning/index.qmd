@@ -271,9 +271,6 @@ Besides error analysis, several metrics are commonly used to evaluate classifica
 
 **Cross-validation:** To further improve a model, the validation dataset is useful. Firstly, testing the data on different splits, instead of a single training/test split, gives a more robust measure of performance. After initial training, the validation set can be used to iteratively check the model performance, and to rotate the training and validation sets as many times as required to tune the hyperparameters in a process called cross-validation.
 
-## What's next
-
-This covered the theory - the mathematics behind how supervised learning actually works. Future posts will dig into practical implementation (how to actually code these models), specific algorithms (support vector machines, decision trees, random forests), and biological applications.
 
 For now, the key takeaway: supervised learning is about finding a function that maps inputs to outputs by minimising a cost function. Gradient descent is the workhorse algorithm that does the optimisation. The challenge is balancing complexity (capture the pattern) with simplicity (don't overfit the noise).
 
