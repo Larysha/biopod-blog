@@ -1,10 +1,9 @@
 ---
 title: "Supervised learning: teaching algorithms to learn from example"
 author: "Larysha Rothmann"
-date: "2025-01-28"
+date: "2025-08-22"
 categories: [machine learning, supervised learning, bioinformatics]
 description: "Unpacking the mathematics behind supervised learning - from linear regression to gradient descent to avoiding the common pitfalls"
-image: images/supervised-learning-thumbnail.png
 ---
 
 ## Where we've been, where we're going
