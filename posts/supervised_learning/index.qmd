@@ -286,4 +286,4 @@ And those same principles underpin everything from linear regression to deep neu
 - [3Blue1Brown's gradient descent visualisation](https://www.youtube.com/watch?v=IHZwWFHWa-w) - exceptional visual explanations
 - [An Introduction to Statistical Learning](https://www.statlearning.com/) - comprehensive, accessible textbook
 - [Deep Learning with Python (3rd edition)](https://www.manning.com/books/deep-learning-with-python-third-edition) by François Chollet - excellent practical guide
-- [Andrew Ng's Deep Learning Specialisation](https://www.coursera.org/specializations/deep-learning) on Coursera - this course was a major inspiration for this post and provided the foundational understanding for many of these concepts
+- [Andrew Ng's Deep Learning Specialisation](https://www.coursera.org/specializations/deep-learning) on Coursera - this course was a major inspiration for this post and provided the foundational understanding for many of these concepts. I think this is still a "gold standard" course if you want to dig deerer into these concepts.
