@@ -1,0 +1,199 @@
+---
+title: "From Dartmouth to deep learning: how machine learning came to biology"
+author: "Larysha Rothmann"
+date: "2026-01-13"
+categories: [machine learning, history, genomics, bioinformatics]
+description: "Tracing the path from early AI dreams to modern genomic applications - why biology needed machine learning, and what it took to get here"
+image: images/ml-history-thumbnail.png
+---
+
+## The early days
+
+In 1955, a group of researchers submitted a proposal for a summer research project at Dartmouth College with a bold premise: "every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it" [1].
+
+This was the birth of artificial intelligence as a formal field of study. The name itself - "artificial intelligence" - wouldn't be coined until the following year at that same Dartmouth workshop. Early pioneers like Marvin Minsky and John McCarthy believed the problem was solvable. Give them a summer, some funding, and a handful of bright minds, and they'd crack it. They didn't.
+
+Turns out, simulating intelligence is hard. Largely because NVIDIA chips and unlimited data didn't exist back then. But also because we still don't fully understand our own cognition. Although neuroscience is making progress on that front and companies like Neuralink are pioneering brain-computer interfaces to decode neural signals [2] - but we're not yet able to replicate human-specific intelligence in machine.
+
+What we call "AI" today is task specific. Speech recognition. Image classification. Data summarisation. Large language models that generate plausible text. These systems excel at specific tasks. The hypothetical goal of full human-like intelligence - artificial general intelligence (AGI) - remains a goal. However, the progress of the field has been remarkable, and it's no longer obvious that AGI no longer seems that far fetched.
+
+Still, specific AI has proven transformative. The first breakthroughs included programs that beat grandmasters at Go [3]. Speech synthesis sounds increasingly natural [4]. Image and video generation blur the line between real and synthetic. AI improves disease diagnosis, fraud detection, market projections, and even your next Netflix recommendation [5].
+
+And then there's ChatGPT. Released in late 2022, it reached 1 million users in 5 days [6]. That statistic gets quoted a lot because it illustrates how quickly large language models integrated into daily life. Their impact now spans nearly every industry, sparking debates about reliability, accuracy, and privacy [7].
+
+But this post isn't about ChatGPT or AGI or the hype. It's about how machine learning - a subset of AI focused on pattern recognition from data - became essential to biology. And why it took so long to get here.
+
+## The evolution: from symbolic AI to genomic applications
+```{mermaid}
+%%| fig-width: 10
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'fontSize': '18px',
+    'cScale0': '#671436',
+    'cScale1': '#052b67',
+    'cScale2': '#1d778b',
+    'cScale3': '#ad597e',
+    'cScale4': '#66967b',
+    'cScale5': '#657b9e',
+    'cScale6': '#8d77ab',
+    'cScale7': '#671436',
+    'cScale8': '#052b67',
+    'cScale9': '#5f4d61',
+    'cScaleLabel0': '#ffffff',
+    'cScaleLabel1': '#ffffff',
+    'cScaleLabel2': '#ffffff',
+    'cScaleLabel3': '#ffffff',
+    'cScaleLabel4': '#ffffff',
+    'cScaleLabel5': '#ffffff',
+    'cScaleLabel6': '#ffffff',
+    'cScaleLabel7': '#ffffff',
+    'cScaleLabel8': '#ffffff',
+    'cScaleLabel9': '#ffffff'
+  }
+}}%%
+timeline
+    title Machine learning meets biology
+    1955 : Dartmouth AI proposal
+         : Symbolic reasoning era begins
+    1960s : Early pattern recognition algorithms
+          : Limited computing power
+    1986 : Backpropagation algorithm
+         : First neural network revival
+    1990s : Support vector machines
+          : BLAST and early bioinformatics tools
+    2000s : Computing power explosion
+          : NGS revolution begins
+          : Microarray analysis with ML
+    2012 : ImageNet moment
+         : Deep learning proves itself
+    2014 : $1000 genome achieved
+         : Sequencing becomes routine
+    2015-2018 : DeepBind, DeepSEA
+              : Deep learning for regulatory elements
+    2018 : AlphaFold released
+         : Protein structure prediction solved
+    2020s : DNA language models
+          : Nucleotide Transformer, DNABERT
+          : ChatGPT reaches 1M users in 5 days
+```
+
+## From symbolic AI to statistical learning
+
+The early decades of AI research focused on symbolic reasoning. Researchers built systems with explicit rules: "if X, then Y." Expert systems encoded human knowledge into decision trees. These worked for narrow, well-defined problems but struggled with complexity and ambiguity.
+
+The 1960s saw development of early "learning" algorithms for pattern recognition, but progress stalled. Computing power was limited. Data was scarce. The field went through several "AI winters" - periods where funding dried up and enthusiasm waned.
+
+The shift came in the early 2000s. Two things changed: computing power exploded (largely thanks to GPUs originally designed for gaming graphics), and so did data generation.
+
+Suddenly, researchers had access to massive datasets and the hardware to process them. Instead of hand-coding rules, they could train algorithms to find patterns in data. This approach - **machine learning** - proved far more flexible than symbolic AI.
+
+## What is machine learning, really?
+
+Machine learning describes a broad class of methods for modelling complex systems. A **model** is simply a mathematical expression (or set of expressions) that captures relationships in data.
+
+François Chollet, developer of the Keras framework, puts it well: "A machine learning system is trained rather than explicitly programmed. It's presented with many relevant examples, and it finds statistical structure in these examples that eventually allows the system to come up with rules" [8].
+
+You don't need to know the rules upfront. You give the algorithm the data - input features that are likely important, and the outcomes you care about - and it figures out the rules in the form of a mathematical model.
+
+The value: given previously unseen features, the trained model can predict a reasonably accurate outcome.
+
+Unlike classical statistics, which often works with smaller, well-structured datasets, machine learning excels at handling large, high-dimensional data where relationships are nonlinear. Some approaches, like Bayesian methods, work well with smaller datasets, but biological problems typically involve vast amounts of data where linear assumptions break down.
+
+Models are approximations by nature - designed to capture key features while simplifying the underlying system. But approximations can be remarkably powerful, particularly with **deep learning**.
+
+Deep learning stacks multiple models in layers, each capturing an aspect of the system, producing more nuanced predictions than traditional methods. The "deep" refers to these multiple layers, which allow extraction of intricate patterns invisible to simpler models.
+
+In effect, it allows for a more complete picture of a complex system than any single model would provide.
+
+## Why biology needed this
+
+Biology generates messy, high-dimensional data. Gene expression depends on dozens of regulatory elements, chromatin state, environmental conditions, and developmental timing. SNPs don't act in isolation - they interact in context-dependent ways. Protein folding is governed by physics we understand in principle but can't compute efficiently (until AlphaFold came along).
+
+Traditional statistical methods handle small datasets with well-defined relationships. But when you have:
+- 20,000 genes measured across thousands of samples
+- Millions of SNPs across hundreds of individuals
+- Protein sequences where structure depends on amino acid interactions hundreds of positions apart
+
+...you need algorithms that can find patterns without requiring you to manually specify every possible interaction.
+
+This is where machine learning shines. Feed it enough examples, and it learns the relevant features. No need to hand-code every regulatory motif or protein folding rule.
+
+But there's a catch: machine learning is data-hungry. You need large, high-quality datasets to train robust models. And until recently, biology didn't have that kind of data at scale.
+
+## The sequencing revolution
+
+In the late 1970s, Sanger sequencing made it possible to read DNA for the first time. It was slow, expensive, and labour-intensive. The Human Genome Project, launched in 1990, took 13 years and $3 billion to sequence a single human genome.
+
+Then next-generation sequencing (NGS) arrived. Illumina's short-read sequencing (50-300 bases) became the gold standard due to high accuracy (~0.1% error rate) through bridge amplification and parallel processing. By 2014, you could sequence a human genome for under $1,000. Today, it costs a few hundred dollars.
+
+Third-generation sequencing - Pacific Biosciences' SMRT sequencing and Oxford Nanopore Technologies - pushed further. Ultra-long reads (up to 15,000 bases) can span repetitive regions, detect structural variants, and identify epigenetic modifications. Oxford Nanopore has a higher error rate (1-10%), but accuracy improves with coverage. High-fidelity (HiFi) reads from PacBio reduce error rates to 0.01-0.1% through circular consensus sequencing.
+
+The result: sequencing is now routine. RNA-seq experiments generate expression data for tens of thousands of genes. Whole-genome sequencing produces millions of variants per individual. ChIP-seq, ATAC-seq, Hi-C - each generates gigabytes of data per experiment.
+
+This explosion of data made machine learning not just useful, but essential.
+
+## Where biology and machine learning converge
+
+Machine learning is now indispensable across genomics:
+
+**Variant calling:** Distinguishing true variants from sequencing errors in noisy data requires algorithms trained on known variants.
+
+**Transcriptomics:** Clustering cell types from single-cell RNA-seq, predicting gene expression from regulatory sequence, identifying differentially expressed genes.
+
+**Structural variants:** Detecting large insertions, deletions, inversions, and translocations that short-read aligners miss.
+
+**Functional annotation:** Predicting whether a variant affects protein function, gene regulation, or splicing.
+
+**Protein structure prediction:** AlphaFold, introduced in 2018, tackled the long-standing challenge of predicting protein structure from amino acid sequence. A task that could take researchers years for a single protein. The AlphaFold Protein Structure Database now contains over 200 million predicted structures with accuracy comparable to X-ray crystallography. The model's code is fully open-source and freely accessible [3].
+
+This is the context in which our [previous posts](https://larysha.github.io/biopod-blog/posts/intro_to_dl/) on [unsupervised](https://larysha.github.io/biopod-blog/posts/unsupervied_learning_intro/) and [supervised learning](https://larysha.github.io/biopod-blog/posts/supervised_learning_intro/) sit. These aren't abstract mathematical exercises. They're the tools that let us make sense of the flood of genomic data we're now generating.
+
+## The challenges: ethics, interpretability, and reproducibility
+
+Despite these exciting leaps forward, there are as always, a few caveats. Since I'm working in plants, I'll focus on the agrecultureal context - but many of these issues apply in clinical genomics and other areas of biology as well.
+
+### Bias and representation
+
+Plant breeding companies using genomic prediction models may rely on datasets biased towards commercial hybrids in North America and Europe. These models identify high-yield variants for those regions, but they're unlikely to generalise to landraces in sub-Saharan Africa or South America, where different genetic contexts and environmental factors come into play [9].
+
+Reducing this bias requires integrating diverse crops into training datasets, incorporating more varied genomic and environmental data. Beyond just better models, underrepresented regions need access to the latest AI-driven tools and resources to identify optimal solutions for their local conditions. Ideally, AI-driven agriculture should benefit all farmers, not just large-scale industrial operations [9].
+
+### The interpretability problem
+
+Machine learning models, particularly deep neural networks, can be opaque. They make accurate predictions, but understanding *why* they make those predictions is often difficult. In biology, where mechanistic insight is valuable, this "black box" problem matters.
+
+Progress has been made. Methods like SHAP (SHapley Additive exPlanations) values help identify which features contribute most to a model's predictions, providing some interpretability. Attention mechanisms in neural networks can highlight which parts of a DNA sequence the model focuses on when making predictions. But interpretability remains an active area of research, and many models still function as sophisticated pattern-matching systems without offering clear biological mechanisms.
+
+### Validation and reproducibility
+
+Machine learning models need to be validated carefully. Overfitting - where a model performs brilliantly on training data but fails on new data - is a constant concern in genomics, especially with small sample sizes and high-dimensional feature spaces. A model trained on one dataset may not generalise to another population, a different sequencing platform, or even samples processed in a different lab. Batch effects, technical artifacts, and population structure can all confound results.
+
+This means that rigorous validation requires:
+     - Independent test sets that the model has never seen
+     - Cross-validation to assess stability across different data splits
+     - Testing on external datasets from different studies or populations
+
+The computational biology community makes an effort here - sharing code on GitHub, depositing data in public repositories, publishing detailed methods. But as models grow more complex and datasets larger, maintaining reproducibility becomes more challenging.
+
+This is an exciting era to be working at the intersection of biology and data. But the pace of that excitement can pose risks -  it's hard to slow down when the tools keep improving. I looked into a couple of the regulatory frameworks around AI in agriculture, since my area of research focusses on using deep learning to predict the effects of genomic variants in plants - the idea being that if we could get these models to be accurate enough, their predictions could be experimentally validated, and eventually deployed in the field to improve crop resilience and yield.
+The regulatory landscape is still catching up. The EU AI Act (2024) introduced broad requirements for transparency and human oversight in high-risk AI systems, but it doesn't specifically address genomic models in breeding. The EU's proposals around New Genomic Techniques (NGTs) have raised related concerns - particularly whether frameworks that treat NGT applications as comparable to conventional breeding are adequate when AI is driving the risk assessment [10, 11]. In the African context, including South Africa, initiatives like AI4D Africa have put AI in agriculture on the agenda, but regulatory guidance remains at the level of broad ethical principles - data privacy, algorithmic bias, equitable access [12]. 
+
+What's missing is clear guidance on what "good enough" looks like for the deployment of these models in a breeding context: how robust does validation need to be? At the moment, I'd imagine a breeder would treat a model-predicted variant the same as a GWAS candidate - it's just another hit to validate experimentally. GWAS itself is a statistical association, not proof of causality, and breeders are already comfortable working with probabilistic candidate lists. However, GWAS has well-established statistical standards that the community broadly agrees on - genome-wide significance thresholds, correction methods, replication requirements. Deep learning models don't have equivalent standardised benchmarks and two labs could train models on similar data and report accuracy metrics that aren't directly comparable. Also, the regulatory question becomes more substantive when our models become accurate enough to start informing decisions more directly, potentially cutting costs on validation. That's when the question of "good enough" becomes important to answer - would every variant prediction still require the same level of scrutiny as any new field trial? What happens when a model generalises poorly to a new environment or population? These are conversations I believe we need to be having now, alongside the research. 
+
+---
+
+## References
+
+1. McCarthy J, Minsky, Rochester N. A proposal for the Dartmouth summer research project on artificial intelligence. 1955
+2. Musk E, Neuralink. An integrated brain-machine interface platform with thousands of channels. Journal of Medical Internet Research 2019; 21:e16194
+3. AlphaGo: using machine learning to master the ancient game of Go. Google 2016
+4. WaveNet. Google DeepMind 2024
+5. Sengar SS, Hasan AB, Kumar S, et al. Generative artificial intelligence: a systematic review and applications. Multimed Tools Appl 2024
+6. Porter J. ChatGPT continues to be one of the fastest-growing services ever. The Verge 2023
+7. Cascella M, Semeraro F, Montomoli J, et al. The breakthrough of large language models release for medical applications: 1-year timeline and perspectives. J Med Syst 2024; 48:22
+8. Chollet F. What is deep learning. Deep Learning with R
+9. Williamson HF, Brettschneider J, Caccamo M, et al. Data management challenges for artificial intelligence in plant and agricultural research. F1000Res 2023; 10:324
+10. https://artificialintelligenceact.eu/
+11. Mundorf, J., Becker-Reshef, I., & Barfoot, P. (2025). The European Commission's Regulatory Proposal on New Genomic Techniques in Plants: A Spotlight on Equivalence, Complexity, and Artificial Intelligence. Preprints. https://doi.org/10.20944/preprints202506.1088.v1
+12. Zangana, H. M., et al. (2025). Ethical and Secure AI Applications in Agricultural Research. In Advances in Computational Intelligence and Robotics Book Series. https://doi.org/10.4018/979-8-3373-4252-8.ch002
