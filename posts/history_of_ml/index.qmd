@@ -1,5 +1,5 @@
 ---
-title: "From Dartmouth to deep learning: how machine learning came to biology"
+title: "When biology got too big for statistics - why genomics needed machine learning"
 author: "Larysha Rothmann"
 date: "2026-01-13"
 categories: [machine learning, history, genomics, bioinformatics]
