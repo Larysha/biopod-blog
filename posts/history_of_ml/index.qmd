@@ -25,11 +25,11 @@ But this post isn't about ChatGPT or AGI or the hype. It's about how machine lea
 
 ## The evolution: from symbolic AI to genomic applications
 ```{mermaid}
-%%| fig-width: 10
+%%| fig-width: 12
 %%{init: {
   'theme': 'base',
   'themeVariables': {
-    'fontSize': '18px',
+    'fontSize': '22px',
     'cScale0': '#671436',
     'cScale1': '#052b67',
     'cScale2': '#1d778b',
