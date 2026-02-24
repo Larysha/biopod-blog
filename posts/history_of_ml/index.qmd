@@ -147,7 +147,7 @@ Machine learning is now indispensable across genomics:
 
 **Protein structure prediction:** AlphaFold, introduced in 2018, tackled the long-standing challenge of predicting protein structure from amino acid sequence. A task that could take researchers years for a single protein. The AlphaFold Protein Structure Database now contains over 200 million predicted structures with accuracy comparable to X-ray crystallography. The model's code is fully open-source and freely accessible [3].
 
-This is the context in which our [previous posts](https://larysha.github.io/biopod-blog/posts/intro_to_dl/) on [unsupervised](https://larysha.github.io/biopod-blog/posts/unsupervied_learning_intro/) and [supervised learning](https://larysha.github.io/biopod-blog/posts/supervised_learning_intro/) sit. These aren't abstract mathematical exercises. They're the tools that let us make sense of the flood of genomic data we're now generating.
+This is the context in which our [previous posts](https://larysha.github.io/biopod-blog/posts/intro_to_dl/) on [unsupervised](https://larysha.github.io/biopod-blog/posts/unsupervied_learning_intro/) and [supervised learning](https://larysha.github.io/biopod-blog/posts/supervised_learning/) sit. These aren't abstract mathematical exercises. They're the tools that let us make sense of the flood of genomic data we're now generating.
 
 ## The challenges: ethics, interpretability, and reproducibility
 
