@@ -20,3 +20,17 @@ code-copy: true
 
 # Other options
 link-external-newwindow: true
+
+# Comments via Giscus (GitHub Discussions backend)
+# Replace repo-id and category-id with values from https://giscus.app
+comments:
+  giscus:
+    repo: Larysha/rish-blogs
+    repo-id: "R_kgDOQiapOQ"
+    category: "General"
+    category-id: "DIC_kwDOQiapOc4C8iOp"
+    mapping: "pathname"
+    reactions-enabled: true
+    loading: lazy
+    input-position: "top"
+    theme: "preferred_color_scheme"

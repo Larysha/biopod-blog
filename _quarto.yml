@@ -9,6 +9,9 @@ website:
   favicon: images/favicon.png
   site-url: "https://larysha.github.io/rish-blogs"
   repo-url: "https://github.com/Larysha/rish-blogs"
+
+  # Replace with your GA4 Measurement ID (format: G-XXXXXXXXXX)
+  google-analytics: "G-79590H20ST"
   
   navbar:
     background: "#e0cdc5"
