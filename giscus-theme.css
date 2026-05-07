@@ -1,0 +1,44 @@
+/*
+ * Custom giscus theme matching the BioPod blog peach palette.
+ * Imports giscus's stock light theme, then overrides the canvas, border,
+ * text, and button colors to use $bg-primary (#e0cdc5) and $text-heading (#323619).
+ */
+
+@import url("https://giscus.app/themes/light.css");
+
+main {
+  /* Backgrounds */
+  --color-canvas-default: #e0cdc5;
+  --color-canvas-overlay: #e0cdc5;
+  --color-canvas-subtle: #d5c3b3;
+  --color-canvas-inset: #d5c3b3;
+
+  /* Borders */
+  --color-border-default: rgba(50, 54, 25, 0.25);
+  --color-border-muted: rgba(50, 54, 25, 0.15);
+
+  /* Text */
+  --color-fg-default: #000000;
+  --color-fg-muted: #323619;
+  --color-fg-subtle: rgba(50, 54, 25, 0.7);
+
+  /* Links and focused states */
+  --color-accent-fg: #323619;
+  --color-accent-emphasis: #323619;
+  --color-accent-muted: rgba(50, 54, 25, 0.3);
+  --color-accent-subtle: rgba(50, 54, 25, 0.1);
+
+  /* Default buttons */
+  --color-btn-text: #323619;
+  --color-btn-bg: #d5c3b3;
+  --color-btn-border: rgba(50, 54, 25, 0.3);
+  --color-btn-hover-bg: rgba(50, 54, 25, 0.12);
+  --color-btn-hover-border: rgba(50, 54, 25, 0.4);
+
+  /* Primary "Comment" submit button */
+  --color-btn-primary-text: #e0cdc5;
+  --color-btn-primary-bg: #323619;
+  --color-btn-primary-border: #323619;
+  --color-btn-primary-hover-bg: rgba(50, 54, 25, 0.85);
+  --color-btn-primary-hover-border: rgba(50, 54, 25, 0.85);
+}
