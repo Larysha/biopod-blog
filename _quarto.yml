@@ -7,8 +7,8 @@ project:
 website:
   title: ""
   favicon: images/favicon.png
-  site-url: "https://larysha.github.io/rish-blogs"
-  repo-url: "https://github.com/Larysha/rish-blogs"
+  site-url: "https://larysha.github.io/biopod-blog"
+  repo-url: "https://github.com/Larysha/biopod-blog"
 
   # Replace with your GA4 Measurement ID (format: G-XXXXXXXXXX)
   google-analytics: "G-79590H20ST"

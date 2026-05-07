@@ -25,7 +25,7 @@ link-external-newwindow: true
 # Replace repo-id and category-id with values from https://giscus.app
 comments:
   giscus:
-    repo: Larysha/rish-blogs
+    repo: Larysha/biopod-blog
     repo-id: "R_kgDOQiapOQ"
     category: "General"
     category-id: "DIC_kwDOQiapOc4C8iOp"
