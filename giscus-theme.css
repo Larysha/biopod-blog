@@ -7,11 +7,11 @@
 @import url("https://giscus.app/themes/light.css");
 
 main {
-  /* Backgrounds */
-  --color-canvas-default: #e0cdc5;
-  --color-canvas-overlay: #e0cdc5;
-  --color-canvas-subtle: #d5c3b3;
-  --color-canvas-inset: #d5c3b3;
+  /* Backgrounds — card sits on the peach page, inputs sit nested inside the card */
+  --color-canvas-default: #d5c3b3;  /* card background ($bg-secondary) */
+  --color-canvas-overlay: #d5c3b3;
+  --color-canvas-subtle: #c8b5a3;   /* input fields, slightly darker for nesting */
+  --color-canvas-inset: #c8b5a3;
 
   /* Borders */
   --color-border-default: rgba(50, 54, 25, 0.25);
