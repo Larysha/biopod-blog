@@ -1,0 +1,60 @@
+<svg viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="fdrgrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f3a42"/>
+      <stop offset="100%" stop-color="#b3d0d5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- title -->
+  <text x="40" y="34" font-size="16" fill="#2c4a52" font-weight="600">GO enrichment - dot plot</text>
+  <text x="40" y="52" font-size="12" fill="#8a8079">illustrative example</text>
+
+  <!-- gridlines -->
+  <line x1="300" y1="70" x2="300" y2="350" stroke="#e3ded9" stroke-width="1"/>
+  <line x1="385" y1="70" x2="385" y2="350" stroke="#e3ded9" stroke-width="1"/>
+  <line x1="470" y1="70" x2="470" y2="350" stroke="#e3ded9" stroke-width="1"/>
+  <line x1="555" y1="70" x2="555" y2="350" stroke="#e3ded9" stroke-width="1"/>
+  <line x1="640" y1="70" x2="640" y2="350" stroke="#e3ded9" stroke-width="1"/>
+
+  <!-- x axis -->
+  <line x1="300" y1="350" x2="640" y2="350" stroke="#b8b0a8" stroke-width="1.5"/>
+  <text x="300" y="370" font-size="12" fill="#46555c" text-anchor="middle">1</text>
+  <text x="385" y="370" font-size="12" fill="#46555c" text-anchor="middle">2</text>
+  <text x="470" y="370" font-size="12" fill="#46555c" text-anchor="middle">3</text>
+  <text x="555" y="370" font-size="12" fill="#46555c" text-anchor="middle">4</text>
+  <text x="640" y="370" font-size="12" fill="#46555c" text-anchor="middle">5</text>
+  <text x="470" y="396" font-size="14" fill="#2b3a42" text-anchor="middle">Fold enrichment</text>
+
+  <!-- term labels (right-aligned) -->
+  <text x="288" y="84"  font-size="13" fill="#2b3a42" text-anchor="end">response to water deprivation</text>
+  <text x="288" y="132" font-size="13" fill="#2b3a42" text-anchor="end">response to abscisic acid</text>
+  <text x="288" y="180" font-size="13" fill="#2b3a42" text-anchor="end">response to osmotic stress</text>
+  <text x="288" y="228" font-size="13" fill="#2b3a42" text-anchor="end">abscisic acid-activated signalling</text>
+  <text x="288" y="276" font-size="13" fill="#2b3a42" text-anchor="end">response to oxidative stress</text>
+  <text x="288" y="324" font-size="13" fill="#2b3a42" text-anchor="end">carbohydrate metabolic process</text>
+
+  <!-- dots: x = fold enrichment, r = gene count, fill = FDR -->
+  <circle cx="572"   cy="80"  r="12.0" fill="#1f3a42"/>
+  <circle cx="521"   cy="128" r="14.0" fill="#2c5560"/>
+  <circle cx="478.5" cy="176" r="9.5"  fill="#3a7585"/>
+  <circle cx="453"   cy="224" r="7.6"  fill="#5a96a3"/>
+  <circle cx="402"   cy="272" r="10.1" fill="#8fb7bf"/>
+  <circle cx="359.5" cy="320" r="8.7"  fill="#b3d0d5"/>
+
+  <!-- size legend -->
+  <text x="672" y="86" font-size="13" fill="#46555c">Gene count</text>
+  <circle cx="694" cy="116" r="14"  fill="#cfd8da" stroke="#46555c" stroke-width="1"/>
+  <text x="716" y="120" font-size="12" fill="#46555c">45</text>
+  <circle cx="694" cy="150" r="10"  fill="#cfd8da" stroke="#46555c" stroke-width="1"/>
+  <text x="716" y="154" font-size="12" fill="#46555c">30</text>
+  <circle cx="694" cy="178" r="7"   fill="#cfd8da" stroke="#46555c" stroke-width="1"/>
+  <text x="716" y="182" font-size="12" fill="#46555c">20</text>
+
+  <!-- colour legend -->
+  <text x="672" y="232" font-size="13" fill="#46555c">FDR (adj. p)</text>
+  <rect x="675" y="242" width="16" height="100" fill="url(#fdrgrad)" stroke="#b8b0a8" stroke-width="1"/>
+  <text x="698" y="250" font-size="11" fill="#46555c">0.001</text>
+  <text x="698" y="263" font-size="10" fill="#8a8079">more significant</text>
+  <text x="698" y="340" font-size="11" fill="#46555c">0.05</text>
+</svg>

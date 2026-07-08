@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" font-family="Georgia, 'Crimson Text', serif">
+  <defs>
+    <style>
+      .label { fill: #3f3a34; }
+      .muted { fill: #6f675c; }
+    </style>
+  </defs>
+
+  <!-- background universe -->
+  <rect x="20" y="20" width="600" height="300" rx="14"
+        fill="#faf5ec" stroke="#b9ad9a" stroke-width="1.5"/>
+  <text x="34" y="46" class="muted" font-size="16" font-style="italic">Background universe (N)</text>
+
+  <!-- your gene list circle -->
+  <circle cx="255" cy="190" r="115" fill="#c67b5c" fill-opacity="0.38"
+          stroke="#b5623f" stroke-width="2"/>
+  <!-- genes with the GO term circle -->
+  <circle cx="385" cy="190" r="115" fill="#5b8a72" fill-opacity="0.38"
+          stroke="#3f6b55" stroke-width="2"/>
+
+  <!-- circle labels -->
+  <text x="175" y="120" class="label" font-size="17" text-anchor="middle">Your gene</text>
+  <text x="175" y="141" class="label" font-size="17" text-anchor="middle">list</text>
+  <text x="465" y="120" class="label" font-size="17" text-anchor="middle">Genes with</text>
+  <text x="465" y="141" class="label" font-size="17" text-anchor="middle">the GO term (M)</text>
+
+  <!-- overlap marker -->
+  <text x="320" y="185" class="label" font-size="30" text-anchor="middle" font-weight="bold">k</text>
+  <text x="320" y="210" class="muted" font-size="14" text-anchor="middle">overlap</text>
+
+  <!-- caption strip -->
+  <text x="320" y="352" class="muted" font-size="15" text-anchor="middle" font-style="italic">Is the overlap (k) bigger than you'd expect by chance?</text>
+</svg>
