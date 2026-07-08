@@ -1,0 +1,72 @@
+---
+title: "Why go deep in the age of AI"
+author: "Larysha Rothmann"
+date: "2026-07-08"
+categories: [personal, academia, research]
+description: "A personal case for doing a PhD in today's changing academic landscape"
+---
+
+## The spirit of the thing
+
+Fifty years ago, a PhD was a fairly rarefied thing - the contemplative pursuit reserved for those with the aptitude and willingness to devote themselves to a focused question. It was also, in its way, a mark of the success of a society that could afford to support that kind of thinking - the slower kind that might only yield useable results much further down the line. Many industrial applications have come from exactly that kind of patient academic work: the painstaking biochemistry that led to the isolation of insulin by Banting and Best; the development of PCR conceived by Kary Mullis and refined over years of molecular biology that few outside the academic field cared about at the time, yet now forms the backbone of many routine diagnostics in industry.
+
+And of course, there was a time when the hobbyist pursuit of science wasn't limited to academic institutions at all. The clerical class of the early 1800s produced some of the most consequential discoveries from the quiet solitude of a countryside rectory. Gregor Mendel grew pea plants in a monastery garden and, in doing so, laid the foundations of genetics. Darwin spent decades of careful observation before he published a word. Even Thomas Bayes, whose theorem now underpins so much of modern statistics, was a Presbyterian minister working out probability theory in his spare time. The spirit of curiosity, and the logical rigour of testing a hypothesis, have never been exclusively the property of those with a title or an institutional address. What united all of them was something simpler: time, focus, and the freedom to follow a question wherever it led.
+
+## Does it still exist?
+
+That spirit is still alive - but I believe that the conditions that make it possible have changed, and not in small ways. The complexity of the problems we're trying to solve, the cost of the equipment, and the scale of collaboration required to do meaningful science means that the lone scientist is mostly a romantic myth now. The work that moves things forward happens in labs, in consortia, in cross-disciplinary teams - and increasingly, in industry. Google DeepMind's AlphaFold impact on structural biology is the most dramatic example that jumps to mind. The line between academic and industrial research has never been blurrier, and the PhD has shifted accordingly.
+
+More people are doing one now, especially in STEM subjects, not because they plan to stay in academia, but because they want to operate in R&D, in start-ups, in technical and even creative roles where depth matters. The degree has become less about being devoted to a single question, and more about proving you can go deep on something, come out the other side, and apply that thinking elsewhere.
+
+## So why am I doing it?
+
+I've heard a lot of comments that in your second year, the motivation lags, and you have to have a bit more grit. So I figured I needed a good answer to the question of why I'm doing this. The best answer I can give is that I'm in a phase where I need to take on something difficult. Not difficult in a grinding, joyless way, but difficult in the way that also happens to be good, and satisfying, and growing. I also want to prove something to myself in a quiet personal sense. That I can get a bit obsessed with something, stay with it through the uncomfortable parts, and do it well. That the capacity for focused work is in me, even when it doesn't feel like it.
+
+And then there's the writing, the communicating, and trying to explain complex things clearly - the part that I actually enjoy when there is the time to do it properly- and which makes it feel like a privilege to consider myself a student of science for this window of time. In a practical sense, a PhD is certainly not the best financial decision, and sure, there are long periods of cracking on with something on your own. But then there are also these wonderful moments of learning, of hearing about other people's work, of opportunities that wouldn't otherwise have come up. For me, it feels like a breath, a pause to focus on learning, because I know that the next phase of my career will be more about applying what I've learned, and I want to take advantage of this while I can.
+
+My research project sits in the application of AI in agriculture, which means the question everyone is asking right now - what does AI do to expertise? - isn't an abstract one for me. It's the thing I stare at every day, so I can't write this post without talking about it.
+
+## The rubber duck in the room
+
+Any honest account of doing a PhD in 2026 has to reckon with the thing sitting on my desk. AI. And for bioinformatics and computational biology, this is being felt more sharply than in most fields I think - the work is already code, data, and text, which happens to be exactly the material these tools are best at. Over the past year, AI has become part of how I work - something genuinely useful to think against. The most useful thing it does for me is act as a rubber duck.
+
+The "duck" is an old programmer's trick to get you to explain your problem in defined words, line by line, to a rubber duck on your desk - and half the time you spot the flaw or solution yourself before the duck has to say anything. Except this duck talks back. I can talk an idea through and have it point out where my reasoning wobbles, check a fact or a formula in seconds, or get a second read on a paragraph before I inflict it on anyone. The old friction of "who can I ask about this, right now" or "is this question too dumb" has more or less gone. These tools are also getting more capable, to the point that it is making a real difference to what I can get done in a single day, and where coding tasks that were once a real difficulty are almost fun to go through and learn from.
+
+## So where does the expertise live?
+
+Which brings me to the uncomfortable question. If a model can recall more than I ever will, and write competent code, then what is the value of the depth I'm spending years trying to build? If expertise can be recreated, or at least convincingly imitated, what am I for?
+
+I don't think the answer is that expertise stops mattering. I think it moves - away from recall and towards judgment. I'm not alone in this; a quick scroll through LinkedIn shows plenty of people in bioinformatics feeling the same shift. Judgment means knowing which question is worth asking, telling whether an answer is actually right and not just plausible, and understanding what a result means for a real problem. The tools are extraordinary at producing plausible output, and far less reliable at knowing when plausible is wrong, or when a technically correct answer is answering the wrong question. That gap is where the expert still stands - but you can only stand there if you've done the deep work yourself. You can't judge what you don't understand.
+
+So maybe that is the case for the PhD, restated for the moment we're in: not the accumulation of knowledge, which is now cheap, but the judgment that comes from digging into something. The other human card is creativity. It came up in a lab meeting a while ago - someone asked whether AI can be creative, and held that true innovation is still human. At the time I thought creativity might just be taking things that already exist and putting them together in a way nobody had quite tried before. If that is all it is, then these models, so good at finding unlikely connections across enormous bodies of knowledge, might be genuinely creative. But I suspect there's something more to it, and that genuine invention is more than recombination.
+
+The kind of invention that shifts a field usually begins with insight into a real problem - a frustration at the bench, an odd observation in the field, a lived experience in the real world that required a real solution. Innovation seems to be grounded in being a person in the world, with a stake in the outcome. A model can generate a thousand hypotheses; it cannot yet care which of them matters, so the direction still seems to come from us.
+
+I don't have a tidy answer here, and I'm wary of over-simplifying. Some of these questions are more useful kept open than closed. But it does make me hopeful that the human can't quite be written out of the story.
+
+## A view from the frontier
+
+Earlier this year I went to a conference at EMBL in Heidelberg on AI and biology, and it got me thinking about topics more deeply. The theme that kept surfacing, talk after talk, was how hard it still is to know what these models are actually learning.
+
+One group had built a deliberately simple model to interrogate two of the best gene splice-site predictors around. It turned out the big models were leaning heavily on CpG content - a feature with no known role in splicing - simply because CpG-rich regions tend to line up with exons. The model wasn't learning the biology of splicing so much as working out "where am I in the gene?" and guessing from there. Another speaker put it with a lovely analogy: a model trained on photos of horses against white backgrounds learns to spot "horse on a white background", not the essence of a horse, and falls apart the moment the background changes. In genomics the trap is the same, and something that I am starting to see in my work - that the model tends to latch onto sequence composition rather than the regulatory logic underneath. This is of course because sequence composition is a big part of the regulatory architecture, so it would be impossible really for the model not to learn this. Yet at the same time, these are real confounders.
+
+None of this means the models are bad actually. Their accuracy is genuinely high, and they move real work forward every day. The uncomfortable part is that a high score on a benchmark is not the same thing as learning the real biology, and it takes real effort to tell the two apart for a complex model.
+
+That gap is opening up a possible new branch in research, which came up in one of the panel discussions: the field seems to be splitting into two complementary efforts. One is dedicated to working out what the models have learned - interpretability, auditing, catching the confounders before they mislead us. The other is focused on building more accurate models to push things forward as fast as possible. Both are needed, and the first is a deeply human job.
+
+My work sits in agriculture, where we badly need models that can predict what a given genetic variant actually does - whether a change in a crop's DNA helps it, harms it, or does nothing at all. Reliable variant effect prediction would change how quickly we can breed for things like drought tolerance and disease resistance. And it is, for now, an unsolved problem. We're making real strides, but there's a long way to go, especially for plants, which are messier and far less studied than the human genome most of these tools were built around.
+
+That is precisely why I'm glad to be doing this now. It's only through the PhD that I get a seat this close to the edge of a problem that hasn't been solved yet - close enough to see what's working, what isn't, and where we might be able to push.
+
+## Where things stand
+
+As I write this, the newest models are genuinely astonishing. DeepMind's AlphaGenome, published in Nature at the start of this year, reads up to a million bases of DNA at once and predicts thousands of regulatory signals at single-base resolution, topping the field on almost every variant-effect benchmark it was tested on. Evo 2, a foundation model trained on more than nine trillion bases spanning the whole tree of life, can flag functional variants it was never explicitly trained to recognise. A few years ago this would have read like science fiction.
+
+And yet the first careful benchmarks are already telling the same story I heard in Heidelberg. These same incredible, massive, complex models show blind spots, a sensitivity to things that shouldn't matter, and confident-but-wrong calls hiding beneath strong average scores. For plants specifically, we're closer to the starting line than the finish. Which is, when I think about it, the best possible reason to still be a student of all this. The tools are extraordinary, the questions are still open, and there is real work left for a person to do. For now, that's more than enough reason to keep cracking on.
+
+## Sources
+
+- Avsec et al. (2026) The AlphaGenome deep learning model predicts effects of non-coding variants. _Nature_. [https://pmc.ncbi.nlm.nih.gov/articles/PMC12851941/](https://pmc.ncbi.nlm.nih.gov/articles/PMC12851941/)
+- Brixi et al. (2026) Genome modelling and design across all domains of life with Evo 2. _Nature_. [https://www.nature.com/articles/s41586-026-10176-5](https://www.nature.com/articles/s41586-026-10176-5)
+- Evaluating Evo 2 for plant variant effect prediction (2026) _bioRxiv_. [https://www.biorxiv.org/content/10.64898/2026.03.24.714098v1](https://www.biorxiv.org/content/10.64898/2026.03.24.714098v1)
+- Benchmarking DNA Foundation Models: Biological Blind Spots in Evo2 Variant-Effect Prediction (2026) _bioRxiv_. [https://www.biorxiv.org/content/10.64898/2026.03.10.710786v1](https://www.biorxiv.org/content/10.64898/2026.03.10.710786v1)
