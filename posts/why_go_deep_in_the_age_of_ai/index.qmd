@@ -2,7 +2,7 @@
 title: "Why go deep in the age of AI"
 author: "Larysha Rothmann"
 date: "2026-07-08"
-categories: [personal, academia, research]
+categories: [personal, academia, research, history]
 description: "A personal case for doing a PhD in today's changing academic landscape"
 ---
 

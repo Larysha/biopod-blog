@@ -2,7 +2,7 @@
 title: "Gene ontology: making sense of gene function"
 author: "Larysha Rothmann"
 date: "2026-06-15"
-categories: [bioinformatics, gene-ontology, functional-annotation]
+categories: [bioinformatics, gene-ontology, functional-annotation, tools, research]
 image: go-venn.svg
 description: "What gene ontology is, where the annotation terms come from, how enrichment testing works, and the grapevine GO tool I built along the way"
 ---
