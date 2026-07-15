@@ -1,5 +1,7 @@
 ---
 title: ""
+pagetitle: "Genomics, bioinformatics & sustainability"
+description-meta: "The BioPod is Larysha Rothmann's blog on genomics, bioinformatics and sustainability — technical deep-dives made accessible, light on jargon and heavy on curiosity."
 page-layout: full
 title-block-banner: false
 toc: false

@@ -1,5 +1,7 @@
 ---
 title: ""
+pagetitle: "About Larysha Rothmann"
+description-meta: "Larysha Rothmann is a bioinformatics PhD student at Stellenbosch University studying grapevine drought genetics. The BioPod is where she writes about computational biology, genomics and sustainability."
 page-layout: full
 toc: false
 ---
