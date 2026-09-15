@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 290" font-family="Georgia, 'Crimson Text', serif">
+  <defs>
+    <style>
+      .cell  { fill: #ffffff; stroke: #cfc7b4; stroke-width: 1; }
+      .head  { fill: #176272; fill-opacity: 0.13; stroke: #cfc7b4; stroke-width: 1; }
+      .mark  { fill: #671436; fill-opacity: 0.13; stroke: #671436; stroke-width: 1.6; }
+      .t     { fill: #323619; font-size: 12px; }
+      .tb    { fill: #323619; font-size: 12px; font-weight: bold; }
+      .ts    { fill: #323619; font-size: 10.5px; font-weight: bold; }
+      .tg    { fill: #323619; font-size: 11px; }
+      .num   { fill: #6f7355; font-size: 12px; font-family: 'Courier New', monospace; }
+      .note  { fill: #671436; font-size: 13px; font-style: italic; }
+      .muted { fill: #6f7355; font-size: 12px; font-style: italic; }
+      .zone  { fill: none; stroke: #a9a48c; stroke-width: 1.1; stroke-dasharray: 4 3; }
+    </style>
+  </defs>
+  <rect width="640" height="290" fill="#faf5ec" rx="14"/>
+
+  <!-- study info block -->
+  <rect class="head" x="20" y="20" width="90" height="22"/><text class="tb" x="28" y="36">Stress</text>
+  <rect class="head" x="110" y="20" width="80" height="22"/><text class="tb" x="118" y="36">Author</text>
+  <rect class="head" x="190" y="20" width="100" height="22"/><text class="tb" x="198" y="36">Project</text>
+  <rect class="cell" x="20" y="42" width="90" height="22"/><text class="t" x="28" y="58">Drought</text>
+  <rect class="cell" x="110" y="42" width="80" height="22"/><text class="t" x="118" y="58">Savoi</text>
+  <rect class="cell" x="190" y="42" width="100" height="22"/><text class="t" x="198" y="58">PRJNA313234</text>
+  <text class="muted" x="300" y="58">decides which results folder the study goes into</text>
+
+  <!-- sample table -->
+  <rect class="zone" x="14" y="86" width="290" height="148" rx="6"/>
+  <rect class="mark" x="20" y="92" width="92" height="22"/><text class="tb" x="28" y="108">SRA ID</text>
+  <rect class="head" x="112" y="92" width="88" height="22"/><text class="tb" x="120" y="108">treatment</text>
+  <rect class="head" x="200" y="92" width="98" height="22"/><text class="tb" x="208" y="108">stage</text>
+  <g class="t">
+    <rect class="cell" x="20" y="114" width="92" height="22"/><text class="t" x="28" y="130">SRR3190105</text>
+    <rect class="cell" x="112" y="114" width="88" height="22"/><text class="t" x="120" y="130">Control</text>
+    <rect class="cell" x="200" y="114" width="98" height="22"/><text class="t" x="208" y="130">41 DAA</text>
+    <rect class="cell" x="20" y="136" width="92" height="22"/><text class="t" x="28" y="152">SRR3190527</text>
+    <rect class="cell" x="112" y="136" width="88" height="22"/><text class="t" x="120" y="152">Deficit</text>
+    <rect class="cell" x="200" y="136" width="98" height="22"/><text class="t" x="208" y="152">41 DAA</text>
+    <rect class="cell" x="20" y="158" width="92" height="22"/><text class="t" x="28" y="174">SRR3190532</text>
+    <rect class="cell" x="112" y="158" width="88" height="22"/><text class="t" x="120" y="174">Control</text>
+    <rect class="cell" x="200" y="158" width="98" height="22"/><text class="t" x="208" y="174">68 DAA</text>
+    <rect class="cell" x="20" y="180" width="92" height="22"/><text class="t" x="28" y="196">...</text>
+    <rect class="cell" x="112" y="180" width="88" height="22"/>
+    <rect class="cell" x="200" y="180" width="98" height="22"/>
+  </g>
+  <text class="muted" x="24" y="224">one row per sample</text>
+
+  <!-- count matrix -->
+  <rect class="zone" x="320" y="86" width="306" height="148" rx="6"/>
+  <rect class="mark" x="326" y="92" width="100" height="22"/><text class="tb" x="334" y="108">gene</text>
+  <rect class="head" x="426" y="92" width="100" height="22"/><text class="ts" x="432" y="107">SRR3190105</text>
+  <rect class="head" x="526" y="92" width="100" height="22"/><text class="ts" x="532" y="107">SRR3190527</text>
+  <rect class="cell" x="326" y="114" width="100" height="22"/><text class="tg" x="332" y="129">Vitvi05_..g00010</text>
+  <rect class="cell" x="426" y="114" width="100" height="22"/><text class="num" x="470" y="130">512</text>
+  <rect class="cell" x="526" y="114" width="100" height="22"/><text class="num" x="570" y="130">498</text>
+  <rect class="cell" x="326" y="136" width="100" height="22"/><text class="tg" x="332" y="151">Vitvi05_..g00020</text>
+  <rect class="cell" x="426" y="136" width="100" height="22"/><text class="num" x="478" y="152">0</text>
+  <rect class="cell" x="526" y="136" width="100" height="22"/><text class="num" x="578" y="152">3</text>
+  <rect class="cell" x="326" y="158" width="100" height="22"/><text class="tg" x="332" y="173">Vitvi05_..g00030</text>
+  <rect class="cell" x="426" y="158" width="100" height="22"/><text class="num" x="462" y="174">2041</text>
+  <rect class="cell" x="526" y="158" width="100" height="22"/><text class="num" x="562" y="174">3187</text>
+  <rect class="cell" x="326" y="180" width="100" height="22"/><text class="t" x="332" y="196">...</text>
+  <rect class="cell" x="426" y="180" width="100" height="22"/>
+  <rect class="cell" x="526" y="180" width="100" height="22"/>
+  <text class="muted" x="330" y="224">one row per gene, one column per sample</text>
+
+  <!-- notes -->
+  <text class="t" x="20" y="270">Sample names must match the count headings exactly, and counts must be raw whole numbers.</text>
+</svg>

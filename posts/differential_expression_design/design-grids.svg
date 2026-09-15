@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 344" font-family="Georgia, 'Crimson Text', serif">
+<defs><style>
+.let{fill:#323619;font-size:15px;font-weight:bold}
+.hd{fill:#323619;font-size:13.5px;font-weight:bold}
+.vd{font-size:12px;font-style:italic}
+.lv{fill:#323619;font-size:12px;text-anchor:end}
+.ch{fill:#6f7355;font-size:11.5px;text-anchor:middle}
+.n{font-size:12.5px;font-weight:bold;text-anchor:middle;fill:#ffffff}
+.n0{font-size:12.5px;text-anchor:middle;fill:#6f7355}
+.nt{fill:#6f7355;font-size:11.5px}
+</style></defs>
+<rect width="570" height="344" fill="#faf5ec"/>
+<text class="let" x="18" y="26">a</text>
+<text class="hd" x="36" y="26">Tocai friulano: stage</text>
+<text class="vd" x="36" y="44" fill="#176272">usable</text>
+<text class="ch" x="156.0" y="72">control</text>
+<text class="ch" x="211.0" y="72">deficit</text>
+<text class="lv" x="122" y="93">41 DAA</text>
+<rect x="130" y="78" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="156.0" y="93">3</text>
+<rect x="185" y="78" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="211.0" y="93">3</text>
+<text class="lv" x="122" y="117">68 DAA</text>
+<rect x="130" y="102" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="156.0" y="117">3</text>
+<rect x="185" y="102" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="211.0" y="117">3</text>
+<text class="lv" x="122" y="141">93 DAA</text>
+<rect x="130" y="126" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="156.0" y="141">3</text>
+<rect x="185" y="126" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="211.0" y="141">3</text>
+<text class="nt" x="18" y="176">every stage holds both groups, so the</text>
+<text class="nt" x="18" y="192">treatment can be compared inside each one</text>
+<text class="let" x="304" y="26">b</text>
+<text class="hd" x="322" y="26">PRJNA268857: stage (°Brix)</text>
+<text class="vd" x="322" y="44" fill="#671436">ruled out - one-sided</text>
+<text class="ch" x="442" y="72">control</text>
+<text class="ch" x="497" y="72">deficit</text>
+<text class="lv" x="408" y="93">22.9</text>
+<rect x="416" y="78" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="442" y="93">3</text>
+<rect x="471" y="78" width="52" height="21" rx="2" fill="#bdbdbd" fill-opacity="0.28" stroke="#bdbdbd" stroke-width="0.6"/>
+<text class="n0" x="497" y="93">0</text>
+<text class="lv" x="408" y="117">23.0</text>
+<rect x="416" y="102" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="442" y="117">3</text>
+<rect x="471" y="102" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="497" y="117">3</text>
+<text class="lv" x="408" y="141">23.1</text>
+<rect x="416" y="126" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="442" y="141">3</text>
+<rect x="471" y="126" width="52" height="21" rx="2" fill="#bdbdbd" fill-opacity="0.28" stroke="#bdbdbd" stroke-width="0.6"/>
+<text class="n0" x="497" y="141">0</text>
+<text class="lv" x="408" y="165">23.2</text>
+<rect x="416" y="150" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="442" y="165">3</text>
+<rect x="471" y="150" width="52" height="21" rx="2" fill="#bdbdbd" fill-opacity="0.28" stroke="#bdbdbd" stroke-width="0.6"/>
+<text class="n0" x="497" y="165">0</text>
+<text class="lv" x="408" y="189">23.3</text>
+<rect x="416" y="174" width="52" height="21" rx="2" fill="#052b67" fill-opacity="0.62" stroke="#052b67" stroke-width="0.6"/>
+<text class="n" x="442" y="189">3</text>
+<rect x="471" y="174" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="497" y="189">3</text>
+<text class="lv" x="408" y="213">23.4</text>
+<rect x="416" y="198" width="52" height="21" rx="2" fill="#bdbdbd" fill-opacity="0.28" stroke="#bdbdbd" stroke-width="0.6"/>
+<text class="n0" x="442" y="213">0</text>
+<rect x="471" y="198" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="497" y="213">3</text>
+<text class="lv" x="408" y="237">23.7</text>
+<rect x="416" y="222" width="52" height="21" rx="2" fill="#bdbdbd" fill-opacity="0.28" stroke="#bdbdbd" stroke-width="0.6"/>
+<text class="n0" x="442" y="237">0</text>
+<rect x="471" y="222" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="497" y="237">3</text>
+<text class="lv" x="408" y="261">23.8</text>
+<rect x="416" y="246" width="52" height="21" rx="2" fill="#bdbdbd" fill-opacity="0.28" stroke="#bdbdbd" stroke-width="0.6"/>
+<text class="n0" x="442" y="261">0</text>
+<rect x="471" y="246" width="52" height="21" rx="2" fill="#671436" fill-opacity="0.62" stroke="#671436" stroke-width="0.6"/>
+<text class="n" x="497" y="261">3</text>
+<text class="nt" x="304" y="286">only 12 of 30 samples (40%) sit in a level</text>
+<text class="nt" x="304" y="302">that holds both groups</text>
+<text class="nt" x="18" y="336">Numbers are samples. A grey cell is a level that only one of the two groups reached.</text>
+</svg>

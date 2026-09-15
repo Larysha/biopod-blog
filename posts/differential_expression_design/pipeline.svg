@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 474" font-family="Georgia, 'Crimson Text', serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a4a3a"/>
+    </marker>
+    <style>
+      .card  { fill: #176272; fill-opacity: 0.12; stroke: #176272; stroke-width: 1.1; }
+      .io    { fill: #052b67; fill-opacity: 0.10; stroke: #052b67; stroke-width: 1.1; }
+      .you   { fill: #671436; fill-opacity: 0.08; stroke: #671436; stroke-width: 1.1; stroke-dasharray: 5 3; }
+      .step  { fill: #176272; font-size: 11px; font-weight: bold; letter-spacing: 1.2px; }
+      .title { fill: #323619; font-size: 14.5px; font-weight: bold; }
+      .body  { fill: #323619; font-size: 12.5px; }
+      .mute  { fill: #6f7355; font-size: 12px; font-style: italic; }
+      .ylab  { fill: #671436; font-size: 11px; font-weight: bold; letter-spacing: 1.2px; }
+      .ytxt  { fill: #4a2030; font-size: 12.5px; }
+      .flow  { stroke: #4a4a3a; stroke-width: 1.1; fill: none; }
+    </style>
+  </defs>
+  <rect width="700" height="474" fill="#faf5ec"/>
+
+  <rect class="io"   x="20"  y="14"  width="330" height="50" rx="7"/>
+  <text class="title" x="36" y="35">Your Excel workbook</text>
+  <text class="mute"  x="36" y="54">one sheet per study - the only file you curate</text>
+  <path class="flow" d="M185,64 L185,82" marker-end="url(#arr)"/>
+
+  <rect class="card" x="20"  y="84"  width="330" height="72" rx="7"/>
+  <text class="step"  x="36" y="105">STEP 1 · IMPORT</text>
+  <text class="body"  x="36" y="126">splits each sheet into a sample table and a</text>
+  <text class="body"  x="36" y="144">count matrix, and writes one row per study</text>
+  <path class="flow" d="M185,156 L185,174" marker-end="url(#arr)"/>
+
+  <rect class="card" x="20"  y="176" width="330" height="72" rx="7"/>
+  <text class="step"  x="36" y="197">STEP 2 · CHECK</text>
+  <text class="body"  x="36" y="218">asks whether each study can run at all, then</text>
+  <text class="body"  x="36" y="236">ranks its columns as candidate blocking factors</text>
+  <path class="flow" d="M185,248 L185,266" marker-end="url(#arr)"/>
+
+  <rect class="card" x="20"  y="268" width="330" height="54" rx="7"/>
+  <text class="step"  x="36" y="289">STEP 3 · DESEQ2</text>
+  <text class="body"  x="36" y="311">one model per study, never a pooled one</text>
+  <path class="flow" d="M185,322 L185,340" marker-end="url(#arr)"/>
+
+  <rect class="card" x="20"  y="342" width="330" height="54" rx="7"/>
+  <text class="step"  x="36" y="363">STEP 4 · COMPARE</text>
+  <text class="body"  x="36" y="385">grades genes by how many studies agree</text>
+  <path class="flow" d="M185,396 L185,414" marker-end="url(#arr)"/>
+
+  <rect class="io"   x="20"  y="416" width="330" height="42" rx="7"/>
+  <text class="title" x="36" y="442">Conserved gene lists</text>
+
+  <path class="flow" d="M392,120 L358,120" marker-end="url(#arr)"/>
+  <rect class="you"  x="394" y="88"  width="286" height="64" rx="7"/>
+  <text class="ylab" x="408" y="110">MANUAL CHECK · studies.csv</text>
+  <text class="ytxt" x="408" y="130">confirm which group is the control, and</text>
+  <text class="ytxt" x="408" y="146">switch off any study you don't want</text>
+
+  <path class="flow" d="M392,212 L358,212" marker-end="url(#arr)"/>
+  <rect class="you"  x="394" y="180" width="286" height="64" rx="7"/>
+  <text class="ylab" x="408" y="202">MANUAL CHECK · studies.csv</text>
+  <text class="ytxt" x="408" y="222">accept the suggested blocking factor</text>
+  <text class="ytxt" x="408" y="238">or type your own - yours always wins</text>
+
+</svg>

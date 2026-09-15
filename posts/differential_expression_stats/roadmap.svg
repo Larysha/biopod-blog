@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" font-family="Georgia, 'Crimson Text', serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a4a3a"/>
+    </marker>
+    <style>
+      .box  { fill: #176272; fill-opacity: 0.12; stroke: #176272; stroke-width: 1.1; }
+      .n    { fill: #176272; font-size: 20px; font-weight: bold; }
+      .h    { fill: #323619; font-size: 14.5px; font-weight: bold; }
+      .s    { fill: #6f7355; font-size: 12px; font-style: italic; }
+      .io   { fill: #671436; font-size: 12px; font-style: italic; }
+      .flow { stroke: #4a4a3a; stroke-width: 1.1; fill: none; }
+    </style>
+  </defs>
+  <rect width="720" height="280" fill="#faf5ec"/>
+
+  <text class="io" x="20" y="24">raw counts in</text>
+
+  <rect class="box" x="20"  y="36" width="200" height="74" rx="7"/>
+  <text class="n" x="34"  y="70">1</text><text class="h" x="58"  y="68">Size factors</text>
+  <text class="s" x="34"  y="93">put samples on one ruler</text>
+  <path class="flow" d="M220,73 L256,73" marker-end="url(#arr)"/>
+
+  <rect class="box" x="260" y="36" width="200" height="74" rx="7"/>
+  <text class="n" x="274" y="70">2</text><text class="h" x="298" y="68">Noise model</text>
+  <text class="s" x="274" y="93">the negative binomial</text>
+  <path class="flow" d="M460,73 L496,73" marker-end="url(#arr)"/>
+
+  <rect class="box" x="500" y="36" width="200" height="74" rx="7"/>
+  <text class="n" x="514" y="70">3</text><text class="h" x="538" y="68">The model</text>
+  <text class="s" x="514" y="93">~ stage + treatment, per gene</text>
+
+  <path class="flow" d="M600,110 L600,134 L120,134 L120,156" marker-end="url(#arr)"/>
+
+  <rect class="box" x="20"  y="160" width="200" height="74" rx="7"/>
+  <text class="n" x="34"  y="194">4</text><text class="h" x="58"  y="192">log2FC and SE</text>
+  <text class="s" x="34"  y="217">the estimate and its wobble</text>
+  <path class="flow" d="M220,197 L256,197" marker-end="url(#arr)"/>
+
+  <rect class="box" x="260" y="160" width="200" height="74" rx="7"/>
+  <text class="n" x="274" y="194">5</text><text class="h" x="298" y="192">Wald test</text>
+  <text class="s" x="274" y="217">SEs from zero, then a p-value</text>
+  <path class="flow" d="M460,197 L496,197" marker-end="url(#arr)"/>
+
+  <rect class="box" x="500" y="160" width="200" height="74" rx="7"/>
+  <text class="n" x="514" y="194">6</text><text class="h" x="538" y="192">Many tests</text>
+  <text class="s" x="514" y="217">Benjamini-Hochberg: padj</text>
+
+  <text class="io" x="700" y="264" text-anchor="end">a ranked gene table out</text>
+</svg>

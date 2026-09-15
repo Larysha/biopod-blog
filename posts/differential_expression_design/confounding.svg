@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 348" font-family="Georgia, 'Crimson Text', serif">
+<defs><style>
+.let{fill:#323619;font-size:15px;font-weight:bold}
+.hd{fill:#323619;font-size:13.5px;font-weight:bold}
+.vd{font-size:12px;font-style:italic}
+.ch{fill:#6f7355;font-size:11.5px;text-anchor:middle}
+.rw{fill:#6f7355;font-size:11px;text-anchor:end}
+.tx{fill:#323619;font-size:12.5px}
+.em{fill:#323619;font-size:12.5px;font-weight:bold}
+</style></defs>
+<rect width="400" height="348" fill="#faf5ec"/>
+<text class="hd" x="18" y="26">A column that cuts across the treatment</text>
+<text class="vd" x="18" y="44" fill="#176272">stage, in the Tocai friulano study</text>
+<text class="ch" x="126" y="70">treatment</text>
+<text class="ch" x="229" y="70">stage</text>
+<text class="rw" x="64" y="93">berry 1</text>
+<rect x="74" y="78" width="104" height="21" rx="2" fill="#052b67" fill-opacity="0.55" stroke="#052b67" stroke-width="0.6"/>
+<text x="126" y="93" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">control</text>
+<rect x="184" y="78" width="90" height="21" rx="2" fill="#176272" fill-opacity="0.55" stroke="#176272" stroke-width="0.6"/>
+<text x="229" y="93" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">41 DAA</text>
+<text class="rw" x="64" y="117">berry 2</text>
+<rect x="74" y="102" width="104" height="21" rx="2" fill="#671436" fill-opacity="0.55" stroke="#671436" stroke-width="0.6"/>
+<text x="126" y="117" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">deficit</text>
+<rect x="184" y="102" width="90" height="21" rx="2" fill="#176272" fill-opacity="0.55" stroke="#176272" stroke-width="0.6"/>
+<text x="229" y="117" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">41 DAA</text>
+<text class="rw" x="64" y="141">berry 3</text>
+<rect x="74" y="126" width="104" height="21" rx="2" fill="#052b67" fill-opacity="0.55" stroke="#052b67" stroke-width="0.6"/>
+<text x="126" y="141" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">control</text>
+<rect x="184" y="126" width="90" height="21" rx="2" fill="#66967b" fill-opacity="0.55" stroke="#66967b" stroke-width="0.6"/>
+<text x="229" y="141" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">68 DAA</text>
+<text class="rw" x="64" y="165">berry 4</text>
+<rect x="74" y="150" width="104" height="21" rx="2" fill="#671436" fill-opacity="0.55" stroke="#671436" stroke-width="0.6"/>
+<text x="126" y="165" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">deficit</text>
+<rect x="184" y="150" width="90" height="21" rx="2" fill="#66967b" fill-opacity="0.55" stroke="#66967b" stroke-width="0.6"/>
+<text x="229" y="165" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">68 DAA</text>
+<text class="rw" x="64" y="189">berry 5</text>
+<rect x="74" y="174" width="104" height="21" rx="2" fill="#052b67" fill-opacity="0.55" stroke="#052b67" stroke-width="0.6"/>
+<text x="126" y="189" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">control</text>
+<rect x="184" y="174" width="90" height="21" rx="2" fill="#657b9e" fill-opacity="0.55" stroke="#657b9e" stroke-width="0.6"/>
+<text x="229" y="189" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">93 DAA</text>
+<text class="rw" x="64" y="213">berry 6</text>
+<rect x="74" y="198" width="104" height="21" rx="2" fill="#671436" fill-opacity="0.55" stroke="#671436" stroke-width="0.6"/>
+<text x="126" y="213" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">deficit</text>
+<rect x="184" y="198" width="90" height="21" rx="2" fill="#657b9e" fill-opacity="0.55" stroke="#657b9e" stroke-width="0.6"/>
+<text x="229" y="213" style="font-size:11.5px;text-anchor:middle;fill:#ffffff">93 DAA</text>
+<text x="282" y="93" style="font-size:11.5px;fill:#176272;font-style:italic">both groups</text>
+<text x="282" y="117" style="font-size:11.5px;fill:#176272;font-style:italic">inside every stage</text>
+<text class="tx" x="18" y="254">Within 41 DAA both groups are present, and again</text>
+<text class="tx" x="18" y="270">within 68 and 93 DAA. So the shift from stage to stage</text>
+<text class="tx" x="18" y="286">and the shift from control to deficit are measured</text>
+<text class="tx" x="18" y="302">from different comparisons, and each gets its own</text>
+<text class="tx" x="18" y="318">number. One answer fits, so the design matrix can be</text>
+<text class="em" x="18" y="334">fitted and the column is kept as a candidate.</text>
+</svg>

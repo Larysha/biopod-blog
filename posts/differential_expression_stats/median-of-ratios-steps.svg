@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" font-family="Georgia, 'Crimson Text', serif">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a3a"/></marker><style>
+.num{fill:#176272;font-size:14px;font-weight:bold} .hd{fill:#323619;font-size:13.5px;font-weight:bold}
+.ch{fill:#6f7355;font-size:11px;text-anchor:middle} .gl{fill:#323619;font-size:12px;text-anchor:end}
+.v{fill:#323619;font-size:12.5px;text-anchor:middle} .cap{fill:#6f7355;font-size:11.5px;font-style:italic}
+.note{fill:#323619;font-size:12.5px} .flow{stroke:#4a4a3a;stroke-width:1.1;fill:none}
+</style></defs>
+<rect width="800" height="290" fill="#faf5ec"/>
+<text class="num" x="80" y="28">1</text>
+<text class="hd" x="96" y="28">Raw counts</text>
+<text class="ch" x="106" y="64">A</text>
+<text class="ch" x="162" y="64">B</text>
+<text class="gl" x="70" y="90.5">gene 1</text>
+<rect x="80" y="74" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="106.0" y="90.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">10</text>
+<rect x="136" y="74" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="162.0" y="90.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">20</text>
+<text class="gl" x="70" y="118.5">gene 2</text>
+<rect x="80" y="102" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="106.0" y="118.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">100</text>
+<rect x="136" y="102" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="162.0" y="118.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">200</text>
+<text class="gl" x="70" y="146.5">gene 3</text>
+<rect x="80" y="130" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="106.0" y="146.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">50</text>
+<rect x="136" y="130" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="162.0" y="146.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">100</text>
+<text class="gl" x="70" y="174.5">gene 4</text>
+<rect x="80" y="158" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="106.0" y="174.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">30</text>
+<rect x="136" y="158" width="52" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="162.0" y="174.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">900</text>
+<path class="flow" d="M196,128 L226,128" marker-end="url(#arr)"/>
+<text class="num" x="234" y="28">2</text>
+<text class="hd" x="250" y="28">Reference</text>
+<text class="ch" x="269" y="64">per gene</text>
+<rect x="234" y="74" width="70" height="24" rx="2" fill="#052b67" fill-opacity="0.12" stroke="#052b67" stroke-width="0.7"/>
+<text x="269.0" y="90.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">14.1</text>
+<rect x="234" y="102" width="70" height="24" rx="2" fill="#052b67" fill-opacity="0.12" stroke="#052b67" stroke-width="0.7"/>
+<text x="269.0" y="118.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">141</text>
+<rect x="234" y="130" width="70" height="24" rx="2" fill="#052b67" fill-opacity="0.12" stroke="#052b67" stroke-width="0.7"/>
+<text x="269.0" y="146.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">70.7</text>
+<rect x="234" y="158" width="70" height="24" rx="2" fill="#052b67" fill-opacity="0.12" stroke="#052b67" stroke-width="0.7"/>
+<text x="269.0" y="174.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">164</text>
+<path class="flow" d="M312,128 L342,128" marker-end="url(#arr)"/>
+<text class="num" x="350" y="28">3</text>
+<text class="hd" x="366" y="28">Ratio</text>
+<text class="ch" x="381" y="64">A ÷ ref</text>
+<text class="ch" x="447" y="64">B ÷ ref</text>
+<rect x="350" y="74" width="62" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="381.0" y="90.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">0.71</text>
+<rect x="416" y="74" width="62" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="447.0" y="90.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">1.41</text>
+<rect x="350" y="102" width="62" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="381.0" y="118.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">0.71</text>
+<rect x="416" y="102" width="62" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="447.0" y="118.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">1.41</text>
+<rect x="350" y="130" width="62" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="381.0" y="146.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">0.71</text>
+<rect x="416" y="130" width="62" height="24" rx="2" fill="#ffffff" stroke="#cfc7b4" stroke-width="0.7"/>
+<text x="447.0" y="146.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">1.41</text>
+<rect x="350" y="158" width="62" height="24" rx="2" fill="#671436" fill-opacity="0.16" stroke="#671436" stroke-width="0.7"/>
+<text x="381.0" y="174.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">0.18</text>
+<rect x="416" y="158" width="62" height="24" rx="2" fill="#671436" fill-opacity="0.16" stroke="#671436" stroke-width="0.7"/>
+<text x="447.0" y="174.5" style="font-size:12.5px;text-anchor:middle;fill:#323619">5.48</text>
+<path d="M482,76 L487,76 L487,180 L482,180" fill="none" stroke="#4a4a3a" stroke-width="1"/>
+<path class="flow" d="M489,128 L519,128" marker-end="url(#arr)"/>
+<text class="num" x="526" y="28">4</text>
+<text class="hd" x="542" y="28">Size factor</text>
+<text class="ch" x="557" y="106">A</text>
+<text class="ch" x="623" y="106">B</text>
+<rect x="526" y="114" width="62" height="28" rx="2" fill="#176272" fill-opacity="0.62" stroke="#176272" stroke-width="0.7"/>
+<text x="557.0" y="132.5" style="font-size:12.5px;text-anchor:middle;fill:#ffffff;font-weight:bold">0.71</text>
+<rect x="592" y="114" width="62" height="28" rx="2" fill="#176272" fill-opacity="0.62" stroke="#176272" stroke-width="0.7"/>
+<text x="623.0" y="132.5" style="font-size:12.5px;text-anchor:middle;fill:#ffffff;font-weight:bold">1.41</text>
+<text x="676" y="118" style="font-size:12.5px;fill:#176272;font-weight:bold">B ÷ A</text>
+<text x="676" y="136" style="font-size:12.5px;fill:#176272;font-weight:bold">= 1.41 ÷ 0.71</text>
+<text x="676" y="154" style="font-size:12.5px;fill:#176272;font-weight:bold">= 2</text>
+<text class="cap" x="80" y="204">reads for each gene</text>
+<text class="cap" x="80" y="220">in each sample</text>
+<text class="cap" x="234" y="204">geometric mean</text>
+<text class="cap" x="234" y="220">of the row</text>
+<text class="cap" x="350" y="204">each count ÷ its</text>
+<text class="cap" x="350" y="220">gene's reference</text>
+<text class="cap" x="526" y="204">median down</text>
+<text class="cap" x="526" y="220">each column</text>
+<line x1="20" y1="238" x2="780" y2="238" stroke="#cfc7b4" stroke-width="1"/>
+<text class="note" x="20" y="260">Gene 1, worked through: its reference is √(10 × 20) = 14.1, so sample A’s ratio is 10 ÷ 14.1 = 0.71.</text>
+<text class="note" x="20" y="279">Gene 4 (burgundy) is the one gene that genuinely changed, and the median steps straight over it.</text>
+</svg>
