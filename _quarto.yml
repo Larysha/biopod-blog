@@ -4,6 +4,8 @@ project:
   resources:
     - fonts/
     - giscus-theme.css
+    - assets/
+    - images/profile3.jpg
 
 website:
   title: "The BioPod"
@@ -27,7 +29,7 @@ website:
       - text: "BLOG"
         href: posts.qmd
       - text: "ABOUT"
-        href: about.qmd
+        href: index.qmd#about
       - text: "RESOURCES"
         href: resources.qmd
       - text: "INSPIRATION"

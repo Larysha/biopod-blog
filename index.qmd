@@ -1,10 +1,20 @@
 ---
 title: ""
 pagetitle: "Genomics, bioinformatics & sustainability"
-description-meta: "The BioPod is Larysha Rothmann's blog on genomics, bioinformatics and sustainability — technical deep-dives made accessible, light on jargon and heavy on curiosity."
+description-meta: "The BioPod is Larysha Rothmann's blog on genomics, bioinformatics and sustainability. Larysha is a bioinformatics PhD student at Stellenbosch University using deep learning to understand how plants regulate their genes under drought."
 page-layout: full
 title-block-banner: false
 toc: false
+anchor-sections: false
+aliases:
+  - about.html
+css: assets/story/biopod-story.css
+include-after-body:
+  text: |
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6/dist/d3-delaunay.min.js"></script>
+    <script src="assets/story/biopod-story.js"></script>
 listing:
   - id: recent-posts
     contents: posts
@@ -16,30 +26,108 @@ listing:
     grid-columns: 3
 ---
 
-:::: {style="max-width: 1200px; margin: 1rem auto 3rem auto; padding: 0 2rem;"}
+::: {.column-screen .bp-home}
+```{=html}
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div>
+    <div class="bp-title script" role="heading" aria-level="1">The BioPod</div>
+    <p class="tag">all things genomics, bioinformatics &amp; sustainability</p>
+    <p class="lede">I'm Larysha, a bioinformatician fascinated by how plants control their genes - and by how computational tools and AI can help us understand that control well enough to make a difference for crops facing a changing climate.</p>
+    <a class="cue" href="#story">
+      <svg viewBox="0 0 22 34" fill="none" stroke="#323619" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="2" width="18" height="30" rx="9"/><path class="arrow" d="M11 9 L11 19 M7 15 L11 19 L15 15"/></svg>
+      Scroll down. We're going to zoom in. Quite a lot.
+    </a>
+  </div>
+  <svg id="sprout" viewBox="-260 -270 520 470" role="img" aria-label="A seedling sprouting from the soil, with a ladybird climbing its stem">
+    <defs>
+      <linearGradient id="soilFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4906b" stop-opacity=".4"/><stop offset="1" stop-color="#b4906b" stop-opacity="0"/></linearGradient>
+      <filter id="roughS" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9"/>
+        <feDisplacementMap in="SourceGraphic" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+    <g id="sproutArt" filter="url(#roughS)"></g>
+    <g id="ladybird"></g>
+    <g id="bubble" opacity="0"><path d="" fill="#f6eee8" stroke="#323619" stroke-width="1.4"/><text class="script" font-size="22" fill="#323619" text-anchor="middle"></text></g>
+  </svg>
+</header>
 
-::: {.hero-container}
-::: {.hero-text}
-<div class="hero-heading" style="font-family: 'Apricots', cursive; font-size: 5rem; color: #323619; margin-bottom: 1rem; line-height: 1.1; margin-top: 0; font-weight: 400;">The BioPod</div>
+<!-- ================= SCROLL STORY ================= -->
+<section class="story" id="story" aria-label="From a crop field down to a gene, into a model, and back">
+  <div class="pin">
+    <div class="panel">
+      <nav class="crumbs" id="crumbs" aria-label="Jump to a scale"></nav>
+      <div class="texts">
+        <article class="st"><h2>Drought, one field at a time</h2><p>Drought is one of the largest causes of crop losses worldwide, and climate projections point to more frequent and severe dry spells in many growing regions. A plant can't move out of a dry season. Over millions of years, plants have evolved ways to sense water stress and respond to it.</p></article>
+        <article class="st"><h2>How a plant responds</h2><p>Under drought, a plant can close its stomata - the microscopic pores on its leaves - to limit water loss, invest in deeper roots, and slow its growth. Each of these responses is controlled by genes, and how strongly those genes respond varies from one plant, and one variety, to the next.</p></article>
+        <article class="st"><h2>Down to the cells</h2><p>A leaf is built from millions of cells. The mesophyll cells inside it are packed with chloroplasts for photosynthesis and mitochondria for respiration, and each cell carries a complete copy of the genome. A leaf cell and a root cell hold identical DNA; what differs is which genes are switched on, how strongly, and when.</p></article>
+        <article class="st"><h2>DNA, wound at every scale</h2><p>In some crops the genome amounts to several metres of DNA, held in a nucleus about a hundredth of a millimetre across. It fits because it is packed hierarchically: wrapped around histone proteins into nucleosomes, which are in turn coiled and folded into chromatin.</p></article>
+        <article class="st"><h2>The nucleosome</h2><p>Each nucleosome is roughly 147 base pairs of DNA wrapped around a core of eight histone proteins. Wrapped this tightly, the DNA is largely inaccessible to the proteins that read it - one of the ways a cell keeps genes switched off.</p></article>
+        <article class="st"><h2>Opening up</h2><p>When a gene is needed, the chromatin around it can be remodelled. The DNA loosens from the histones and exposes a short stretch of sequence that was hidden a moment ago: a DNA pattern that specific proteins can recognise and bind.</p></article>
+        <article class="st"><h2>A drought signal arrives</h2><p>Under water stress, plants accumulate the hormone abscisic acid (ABA), which triggers stomatal closure and switches on stress-response genes. Part of that signal is carried by a family of transcription factors called ABFs. Here, one finds our newly exposed DNA and binds a short pattern whose core reads <b>ACGTG</b> - the ABA-responsive element, or ABRE.</p></article>
+        <article class="st"><h2>Copying the gene</h2><p>The bound ABF doesn't act alone. It helps draw in co-activators such as the Mediator complex, which work with general transcription factors to position RNA polymerase II at the start of the gene. The polymerase then moves along the DNA, using one strand as a template to build messenger RNA (mRNA), one nucleotide at a time.</p></article>
+        <article class="st"><h2>From message to protein</h2><p>The mRNA is exported from the nucleus. In the cytoplasm a ribosome reads it three bases at a time, each codon specifying an amino acid, and the growing chain folds into a protein - in this case, one of the many that help cells tolerate water loss.</p></article>
+        <article class="st"><h2>DNA as data</h2><p>This is where I come in. RNA sequencing measures how strongly each gene is expressed, and the genome gives us the regulatory DNA around it. To a model, a sequence becomes a matrix - one row per base, one column per position - and a filter slides along it, responding where it finds a DNA pattern it has learned, like the ABRE.</p></article>
+        <article class="st"><h2>Learning from examples</h2><p>Trained on thousands of genes and their measured expression, a deep learning model adjusts every connection so that its predictions match the measurements as closely as possible. Some of its filters come to respond to DNA patterns we already know; others pick up patterns nobody has described yet.</p></article>
+        <article class="st"><h2>Then comes the careful part</h2><p>An accurate prediction shows that a model can match the data. It doesn't show why. Working out what the model has actually learned - genuine regulatory signal, or a shortcut that happens to correlate with it - takes interpretation, and the most promising variants still need testing in the lab.</p></article>
+        <article class="st"><h2>Back to the field</h2><p>If we can reliably predict what a change in regulatory DNA does to a gene's expression, breeders could screen for drought tolerance and disease resistance faster and with far less trial and error. That is the problem I work on: connecting a handful of letters in a genome to crops that can cope with the seasons ahead.</p></article>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <svg id="stage" viewBox="-400 -400 800 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="edgeFade" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="470">
+            <stop offset=".8" stop-color="#e0cdc5" stop-opacity="0"/>
+            <stop offset="1" stop-color="#e0cdc5" stop-opacity="1"/>
+          </radialGradient>
+        </defs>
+        <g id="levels"></g>
+        <g id="model" opacity="0"></g>
+        <rect x="-1400" y="-1400" width="2800" height="2800" fill="url(#edgeFade)" pointer-events="none"/>
+        <g id="caps"></g>
+        <g id="scalebar" transform="translate(-330 -360)">
+          <path d="M0 0 L60 0 M0 -6 L0 6 M60 -6 L60 6" class="ink"/>
+          <text x="72" y="6" font-size="17" font-style="italic" fill="#323619">≈ 5 m</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
 
-<p style="font-family: 'Crimson Text', serif; font-size: 3rem; color: #323619; font-style: italic; margin-top: 0; margin-bottom: 0.3rem;">all things genomics, bioinformatics & sustainability</p>
-
-
-Computational work is often a solo activity-just you, your code, and a gene network. But the big challenges aren't tackled alone: crops failing, climates shifting, farmers adapting. These need collective solutions.
-
-This blog is my way of connecting the dots and engaging beyond the screen. I write about the technical stuff I'm learning and the broader issues it touches (and some other things inbetween). Light on jargon, heavy on curiosity.
+<!-- ================= ABOUT (with why I write) ================= -->
+<section class="sec" id="about">
+  <svg class="crawl" id="crawl" viewBox="0 0 1200 80" preserveAspectRatio="xMinYMid slice" aria-hidden="true"></svg>
+  <div class="about-grid">
+    <svg id="portrait" viewBox="-230 -240 460 480" role="img" aria-label="Photo of Larysha Rothmann"></svg>
+    <div>
+      <h2>Hi, I'm Larysha</h2>
+      <p>I'm a bioinformatics PhD student at Stellenbosch University in South Africa. My research uses deep learning to understand how plants regulate their genes under drought - and which genetic variants matter enough to test in the lab, rather than just existing in massive datasets. I work in grapevine, with an eye on crops more broadly.</p>
+      <p>I also write. Computational work is often a solo activity - just you, your code, and a gene network - and The BioPod is how I take it back out into the world: explaining what I'm learning clearly, without stripping out what makes it interesting. It's also the best test I know of whether I actually understand something.</p>
+      <ul class="chips">
+        <li>regulatory genomics</li><li>deep learning</li><li>RNA-seq &amp; differential expression</li><li>gene ontology</li><li>R &amp; Python</li><li>high-performance computing</li><li>science writing</li>
+      </ul>
+      <p class="small-print">Away from the screen: sketching, yoga, enjoying the mountains of the Cape Winelands, and keeping a sourdough starter alive.</p>
+      <div class="links">
+        <a href="https://github.com/Larysha">GitHub</a>
+        <a href="https://www.linkedin.com/in/larysha-rothmann-6aa78418a/">LinkedIn</a>
+        <a href="mailto:biopod.blog@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
 :::
 
-::: {.hero-image-container}
-![](images/hero-collage.png){.hero-image-side}
-:::
-:::
-
-::: {style="margin-top: 5rem;"}
+::: {.column-screen}
+::: {style="max-width: 1240px; margin: 1rem auto 3rem auto; padding: 0 2rem;"}
 <h2 style="font-family: 'Apricots', cursive; font-size: 2.5rem; color: #323619; margin-bottom: 2rem;">Lately...</h2>
 
 ::: {#recent-posts}
 :::
 :::
+:::
 
-::::
+```{=html}
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19 V6 M6 11 L12 5 L18 11"/></svg><span>back to top</span></button>
+```
