@@ -5,7 +5,7 @@ project:
     - fonts/
     - giscus-theme.css
     - assets/
-    - images/profile3.jpg
+    - images/profile4.jpg
 
 website:
   title: "The BioPod"

@@ -4,7 +4,6 @@
  */
   :root { --blush: #e0cdc5; --sand: #d5c3b3; --olive: #323619; --sanguine: #a5583a; --ink-soft: #3b3a2a; }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   a { color: var(--olive); }
   .script { font-family: 'Apricots', cursive; font-weight: 400; }
   svg text { font-family: 'Crimson Text', serif; }

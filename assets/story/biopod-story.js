@@ -882,7 +882,7 @@ updateCrumbs();
   const bd = smooth(ellPts(0, 0, 190, 205, .1, 0, Math.PI * 2, 12, .05, true), true);
   const cp = el('clipPath', { id: 'portraitClip' }, el('defs', {}, s)); el('path', { d: bd }, cp);
   el('path', { d: bd, fill: LEAF, 'fill-opacity': .5, transform: 'translate(12 10)' }, s);
-  el('image', { href: 'images/profile3.jpg', x: -330, y: -230, width: 640, height: 626, 'clip-path': 'url(#portraitClip)', preserveAspectRatio: 'xMidYMid slice' }, s);
+  el('image', { href: 'images/profile4.jpg', x: -455, y: -725, width: 960, height: 1280, 'clip-path': 'url(#portraitClip)', preserveAspectRatio: 'xMidYMid slice' }, s);
   el('path', { d: bd, fill: 'none', stroke: INK, 'stroke-width': 2 }, s);
   const vp = [[-210, 170], [-150, 210], [-60, 226], [40, 220], [130, 196], [190, 140], [214, 70]];
   const pv = el('path', { d: smooth(vp), class: 'ink', pathLength: 1 }, s);
@@ -905,6 +905,12 @@ updateCrumbs();
 }
 
 ScrollTrigger.create({ trigger: '#about', start: 'top 80%', onEnter: () => $('toTop').classList.add('show'), onLeaveBack: () => $('toTop').classList.remove('show') });
-$('toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+// jump straight back up (smooth-scrolling back through the whole story replays every animation)
+$('toTop').addEventListener('click', () => {
+  const jump = () => window.scrollTo({ top: 0, behavior: 'instant' });
+  if (reduceMotion) return jump();
+  const page = document.querySelector('main') || document.body;
+  gsap.to(page, { opacity: 0, duration: .18, onComplete: () => { jump(); ScrollTrigger.update(); gsap.to(page, { opacity: 1, duration: .35, delay: .05 }); } });
+});
 document.fonts.ready.then(() => ScrollTrigger.refresh());
 })();
