@@ -1,0 +1,42 @@
+/* Projects page (projects.qmd). Palette and fonts follow the homepage story. */
+.bp-vine { display: block; width: 100%; height: 80px; overflow: visible; margin: 2.4rem 0 1rem; }
+.bp-vine .vine-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.bp-vine.drawn .vine-line { stroke-dashoffset: 0; }
+@media (prefers-reduced-motion: reduce) { .bp-vine .vine-line { transition: none; stroke-dashoffset: 0; } }
+
+.proj { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.2rem; align-items: center; margin: 2.2rem 0 3.2rem; }
+.proj.flip .proj-media { order: 2; }
+@media (max-width: 760px) { .proj { grid-template-columns: 1fr; gap: 1.1rem; } .proj.flip .proj-media { order: 0; } }
+
+/* a browser-window frame says "this runs in a web page" */
+.proj-window { display: block; border: 1.4px solid #323619; border-radius: 10px; overflow: hidden; background: #faf5ec; box-shadow: 6px 6px 0 rgba(50, 54, 25, .12); transition: transform .25s, box-shadow .25s; }
+.proj-window:hover, .proj-window:focus-visible { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 rgba(50, 54, 25, .14); outline: none; }
+.proj-window .bar { display: flex; gap: 6px; align-items: center; padding: 7px 10px; border-bottom: 1.2px solid rgba(50, 54, 25, .35); font-size: .8rem; color: #3b3a2a; }
+.proj-window .bar i { width: 9px; height: 9px; border-radius: 50%; border: 1.2px solid #323619; }
+.proj-window .bar span { margin-left: .5rem; font-family: 'Courier New', monospace; opacity: .8; }
+.proj-window img { display: block; width: 100%; height: auto; }
+
+.proj-text h3 { display: flex; align-items: center; gap: .6rem; margin: 0 0 .2rem; font-size: 1.6rem; }
+.proj-text h3 img { width: 34px; height: 34px; }
+.proj-text p.proj-line { font-style: italic; font-size: 1.12rem !important; color: #3b3a2a; margin: 0 0 .8rem; }
+.proj-chips { display: flex; flex-wrap: wrap; gap: .4rem .5rem; margin: .8rem 0 1rem; padding: 0; list-style: none; }
+.proj-chips li { border: 1.2px solid #323619; border-radius: 999px; padding: 0 .75rem; font-size: .9rem; color: #323619; background: rgba(255, 255, 255, .2); }
+.proj-links { display: flex; flex-wrap: wrap; gap: .6rem; }
+.proj-links a { text-decoration: none; border: 1.4px solid #323619; border-radius: 999px; padding: .15rem .95rem; color: #323619; font-size: 1rem; transition: background .2s, color .2s; }
+.proj-links a.primary, .proj-links a:hover, .proj-links a:focus-visible { background: #323619; color: #f6eee8; outline: none; }
+
+/* seqart: a framed print with its controls underneath */
+.sa-frame { background: #fff; border: 10px solid #fbf7f1; outline: 1.6px solid #323619; box-shadow: 6px 6px 0 rgba(50, 54, 25, .12); max-width: 380px; margin: 0 auto; }
+.sa-poster svg { display: block; width: 100%; height: auto; }
+.sa-controls { max-width: 380px; margin: 1rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .7rem; font-size: .95rem; }
+.sa-controls label { display: flex; flex-direction: column; gap: .15rem; color: #3b3a2a; }
+.sa-controls .wide { grid-column: 1 / -1; }
+.sa-controls input, .sa-controls select, .sa-controls textarea { font: inherit; font-size: .9rem; color: #000; background: #faf5ec; border: 1.2px solid rgba(50, 54, 25, .5); border-radius: 6px; padding: .2rem .45rem; }
+.sa-controls textarea { font-family: 'Courier New', monospace; font-size: .75rem; height: 4.2rem; resize: vertical; word-break: break-all; }
+.sa-controls .btns { grid-column: 1 / -1; display: flex; gap: .5rem; }
+.sa-controls button { font: inherit; font-size: .95rem; border: 1.4px solid #323619; background: transparent; color: #323619; border-radius: 999px; padding: .1rem .9rem; cursor: pointer; }
+.sa-controls button:hover, .sa-controls button:focus-visible { background: #323619; color: #f6eee8; outline: none; }
+.sa-note { max-width: 380px; margin: .5rem auto 0; font-size: .9rem !important; font-style: italic; color: #3b3a2a; }
+
+/* this page is full-width layout; keep the content to a comfortable column */
+#quarto-document-content, #title-block-header { max-width: 1080px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }

@@ -28,6 +28,8 @@ website:
         href: index.qmd
       - text: "BLOG"
         href: posts.qmd
+      - text: "PROJECTS"
+        href: projects.qmd
       - text: "ABOUT"
         href: index.qmd#about
       - text: "RESOURCES"
