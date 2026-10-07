@@ -1,5 +1,5 @@
 /* Small homepage creatures for pages and posts: an ant, ladybird or sprout on up to three headings,
-   and a vine with a caterpillar wherever the page has <svg class="bp-vine">.
+   and a vine with a caterpillar wherever the page has <svg class="bp-vine"> (add data-caterpillar="no" for leaves only).
    Ported from assets/story/biopod-story.js. Purely decorative. */
 (() => {
   const INK = '#323619', LEAF = '#9fb371';
@@ -51,7 +51,8 @@
       const leaf = el('path', { d: `M0 0 Q${L * .45} ${-W} ${L} 0 Q${L * .45} ${W} 0 0 Z M0 0 L${L * .85} 0`, fill: LEAF, 'fill-opacity': .6, stroke: INK, 'stroke-width': 1.2 }, g);
       if (!REDUCED) el('animateTransform', { attributeName: 'transform', type: 'rotate', values: '-6;6;-6', dur: `${3.6 + (i % 4) * .6}s`, begin: `${-i * .4}s`, repeatCount: 'indefinite' }, leaf);
     });
-    const cat = el('g', {}, svg);
+    const bare = svg.dataset.caterpillar === 'no'; // leaves only
+    const cat = el('g', bare ? { display: 'none' } : {}, svg);
     const segs = Array.from({ length: 7 }, (_, i) => el('circle', { r: i === 6 ? 8 : 6.5, fill: i === 6 ? '#8fae6a' : (i % 2 ? '#a9c27a' : '#9fb371'), stroke: INK, 'stroke-width': 1.3 }, cat));
     const eye = el('circle', { r: 1.6, fill: INK }, cat);
     const place = t => segs.forEach((s, i) => {
@@ -62,7 +63,7 @@
     place(0.05);
     onView(svg, () => {
       svg.classList.add('drawn');
-      if (REDUCED) return;
+      if (REDUCED || bare) return;
       const t0 = performance.now();
       const loop = now => { place((0.05 + (now - t0) / 70000) % 1); requestAnimationFrame(loop); }; // one lap every 70 s, as on the homepage
       requestAnimationFrame(loop);

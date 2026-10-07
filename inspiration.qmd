@@ -9,7 +9,7 @@ include-after-body:
 ::: {.inspiration-page}
 ::: {style="max-width: 900px; margin: 0 auto; padding: 0 2rem;"}
 
-## snippets from people that knew how to write 
+## snippets from people who knew how to write 
 
 "As humans we are inclined to feel that life must have a point. We have plans and aspirations and desires. We want to take constant advantage of all the intoxicating existence we've been endowed with. But what's life to a lichen? Yet its impulse to exist, to be, is every bit as strong as ours—arguably even stronger. If I were told that I had to spend decades being a furry growth on a rock in the woods, I believe I would lose the will to go on. Lichens don't. Like virtually all living things, they will suffer any hardship, endure any insult, for a moment's additional existence. Life, in short, just wants to be.”  
 
@@ -20,7 +20,7 @@ include-after-body:
 ― _Bill Bryson_
 
 ```{=html}
-<svg class="bp-vine" aria-hidden="true"></svg>
+<svg class="bp-vine" data-caterpillar="no" aria-hidden="true"></svg>
 ```
 
 "Nature has given us a brain that survives in a changing world by changing itself"
