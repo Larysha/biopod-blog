@@ -34,3 +34,6 @@ comments:
     loading: lazy
     input-position: "top"
     theme: "https://larysha.github.io/biopod-blog/giscus-theme.css"
+# A small homepage creature on one heading per post
+include-after-body:
+  - text: <script src="../../assets/doodles.js"></script>
