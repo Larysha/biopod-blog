@@ -1,11 +1,8 @@
-/* Small homepage creatures on blog-post headings: up to three per post, spread through it.
-   The ant, ladybird and sprout are ported from assets/story/biopod-story.js. Purely decorative. */
+/* Small homepage creatures for pages and posts: an ant, ladybird or sprout on up to three headings,
+   and a vine with a caterpillar wherever the page has <svg class="bp-vine">.
+   Ported from assets/story/biopod-story.js. Purely decorative. */
 (() => {
-  const h2s = [...document.querySelectorAll('#quarto-document-content h2.anchored')];
-  const n = h2s.length;
-  if (n < 2) return;
-
-  const INK = '#323619';
+  const INK = '#323619', LEAF = '#9fb371';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const css = document.createElement('style');
   css.textContent = `
@@ -20,11 +17,58 @@
     .bp-sprout .plant { transform-box: fill-box; transform-origin: 50% 100%; }
     .bp-sprout.grown .plant { animation: bp-sway 5s ease-in-out 1.6s infinite; }
     @keyframes bp-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
+    .bp-vine { display: block; width: 100%; height: 80px; overflow: hidden; margin: 2.4rem 0 1rem; }
+    .bp-vine .vine-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+    .bp-vine.drawn .vine-line { stroke-dashoffset: 0; }
     @media (prefers-reduced-motion: reduce) {
+      .bp-vine .vine-line { transition: none; stroke-dashoffset: 0; }
       .bp-sprout .ink, .bp-sprout .wash { transition: none; }
       .bp-sprout.grown .plant { animation: none; }
     }`;
   document.head.appendChild(css);
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = reduce;
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  };
+  const onView = (node, fn) => new IntersectionObserver((es, obs) => {
+    if (es.some(e => e.isIntersecting)) { obs.disconnect(); fn(); }
+  }, { threshold: 0.4 }).observe(node);
+
+  // ---------- vine with swaying leaves and a caterpillar ----------
+  document.querySelectorAll('.bp-vine').forEach(svg => {
+    svg.setAttribute('viewBox', '0 0 1200 80');
+    svg.setAttribute('preserveAspectRatio', 'xMinYMid slice');
+    const vine = el('path', { d: 'M0 52 C120 36 220 64 360 50 C500 36 620 66 760 52 C900 38 1040 62 1200 48', fill: 'none', stroke: INK, 'stroke-width': 1.2, pathLength: 1, class: 'vine-line' }, svg);
+    const len = vine.getTotalLength();
+    [70, 180, 300, 430, 560, 700, 830, 980, 1110].forEach((x, i) => {
+      const p = vine.getPointAtLength(len * x / 1200), L = 30 + (i % 3) * 6, W = 11;
+      const g = el('g', { transform: `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${i % 2 ? -63 : -120})`, class: 'vine-leaf' }, svg);
+      const leaf = el('path', { d: `M0 0 Q${L * .45} ${-W} ${L} 0 Q${L * .45} ${W} 0 0 Z M0 0 L${L * .85} 0`, fill: LEAF, 'fill-opacity': .6, stroke: INK, 'stroke-width': 1.2 }, g);
+      if (!REDUCED) el('animateTransform', { attributeName: 'transform', type: 'rotate', values: '-6;6;-6', dur: `${3.6 + (i % 4) * .6}s`, begin: `${-i * .4}s`, repeatCount: 'indefinite' }, leaf);
+    });
+    const cat = el('g', {}, svg);
+    const segs = Array.from({ length: 7 }, (_, i) => el('circle', { r: i === 6 ? 8 : 6.5, fill: i === 6 ? '#8fae6a' : (i % 2 ? '#a9c27a' : '#9fb371'), stroke: INK, 'stroke-width': 1.3 }, cat));
+    const eye = el('circle', { r: 1.6, fill: INK }, cat);
+    const place = t => segs.forEach((s, i) => {
+      const p = vine.getPointAtLength(((t * len) + i * 11) % len), hump = Math.max(0, Math.sin(t * 90 - i * .9)) * 6;
+      s.setAttribute('cx', p.x.toFixed(1)); s.setAttribute('cy', (p.y - 7 - hump).toFixed(1));
+      if (i === 6) { eye.setAttribute('cx', (p.x + 3).toFixed(1)); eye.setAttribute('cy', (p.y - 10 - hump).toFixed(1)); }
+    });
+    place(0.05);
+    onView(svg, () => {
+      svg.classList.add('drawn');
+      if (REDUCED) return;
+      const t0 = performance.now();
+      const loop = now => { place((0.05 + (now - t0) / 70000) % 1); requestAnimationFrame(loop); }; // one lap every 70 s, as on the homepage
+      requestAnimationFrame(loop);
+    });
+  });
+
 
   const antLeg = (x, s) => `<path data-x="${x}" data-y="0" data-p="${(x / 3 + 1 + (s > 0 ? 1 : 0)) % 2}" d="M${x} 0 q${x * .6} ${s * 5} ${x * .9 - 1} ${s * 8}" stroke="${INK}" stroke-width="1.1" stroke-linecap="round" fill="none"/>`;
   const ANT = `${[-3, 0, 3].flatMap(x => [-1, 1].map(s => antLeg(x, s))).join('')}
@@ -98,9 +142,12 @@
     }, { threshold: 1 }).observe(h);
   }
 
-  // up to three headings spread through the post; creatures picked by URL so a post always looks the same
+  // up to three headings spread through the page; creatures picked by URL so a page always looks the same
+  const h2s = [...document.querySelectorAll('#quarto-document-content h2.anchored')];
+  const n = h2s.length;
+  const picks = n === 1 ? [0] : [1, Math.floor(n / 2), n - 2];
   const kinds = ['ant', 'ladybird', 'sprout'];
   const seed = [...location.pathname].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
-  [...new Set([1, Math.floor(n / 2), n - 2].filter(i => i >= 1 && i < n))]
+  [...new Set(picks.filter(i => i >= 0 && i < n))]
     .forEach((i, j) => addDoodle(h2s[i], kinds[(seed + j) % kinds.length]));
 })();

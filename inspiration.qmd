@@ -2,6 +2,8 @@
 title: "Inspiration"
 page-layout: full
 toc: true
+include-after-body:
+  - text: <script src="assets/doodles.js"></script>
 ---
 
 ::: {.inspiration-page}
@@ -17,7 +19,9 @@ toc: true
 
 ― _Bill Bryson_
 
----
+```{=html}
+<svg class="bp-vine" aria-hidden="true"></svg>
+```
 
 "Nature has given us a brain that survives in a changing world by changing itself"
 

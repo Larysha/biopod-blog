@@ -1,9 +1,4 @@
 /* Projects page (projects.qmd). Palette and fonts follow the homepage story. */
-.bp-vine { display: block; width: 100%; height: 80px; overflow: visible; margin: 2.4rem 0 1rem; }
-.bp-vine .vine-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
-.bp-vine.drawn .vine-line { stroke-dashoffset: 0; }
-@media (prefers-reduced-motion: reduce) { .bp-vine .vine-line { transition: none; stroke-dashoffset: 0; } }
-
 .proj { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.2rem; align-items: center; margin: 2.2rem 0 3.2rem; }
 .proj.flip .proj-media { order: 2; }
 @media (max-width: 760px) { .proj { grid-template-columns: 1fr; gap: 1.1rem; } .proj.flip .proj-media { order: 0; } }

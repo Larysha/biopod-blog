@@ -1,49 +1,12 @@
-/* Projects page: the vine-and-caterpillar divider (ported from the homepage) and a mini seqart demo.
+/* Projects page: a mini seqart demo. (The vine divider lives in assets/doodles.js.)
    Plain SVG and DOM, no libraries. */
 (() => {
   'use strict';
   const NS = 'http://www.w3.org/2000/svg';
-  const INK = '#323619', LEAF = '#9fb371';
   const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const el = (tag, attrs, parent) => {
-    const e = document.createElementNS(NS, tag);
-    for (const k in attrs) e.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(e);
-    return e;
-  };
   const onView = (node, fn) => new IntersectionObserver((es, obs) => {
     if (es.some(e => e.isIntersecting)) { obs.disconnect(); fn(); }
   }, { threshold: 0.4 }).observe(node);
-
-  // ---------- vine with swaying leaves and a caterpillar ----------
-  document.querySelectorAll('.bp-vine').forEach(svg => {
-    svg.setAttribute('viewBox', '0 0 1200 80');
-    svg.setAttribute('preserveAspectRatio', 'xMinYMid slice');
-    const vine = el('path', { d: 'M0 52 C120 36 220 64 360 50 C500 36 620 66 760 52 C900 38 1040 62 1200 48', fill: 'none', stroke: INK, 'stroke-width': 1.2, pathLength: 1, class: 'vine-line' }, svg);
-    const len = vine.getTotalLength();
-    [70, 180, 300, 430, 560, 700, 830, 980, 1110].forEach((x, i) => {
-      const p = vine.getPointAtLength(len * x / 1200), L = 30 + (i % 3) * 6, W = 11;
-      const g = el('g', { transform: `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${i % 2 ? -63 : -120})`, class: 'vine-leaf' }, svg);
-      const leaf = el('path', { d: `M0 0 Q${L * .45} ${-W} ${L} 0 Q${L * .45} ${W} 0 0 Z M0 0 L${L * .85} 0`, fill: LEAF, 'fill-opacity': .6, stroke: INK, 'stroke-width': 1.2 }, g);
-      if (!REDUCED) el('animateTransform', { attributeName: 'transform', type: 'rotate', values: '-6;6;-6', dur: `${3.6 + (i % 4) * .6}s`, begin: `${-i * .4}s`, repeatCount: 'indefinite' }, leaf);
-    });
-    const cat = el('g', {}, svg);
-    const segs = Array.from({ length: 7 }, (_, i) => el('circle', { r: i === 6 ? 8 : 6.5, fill: i === 6 ? '#8fae6a' : (i % 2 ? '#a9c27a' : '#9fb371'), stroke: INK, 'stroke-width': 1.3 }, cat));
-    const eye = el('circle', { r: 1.6, fill: INK }, cat);
-    const place = t => segs.forEach((s, i) => {
-      const p = vine.getPointAtLength(((t * len) + i * 11) % len), hump = Math.max(0, Math.sin(t * 90 - i * .9)) * 6;
-      s.setAttribute('cx', p.x.toFixed(1)); s.setAttribute('cy', (p.y - 7 - hump).toFixed(1));
-      if (i === 6) { eye.setAttribute('cx', (p.x + 3).toFixed(1)); eye.setAttribute('cy', (p.y - 10 - hump).toFixed(1)); }
-    });
-    place(0.05);
-    onView(svg, () => {
-      svg.classList.add('drawn');
-      if (REDUCED) return;
-      const t0 = performance.now();
-      const loop = now => { place((0.05 + (now - t0) / 70000) % 1); requestAnimationFrame(loop); }; // one lap every 70 s, as on the homepage
-      requestAnimationFrame(loop);
-    });
-  });
 
   // ---------- seqart, in miniature ----------
   // Palettes, shapes, and layout rules follow github.com/Larysha/seqart (palettes.py, shapes.py, layout.py).

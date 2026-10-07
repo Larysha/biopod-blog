@@ -2,9 +2,15 @@
 title: "Resources"
 toc: true
 toc-location: right
+include-after-body:
+  - text: <script src="assets/doodles.js"></script>
 ---
 
 A collection of free, open-source tools and resources I've found useful over the years. Some I've worked through extensively, others I'm still exploring. If it's here, it's worth your time.
+
+```{=html}
+<svg class="bp-vine" aria-hidden="true"></svg>
+```
 
 ## Machine Learning & Deep Learning
 
