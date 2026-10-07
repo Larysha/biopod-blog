@@ -1,0 +1,23 @@
+/* Interactive figures (figs.js). Palette follows the DE series: navy null, burgundy observed. */
+.viz { background: #faf5ec; border: 1px solid rgba(50, 54, 25, .18); border-radius: 6px; padding: 1rem 1.1rem .8rem; margin: 1.8rem 0; }
+.viz svg { width: 100%; height: auto; display: block; overflow: visible; }
+.viz svg text { font-family: 'Crimson Text', serif; font-size: 14px; fill: #000; }
+.viz svg text.small { font-size: 12.5px; fill: #3b3a2a; }
+.viz svg text.lab { font-size: 14.5px; font-weight: 600; }
+.viz svg text.axis-title { font-size: 14px; }
+.viz svg text.base { font-family: 'Courier New', monospace; font-weight: 700; font-size: 22px; }
+.viz svg text.small-base { font-size: 16px; }
+.viz .axis line { stroke: #333; stroke-width: .9; }
+.viz .handle .grab { cursor: ew-resize; touch-action: none; }
+.viz p.viz-title { font-weight: 600; color: #323619; margin: 0 0 .5rem !important; font-size: 1.05rem !important; }
+.viz p.viz-note { font-size: .95rem !important; color: #3b3a2a; margin: .6rem 0 0 !important; }
+.viz p.viz-readout { font-size: 1rem !important; color: #000; margin: .5rem 0 0 !important; min-height: 3em; font-variant-numeric: tabular-nums; }
+.viz-controls { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; align-items: center; margin-top: .6rem; }
+.viz-toggle { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; }
+.viz-label { font-size: .95rem; color: #3b3a2a; margin-right: .2rem; }
+.viz button { font: inherit; font-size: .95rem; line-height: 1.3; border: 1.2px solid #323619; background: transparent; color: #323619; border-radius: 999px; padding: .1rem .85rem; cursor: pointer; }
+.viz button:hover, .viz button:focus-visible, .viz button[aria-pressed="true"] { background: #323619; color: #faf5ec; outline: none; }
+.viz-slider { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 0; }
+.viz-slider .viz-label { min-width: 12.5rem; }
+.viz input[type=range] { accent-color: #671436; width: 14rem; max-width: 100%; }
+@media (max-width: 600px) { .viz { padding: .8rem 12px .7rem; } .viz-slider .viz-label { min-width: 0; } }

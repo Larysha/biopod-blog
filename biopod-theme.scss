@@ -30,6 +30,12 @@ $body-color: $text-body;
 $link-color: $text-heading;
 $link-hover-color: $text-heading;
 
+// Callouts: palette colours instead of Quarto's default blue/green/orange/red
+$callout-color-note: #66967b;      // sage
+$callout-color-tip: #8d77ab;       // muted purple
+$callout-color-warning: #c98a4b;   // ochre
+$callout-color-important: #671436; // burgundy
+
 // Typography
 $font-family-sans-serif: 'Crimson Text', serif;
 $font-family-monospace: 'Courier New', monospace;

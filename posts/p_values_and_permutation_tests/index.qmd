@@ -1,0 +1,150 @@
+---
+title: "Statistics refresher, part 1: p-values, null distributions, and permutation tests"
+author: "Larysha Rothmann"
+date: "2026-10-07"
+categories: [statistics, bioinformatics, tutorial]
+image: cover.svg
+description: "What a p-value measures, where the null distribution comes from, and how to build one by shuffling, with interactive figures and an example from searching DNA for protein binding sites"
+css: figs.css
+resources:
+  - figs.js
+include-after-body:
+  text: |
+    <script src="figs.js"></script>
+---
+
+::: {.callout-note appearance="simple"}
+This is the first post in a short series of statistics refreshers: the ideas I use most in bioinformatics, written down properly so that they stick. The figures are interactive, so drag, click, and shuffle as you read.
+:::
+
+## Is it real, or is it chance?
+
+Most analyses end with the same question: is this pattern real, or could chance have produced it? A gene looks more active under drought. A short DNA sequence turns up in a lot of promoters. A group of genes seems to switch on and off together. Any of these could be biology, or it could be noise.
+
+Hypothesis testing starts by working out what the data would look like under ordinary circumstances, where any pattern is produced by chance alone. It then asks how unusual the real result is against that background. This post covers the three pieces involved: the null distribution (the chance background), the p-value and z-score (how unusual the result is), and the permutation test (a way to build the background yourself by shuffling).
+
+## An example: finding where proteins bind DNA
+
+Genes are switched on and off partly by proteins called transcription factors, which bind short DNA patterns, or motifs, near the genes they control. Part of my work uses deep learning to find these patterns: a model learns to predict how active a gene is from the DNA around it, and interpretation methods then pull out the motifs the model relies on most.
+
+A motif found this way is a candidate rather than a result, and this post uses two simple checks as examples. The first is where the motif occurs. A scanning tool such as [BLAMM](https://github.com/biointec/blamm) slides the motif along the DNA and scores every position for how closely it matches, and the question is which scores are high enough to count as hits. The second is whether the genes carrying the motif are switched on and off together, as you would expect if one protein controls them. For this I use a co-expression network: a map that links two genes when their activity rises and falls together across many experiments.
+
+## The null distribution
+
+A test starts with two explanations. The null hypothesis (H₀) is that nothing is going on, and any pattern is chance. The alternative (H₁) is what you suspect. For the co-expression check, H₀ is that the genes carrying the motif are no more linked to each other than any 10 genes picked at random.
+
+Next, the data are summarised as one number, the test statistic. For the co-expression check, it's simply the number of links among the motif's genes. Say the motif sits near 10 genes, and 11 pairs of them are linked.
+
+On its own, 11 means little, because it depends on how many links the network has overall. The null distribution supplies the context: it's the spread of values the statistic takes when H₀ is true, which here means the number of links among 10 randomly chosen genes, counted over and over. The p-value is the fraction of that distribution at least as extreme as the observed value, shown as the shaded tail in Figure 1.
+
+```{=html}
+<div class="viz" id="viz-tail">
+  <p class="viz-title">Figure 1. The p-value is a tail area</p>
+  <p class="viz-note">Drag the observed line or use the slider. Both nulls have a mean of 0 and a standard deviation of 1, so the x-axis is the z-score. The skewed null is a rescaled gamma distribution, a shape typical of counts and scores.</p>
+</div>
+```
+
+Formally, p = P(a result at least this extreme | H₀), where the bar reads "given". The calculation assumes the null is true, and forgetting that is behind most misreadings of p-values (more on this below).
+
+A one-sided test counts only one tail: here, are the genes more linked than chance would give? A two-sided test counts surprises in both directions, which doubles p for a symmetric null. The choice should be made before looking at the data. The co-expression check is one-sided, since fewer links than chance wouldn't support the motif.
+
+### z-scores
+
+The x-axis of Figure 1 measures distance from the null mean in standard deviations. That distance is the z-score:
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+where $x$ is the observed value, and $\mu$ and $\sigma$ are the mean and standard deviation of the null. In the toy network in Figure 2, random sets of 10 genes have about 3.7 links on average, with a standard deviation of about 1.8, so 11 links gives z = (11 - 3.7) / 1.8 ≈ 4.
+
+When the null is normal, each z-score corresponds to a fixed p-value. Each row below gives a distance above the null mean (z), the fraction of the null that lies at least that far up (p), and so how often chance alone would produce a result that high:
+
+| z | p (one-sided) | chance alone gets this far |
+|---:|---:|---:|
+| 1 | 0.16 | 1 time in 6 |
+| 1.96 | 0.025 | 1 time in 40 |
+| 3 | 0.0013 | 1 time in 740 |
+| 3.72 | 0.0001 | 1 time in 10,000 |
+| 5 | 2.9 × 10⁻⁷ | 1 time in 3.5 million |
+
+Reading across the third row: a result 3 standard deviations above the null mean would turn up by chance about once in 740 tries. The 1.96 row is the source of the familiar p < 0.05, since 0.025 in each tail adds up to 0.05 for a two-sided test.
+
+The table only holds for a normal null. Switch Figure 1 to the skewed null and set z to 3: the tail now holds 1.2% of the distribution instead of 0.13%, about nine times more. Nulls built from counts and scores are often skewed like this, so the z-score is a good measure of distance, but the p-value should come from the tail of the actual null.
+
+## Building the null by shuffling
+
+Some tests have a null worked out in theory: a t-test uses the t-distribution, for example. There's no formula for the number of links among random genes in a particular network, but it's easy to simulate: pick 10 genes at random, count their links, and repeat. This is a permutation test:
+
+1. Compute the statistic on the real data.
+2. Shuffle away the thing you're testing, and only that. Here, the motif's genes are swapped for 10 random genes, while the network stays the same.
+3. Recompute the statistic. This is one draw from the null.
+4. Repeat 1,000 or more times.
+5. If $b$ of the $n$ shuffles score at least as high as the real data, $p = (b + 1)/(n + 1)$.
+
+Figure 2 runs this on a small made-up network with two planted sets of 10 genes, one tightly linked and one loosely linked.
+
+```{=html}
+<div class="viz" id="viz-perm">
+  <p class="viz-title">Figure 2. A permutation test on a toy gene network</p>
+  <p class="viz-note">60 made-up genes. A grey line links two genes that switch on and off together. Each shuffle picks 10 random genes (navy), counts the links among them, and adds one to the histogram. The burgundy line marks the observed set.</p>
+</div>
+```
+
+After 1,000 shuffles, the tight set usually has more links than all but a couple of the random sets, giving p ≈ 0.001 to 0.003. The +1 in the formula counts the real data as one of the possible arrangements, so p can never reach zero: with 1,000 shuffles, the smallest possible value is 1/1,001 ([Phipson and Smyth, 2010](https://doi.org/10.2202/1544-6115.1585)). Smaller p-values need more shuffles.
+
+The null is also skewed to the right, like the skewed curve in Figure 1. On a normal null, the tight set's z of about 4 would suggest p ≈ 3 × 10⁻⁵, about 25 times smaller than the shuffles give.
+
+Switching to the loose set doesn't change the histogram, because the null depends on the network and the set size, not on which genes are tested. The loose set lands at z ≈ 1.8, well inside the range chance produces.
+
+In my own analysis, the genes carrying the best-supported motif came out at z = 3.72, and none of 1,000 random sets matched them, so p ≤ 0.001. The genes carrying the most common motif reached only z = 1.82. Each of those genes may still be a real target, but together they don't behave as one tightly coordinated group.
+
+## Scanning the genome for motifs
+
+BLAMM uses the same logic to decide what counts as a hit. A motif's score at a position adds up how well each base matches the motif. To set a threshold, BLAMM first scores a large stretch of ordinary sequence (by default the first 10 million bases of the input) and keeps the histogram of scores, which is an empirical null. It then finds the score that only 1 in 10,000 of those background positions reach, and reports every position, on either strand, that clears it. These are hits at p < 10⁻⁴.
+
+That sounds strict until you count the tests. Around 25,000 genes, about 3,000 bases around each, two strands, and 60 motifs come to billions of positions, and at 1 in 10,000, that's hundreds of thousands of hits by chance alone. Dealing with this is the job of multiple testing correction.
+
+A hit also only means that the sequence matches the motif better than background sequence usually does. It doesn't mean a protein binds there.
+
+## What a p-value is not
+
+A p-value assumes the null is true and reports how surprising the data are under that assumption. It can't answer other questions:
+
+1. It is not the probability that the null is true. p is P(data | H₀), not P(H₀ | data), so a motif hit at p < 10⁻⁴ is not a 99.99% chance that the site is real.
+2. It is not the probability that the result is "due to chance", which is the same mistake in plainer words.
+3. A large p-value doesn't show that the null is true, only that the data couldn't rule it out. A motif near only a few genes can fail the co-expression check simply for lack of data.
+4. It doesn't measure effect size. With enough samples, a tiny difference gets a tiny p-value.
+5. p < 0.05 is a convention. The right threshold depends on the cost of a false positive and on how many tests you run.
+
+Figure 3 shows points 3 and 4. Each simulated experiment measures one gene in two groups of samples (control and drought, say) and tests whether the group averages differ. The histogram collects the p-values from 2,000 experiments.
+
+```{=html}
+<div class="viz" id="viz-pdist">
+  <p class="viz-title">Figure 3. p-values across 2,000 repeated experiments</p>
+  <p class="viz-note">Burgundy: experiments with p &lt; 0.05. The true difference is in standard deviations of the measurement, so 0.5 means the group averages differ by half a standard deviation. Each experiment is a z-test on normally distributed measurements.</p>
+</div>
+```
+
+With no true difference, the histogram is flat. Under the null, p-values are spread evenly between 0 and 1, so 5% fall below 0.05 by chance, and that 5% is the false positive rate a 0.05 threshold accepts. The same flat floor sits under the spike at zero in the DESeq2 p-value histogram from [part 2 of the differential expression series](../differential_expression_stats/index.qmd).
+
+Set the difference to 1.00 with 3 samples per group. The effect is large, but only about 23% of experiments detect it, so a non-significant result says little. Then set it to 0.10 with 2,000 samples per group. The groups barely differ, yet nearly 9 in 10 experiments come out significant. A p-value measures how clearly the data separate an effect from zero, not how big or important the effect is.
+
+## Choosing what to shuffle
+
+A permutation test is only as good as its shuffle, which should break the structure being tested and nothing else. Shuffle too much, and the null becomes easy to beat, which makes real results look stronger than they are.
+
+The model side of my work has an example. A model that predicts gene activity from DNA might be relying on simple base composition, such as how GC-rich a sequence is, rather than on motifs. To check, you can retrain it on shuffled sequences, which keep the composition but destroy the motifs. My model still scored an auROC of 0.71 on shuffled sequence (where 0.5 is a coin flip and 1 is perfect), so composition alone carries real signal. But how much of the composition does a shuffle keep? Figure 4 shuffles a 60-base sequence containing two copies of ACGTG, a motif bound by drought-response proteins.
+
+```{=html}
+<div class="viz" id="viz-shuffle">
+  <p class="viz-title">Figure 4. What a shuffle keeps, and what it destroys</p>
+  <p class="viz-note">Highlighted: the ACGTG motif, read on either strand. Grid cells turn burgundy when a pair count differs from the original sequence.</p>
+</div>
+```
+
+Shuffling single bases keeps the count of each base but scrambles the pairs, meaning how often each base follows each other base. Pairs and longer runs are part of composition too, and a model can learn from them. A dinucleotide shuffle ([Altschul and Erickson, 1985](https://doi.org/10.1093/oxfordjournals.molbev.a040370)) keeps every pair count and still usually breaks the motif.
+
+So 0.71 is a lower bound on what composition alone can do. A model trained only on counts of short sequences, up to three bases long, reached 0.95. The more ordinary structure a null keeps, the harder it is to beat, and the more it means when a result does beat it.
+
+## Summary
+
+A null distribution shows what a statistic looks like when only chance is at work. The p-value is the fraction of it at least as extreme as the observed result, and the z-score is the distance from its mean in standard deviations, which converts directly into a p-value only when the null is normal. When no formula gives the null, a permutation test builds one by shuffling away exactly what you're testing. None of these numbers tell you whether the null is true, how big an effect is, or whether it matters biologically.
